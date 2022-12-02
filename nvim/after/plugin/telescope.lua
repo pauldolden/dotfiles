@@ -34,6 +34,7 @@ require("telescope").setup({
                     ["<leader>c"] = fb_actions.create,
                     ["<leader>r"] = fb_actions.rename,
                     ["<leader>y"] = fb_actions.copy,
+                    ["<leader>m"] = fb_actions.move,
                     ["<leader>d"] = fb_actions.remove,
                 },
                 ["n"] = {
