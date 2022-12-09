@@ -85,6 +85,7 @@ return require('packer').startup(function(use)
   use("nvim-lua/popup.nvim")
   use("tpope/vim-surround")
   use("mbbill/undotree")
+  use("fatih/vim-go")
   use {
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
