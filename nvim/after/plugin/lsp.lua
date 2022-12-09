@@ -54,4 +54,3 @@ require("mason-lspconfig").setup_handlers {
 require('lspconfig').eslint.setup(config({
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue", "astro", "svelte" }
 }))
-require('lspconfig').markdownlint.setup {}
