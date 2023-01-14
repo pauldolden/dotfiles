@@ -7,8 +7,6 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use("wbthomason/packer.nvim")
   -- Color scheme
-  use("folke/tokyonight.nvim")
-  use("folke/lsp-colors.nvim")
   use { "catppuccin/nvim", as = "catppuccin" }
   use("lukas-reineke/indent-blankline.nvim")
   -- Treesitter
@@ -21,27 +19,35 @@ return require('packer').startup(function(use)
     "windwp/nvim-ts-autotag",
     config = function() require('nvim-ts-autotag').setup() end
    }
-
   use("mfussenegger/nvim-dap")
   use("rcarriga/nvim-dap-ui")
   use("theHamsta/nvim-dap-virtual-text")
   -- Icons
   use("kyazdani42/nvim-web-devicons")
   --  LSP/Completion
-  use("neovim/nvim-lspconfig")
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/nvim-cmp")
-  use("onsails/lspkind-nvim")
-  use("nvim-lua/lsp_extensions.nvim")
-  use("glepnir/lspsaga.nvim")
-  use("simrat39/symbols-outline.nvim")
-  use("simrat39/rust-tools.nvim")
-  use("L3MON4D3/LuaSnip")
-  use("saadparwaiz1/cmp_luasnip")
+use {
+  'VonHeikemen/lsp-zero.nvim',
+  requires = {
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},
+    {'williamboman/mason.nvim'},
+    {'williamboman/mason-lspconfig.nvim'},
+
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},
+    {'hrsh7th/cmp-buffer'},
+    {'hrsh7th/cmp-path'},
+    {'saadparwaiz1/cmp_luasnip'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/cmp-nvim-lua'},
+
+    -- Snippets
+    {'L3MON4D3/LuaSnip'},
+    -- Snippet Collection (Optional)
+    {'rafamadriz/friendly-snippets'},
+  }
+}
   use("leafOfTree/vim-svelte-plugin")
-  use("williamboman/mason.nvim")
-  use("williamboman/mason-lspconfig.nvim")
   use {
   "folke/trouble.nvim",
   requires = "kyazdani42/nvim-web-devicons",
@@ -55,8 +61,6 @@ return require('packer').startup(function(use)
 }
   -- Formatter
   use("sbdchd/neoformat")
-  -- Markup
-  use("mattn/emmet-vim")
   -- Status Line
   use({
     'nvim-lualine/lualine.nvim',
@@ -80,12 +84,24 @@ return require('packer').startup(function(use)
   use("junegunn/fzf")
   use("junegunn/fzf.vim")
   use("tpope/vim-commentary")
-  use("mhinz/vim-startify")
   use("nvim-lua/plenary.nvim")
   use("nvim-lua/popup.nvim")
   use("tpope/vim-surround")
   use("mbbill/undotree")
   use("fatih/vim-go")
+  -- VimWiki
+    use {
+        'vimwiki/vimwiki',
+        config = function()
+            vim.g.vimwiki_list = {
+                {
+                    path = '~/vimwiki',
+                    syntax = 'markdown',
+                    ext = '.md',
+                }
+            }
+        end
+    }
   use {
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
