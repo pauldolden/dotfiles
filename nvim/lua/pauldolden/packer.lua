@@ -7,8 +7,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use("wbthomason/packer.nvim")
   -- Color scheme
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use("lukas-reineke/indent-blankline.nvim")
+	use 'folke/tokyonight.nvim'
   -- Treesitter
   use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
@@ -75,13 +74,13 @@ return require('packer').startup(function(use)
      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   })
   -- Git
-  use("tpope/vim-fugitive")
   use("APZelos/blamer.nvim")
   -- Telescope
   use("nvim-telescope/telescope.nvim")
   use("nvim-telescope/telescope-file-browser.nvim")
   use("nvim-telescope/telescope-fzy-native.nvim")
   -- Misc
+  use("lukas-reineke/indent-blankline.nvim")
   use("junegunn/fzf")
   use("junegunn/fzf.vim")
   use("tpope/vim-commentary")
@@ -89,7 +88,6 @@ return require('packer').startup(function(use)
   use("nvim-lua/popup.nvim")
   use("tpope/vim-surround")
   use("mbbill/undotree")
-  use("fatih/vim-go")
   -- VimWiki
     use {
         'vimwiki/vimwiki',
