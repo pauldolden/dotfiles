@@ -1,10 +1,11 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.softtabstop = 0
 vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+vim.opt.expandtab = false
+vim.opt.preserveindent = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.nuw = 6
