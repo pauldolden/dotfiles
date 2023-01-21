@@ -80,6 +80,8 @@ return require('packer').startup(function(use)
   use("nvim-telescope/telescope-file-browser.nvim")
   use("nvim-telescope/telescope-fzy-native.nvim")
   -- Misc
+	use("chentoast/marks.nvim")
+	use "fladson/vim-kitty"
   use("lukas-reineke/indent-blankline.nvim")
   use("junegunn/fzf")
   use("junegunn/fzf.vim")
