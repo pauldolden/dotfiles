@@ -14,6 +14,8 @@ nnoremap("<leader>fs", "<cmd>Telescope live_grep<CR>")
 -- Git
 nnoremap("<leader>gb", "<cmd>BlamerToggle<CR>")
 nnoremap("<leader>gd", "<cmd>vertical Gdiffsplit<CR>")
+-- Formatter
+nnoremap("<silent> <leader>f","<cmd>Format<CR>")
 -- Misc
 nnoremap("<leader>ep", "<cmd>echo expand('%:p')<CR>")
 nnoremap("<leader>yp", "<cmd>let @+ = expand('%:p')<CR>")
