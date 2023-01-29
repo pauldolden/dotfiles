@@ -1,5 +1,3 @@
-local nnoremap = require("pauldolden.keymap").nnoremap
-
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "help", "javascript", "typescript", "c", "lua", "rust" },
@@ -58,8 +56,4 @@ function ContextSetup(show_all_context)
     })
 end
 
-nnoremap("<leader>cf", function() ContextSetup(true) end)
-nnoremap("<leader>cp", function() ContextSetup(false) end)
 ContextSetup(false)
-
-
