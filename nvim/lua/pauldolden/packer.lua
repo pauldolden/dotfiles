@@ -46,6 +46,7 @@ return require('packer').startup(function(use)
       {'rafamadriz/friendly-snippets'},
     }
   }
+  use("dense-analysis/ale")
   use("github/copilot.vim")
   use("leafOfTree/vim-svelte-plugin")
   use {
