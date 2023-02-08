@@ -26,3 +26,10 @@ vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>Trouble<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>u", "<cmd>UndotreeShow<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>Copilot<CR>", { silent = true })
 vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+-- Motions
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {silent = true})
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {silent = true})
+vim.api.nvim_set_keymap("n", "n", "nzzzv", {silent = true})
+vim.api.nvim_set_keymap("n", "N", "Nzzzv", {silent = true})
+-- Escape
+vim.api.nvim_set_keymap("i", "<C-c>", "<Esc>", {silent = true})
