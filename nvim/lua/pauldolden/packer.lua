@@ -109,4 +109,6 @@ return require('packer').startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
  	use("mg979/vim-visual-multi")
+  use("ThePrimeagen/vim-be-good")
 end)
+
