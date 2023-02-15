@@ -1,8 +1,3 @@
---[[
- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
- `lvim` is the global options object
-]]
-
 -- vim options
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
@@ -25,12 +20,15 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<leader>]"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<leader>["] = ":BufferLineCyclePrev<CR>"
 
+lvim.keys.normal_mode["<S-x>"] = ":BufferKill<CR>"
+lvim.keys.normal_mode["<leader>q"] = ":BufferKill<CR>"
 
 lvim.keys.normal_mode["<leader>yp"] = "<cmd>let @+ = expand('%:p')<CR>"
 lvim.keys.normal_mode["<C-d>"] = "<C-d>zz<CR>"
-lvim.keys.normal_mode["<C-u>"] = "<C-u:w>zz<CR>"
-lvim.keys.normal_mode["<C-J>"] = 'copilot#Accept("<CR>")'
+lvim.keys.normal_mode["<C-u>"] = "<C-u>zz<CR>"
 
 -- -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
@@ -47,26 +45,6 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 
--- -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  { command = "stylua" },
-  {
-    command = "prettier",
-    extra_args = { "--print-width", "100" },
-    filetypes = { "typescript", "typescriptreact" },
-  },
-}
-local linters = require "lvim.lsp.null-ls.linters"
-linters.setup {
-  { command = "flake8", filetypes = { "python" } },
-  {
-    command = "shellcheck",
-    args = { "--severity", "warning" },
-  },
-}
-
--- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
   {
     "folke/trouble.nvim",
@@ -94,56 +72,72 @@ lvim.plugins = {
     end
   },
   { "zbirenbaum/copilot.lua",
-    event = { "VimEnter" },
+    event = { "InsertEnter" },
     config = function()
-      vim.defer_fn(function()
-        require("copilot").setup {
-          plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+      require("copilot").setup({
+        suggestion = {
+          auto_trigger = true,
+          keymap = {
+            accept = "<C-J>"
+          }
         }
-      end, 100)
+      })
     end,
   },
-
   { "zbirenbaum/copilot-cmp",
     after = { "copilot.lua", "nvim-cmp" },
   },
   {
     "mrjones2014/nvim-ts-rainbow",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        rainbow = {
+          enable = true,
+          extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+          max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
+        },
+      }
+    end
   },
   {
     "tpope/vim-surround",
   },
   {
     "gelguy/wilder.nvim",
+    config = function()
+      local wilder = require('wilder')
+      wilder.setup({ modes = { ':', '/', '?' } })
+
+      wilder.set_option('renderer', wilder.popupmenu_renderer(
+        wilder.popupmenu_palette_theme({
+          -- 'single', 'double', 'rounded' or 'solid'
+          -- can also be a list of 8 characters, see :h wilder#popupmenu_palette_theme() for more details
+          border = 'rounded',
+          max_height = '75%', -- max height of the palette
+          min_height = 0, -- set to the same as 'max_height' for a fixed height window
+          prompt_position = 'top', -- 'top' or 'bottom' to set the location of the prompt
+          reverse = 0, -- set to 1 to reverse the order of the list, use in combination with 'prompt_position'
+        })
+      ))
+
+    end
   },
-  { "mg979/vim-visual-multi" }
+  { "mg979/vim-visual-multi" },
+  { "APZelos/blamer.nvim" },
+  {
+    "wakatime/vim-wakatime"
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
 }
 
-local wilder = require('wilder')
-wilder.setup({ modes = { ':', '/', '?' } })
-
-wilder.set_option('renderer', wilder.popupmenu_renderer(
-  wilder.popupmenu_palette_theme({
-    -- 'single', 'double', 'rounded' or 'solid'
-    -- can also be a list of 8 characters, see :h wilder#popupmenu_palette_theme() for more details
-    border = 'rounded',
-    max_height = '75%', -- max height of the palette
-    min_height = 0, -- set to the same as 'max_height' for a fixed height window
-    prompt_position = 'top', -- 'top' or 'bottom' to set the location of the prompt
-    reverse = 0, -- set to 1 to reverse the order of the list, use in combination with 'prompt_position'
-  })
-))
 
 
 -- Can not be placed into the config method of the plugins.
+lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
 table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
-
--- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "zsh",
-  callback = function()
-    -- let treesitter use bash highlight for zsh files as well
-    require("nvim-treesitter.highlight").attach(0, "bash")
-  end,
-})
