@@ -25,6 +25,7 @@ lvim.keys.normal_mode["<leader>["] = ":BufferLineCyclePrev<CR>"
 
 lvim.keys.normal_mode["<S-x>"] = ":BufferKill<CR>"
 lvim.keys.normal_mode["<leader>q"] = ":BufferKill<CR>"
+lvim.keys.normal_mode["<leader>t"] = ":Trouble<CR>"
 
 lvim.keys.normal_mode["<leader>yp"] = "<cmd>let @+ = expand('%:p')<CR>"
 lvim.keys.normal_mode["<C-d>"] = "<C-d>zz<CR>"
