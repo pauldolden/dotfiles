@@ -10,6 +10,7 @@ M.config = function()
   lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
   lvim.keys.normal_mode["<leader>]"] = ":BufferLineCycleNext<CR>"
   lvim.keys.normal_mode["<leader>["] = ":BufferLineCyclePrev<CR>"
+  lvim.keys.normal_mode["<leader>lF"] = ":!eslint %:p --fix<CR>"
 
   lvim.keys.normal_mode["<S-x>"] = ":BufferKill<CR>"
   lvim.keys.normal_mode["<leader>q"] = ":BufferKill<CR>"
