@@ -69,7 +69,7 @@ M.config = function()
 
         wilder.set_option('renderer', wilder.popupmenu_renderer(
           wilder.popupmenu_palette_theme({
-            highlighter = wilder.basic_highlighterhlighter(),
+            highlighter = wilder.basic_highlighter(),
             border = 'single',
             max_height = '75%',
             min_height = 0,
