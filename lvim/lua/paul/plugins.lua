@@ -90,6 +90,12 @@ M.config = function()
         require("nvim-ts-autotag").setup()
       end,
     },
+    {
+      "ray-x/go.nvim",
+      config = function()
+        require("go").setup()
+      end,
+    }
   }
 
   lvim.builtin.treesitter.rainbow.enable = true
