@@ -95,7 +95,19 @@ M.config = function()
       config = function()
         require("go").setup()
       end,
-    }
+    },
+    {
+      "vimwiki/vimwiki",
+      config = function()
+        vim.g.vimwiki_list = {
+          {
+            path = "~/vault/",
+            syntax = "markdown",
+            ext = ".md",
+          },
+        }
+      end,
+    },
   }
 
   lvim.builtin.treesitter.rainbow.enable = true
