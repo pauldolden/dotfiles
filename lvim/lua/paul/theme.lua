@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = function()
-  lvim.colorscheme = "lunar"
+  lvim.colorscheme = "tokyonight"
   lvim.builtin.alpha.active = true
   lvim.builtin.alpha.mode = "dashboard"
   lvim.builtin.terminal.active = true
