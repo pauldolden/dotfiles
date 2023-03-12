@@ -3,7 +3,6 @@
 -- Add any additional options here
 vim.opt.title = true
 -- set window title to root directory
-vim.opt.titlestring = "%{expand('%:p:h:t')}"
 vim.opt.compatible = false
 -- Vimwiki stuff
 vim.cmd("filetype plugin on")
