@@ -1,5 +1,16 @@
 return {
   {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight-storm",
+    },
+  },
+  { "tpope/vim-surround" },
+  { "mg979/vim-visual-multi" },
+  { "APZelos/blamer.nvim" },
+  { "wakatime/vim-wakatime" },
+  { "vimwiki/vimwiki" },
+  {
     "zbirenbaum/copilot.lua",
     event = { "InsertEnter" },
     config = function()
@@ -28,33 +39,6 @@ return {
     end,
   },
   {
-    "tpope/vim-surround",
-  },
-  {
-    "gelguy/wilder.nvim",
-    config = function()
-      local wilder = require("wilder")
-      wilder.setup({ modes = { ":", "/", "?" } })
-
-      wilder.set_option(
-        "renderer",
-        wilder.popupmenu_renderer(wilder.popupmenu_palette_theme({
-          highlighter = wilder.basic_highlighter(),
-          border = "single",
-          max_height = "75%",
-          min_height = 0,
-          prompt_position = "top",
-          reverse = 0,
-        }))
-      )
-    end,
-  },
-  { "mg979/vim-visual-multi" },
-  { "APZelos/blamer.nvim" },
-  {
-    "wakatime/vim-wakatime",
-  },
-  {
     "windwp/nvim-ts-autotag",
     config = function()
       require("nvim-ts-autotag").setup()
@@ -64,18 +48,6 @@ return {
     "ray-x/go.nvim",
     config = function()
       require("go").setup()
-    end,
-  },
-  {
-    "vimwiki/vimwiki",
-    config = function()
-      vim.g.vimwiki_list = {
-        {
-          path = "~/vault/",
-          syntax = "markdown",
-          ext = ".md",
-        },
-      }
     end,
   },
 }
