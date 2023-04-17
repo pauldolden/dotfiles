@@ -2,14 +2,13 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-storm",
+      colorscheme = "tokyonight-night",
     },
   },
   { "tpope/vim-surround" },
   { "mg979/vim-visual-multi" },
   { "APZelos/blamer.nvim" },
   { "wakatime/vim-wakatime" },
-  { "vimwiki/vimwiki" },
   {
     "zbirenbaum/copilot.lua",
     event = { "InsertEnter" },
