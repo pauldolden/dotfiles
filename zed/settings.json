@@ -1,5 +1,5 @@
 {
-  "base_keymap": "JetBrains",
+  "base_keymap": "VSCode",
   "theme": "Rosé Pine Moon",
   "buffer_font_size": 17,
   "vim_mode": true

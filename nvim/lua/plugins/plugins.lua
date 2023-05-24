@@ -49,4 +49,10 @@ return {
       require("go").setup()
     end,
   },
+  {
+    "ThePrimeagen/harpoon",
+    config = function()
+      require("harpoon").setup()
+    end,
+  },
 }
