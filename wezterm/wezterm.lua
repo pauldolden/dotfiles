@@ -76,5 +76,28 @@ config.colors = {
 	},
 }
 
+config.keys = {
+	{
+		key = "DownArrow",
+		mods = "OPT",
+		action = wezterm.action.SplitPane({ direction = "Down", size = { Percent = 25 } }),
+	},
+	{
+		key = "UpArrow",
+		mods = "OPT",
+		action = wezterm.action.SplitPane({ direction = "Up", size = { Percent = 25 } }),
+	},
+	{
+		key = "LeftArrow",
+		mods = "OPT",
+		action = wezterm.action.SplitPane({ direction = "Left", size = { Percent = 50 } }),
+	},
+	{
+		key = "RightArrow",
+		mods = "OPT",
+		action = wezterm.action.SplitPane({ direction = "Right", size = { Percent = 50 } }),
+	},
+}
+
 -- and finally, return the configuration to wezterm
 return config
