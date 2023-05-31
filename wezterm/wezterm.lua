@@ -39,7 +39,7 @@ function tab_title(tab_info)
 	return tab_info.active_pane.title
 end
 
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+wezterm.on("format-tab-title", function(tab)
 	local title = tab_title(tab)
 	if tab then
 		return {
@@ -63,8 +63,8 @@ config.colors = {
 		inactive_tab_edge = "#1e2030",
 		background = "#191b28",
 		active_tab = {
-			fg_color = "#82aaff",
-			bg_color = "#222436",
+			bg_color = "#82aaff",
+			fg_color = "#222436",
 		},
 		inactive_tab = {
 			bg_color = "#1e2030",
