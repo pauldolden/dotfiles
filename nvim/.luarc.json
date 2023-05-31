@@ -59,6 +59,7 @@
         "/Users/pauldolden/.local/share/nvim/lazy/neoconf.nvim/types",
         "/Users/pauldolden/.local/share/nvim/lazy/neoconf.nvim/types/lua",
         "/Users/pauldolden/.config/nvim/lua",
-        "/Users/pauldolden/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/7e8214ae"
+        "/Users/pauldolden/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/7e8214ae",
+        "/Users/paul4035/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/037dd1bc"
     ]
 }
