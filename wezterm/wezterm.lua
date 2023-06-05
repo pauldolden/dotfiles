@@ -19,6 +19,8 @@ config.show_tab_index_in_tab_bar = false
 config.show_new_tab_button_in_tab_bar = false
 config.use_fancy_tab_bar = false
 config.tab_max_width = 50
+config.send_composed_key_when_left_alt_is_pressed = true
+config.send_composed_key_when_right_alt_is_pressed = false
 
 config.window_frame = {
 	font_size = 16.0,
