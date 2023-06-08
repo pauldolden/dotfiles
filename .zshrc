@@ -1,5 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 export PATH="${PATH}:${HOME}/npm/bin"
 PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 export PATH
@@ -39,6 +40,7 @@ DISABLE_AUTO_TITLE="true"
 precmd () { print -Pn "\e]0;${PWD##*/}\a" }
 
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
+
 eval "$(zoxide init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
