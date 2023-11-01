@@ -40,11 +40,23 @@ alias actm1='act --container-architecture linux/amd64'
 alias proj='cd ~/Development/Projects'
 alias pp='cd ~/Development/Projects/personal'
 alias wd='cd ~/Development/Projects/weirddeer'
+# Terraform
+alias tf='terraform'
+alias tfi='terraform init'
+alias tfa='terraform apply'
+alias tfd='terraform destroy'
+alias tfp='terraform plan'
+alias tfw='terraform workspace'
+alias tfws='terraform workspace select'
+alias tfwl='terraform workspace list'
+alias tfwrm='terraform workspace delete'
 
-DISABLE_AUTO_TITLE="true"
-precmd () { print -Pn "\e]0;${PWD##*/}\a" }
+function kp() {
+  kill -9 $(lsof -ti :$1)
+}
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.post.zsh"

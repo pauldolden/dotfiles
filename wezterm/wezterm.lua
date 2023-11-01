@@ -15,6 +15,7 @@ end
 -- For example, changing the color scheme:
 config.font_size = 17.0
 config.tab_bar_at_bottom = true
+config.enable_tab_bar = false
 config.show_tab_index_in_tab_bar = false
 config.show_new_tab_button_in_tab_bar = false
 config.use_fancy_tab_bar = false
@@ -30,19 +31,19 @@ config.window_frame = {
 -- It prefers the title that was set via `tab:set_title()`
 -- or `wezterm cli set-tab-title`, but falls back to the
 -- title of the active pane in that tab.
-function tab_title(tab_info)
+local function tab_title(tab_info)
 	local title = tab_info.tab_title
 	-- if the tab title is explicitly set, take that
 	if title and #title > 0 then
 		return title
 	end
-	-- Otherwise, use the title from the active pane
-	-- in that tab
+
 	return tab_info.active_pane.title
 end
 
 wezterm.on("format-tab-title", function(tab)
 	local title = tab_title(tab)
+
 	if tab then
 		return {
 			{ Text = "  " .. title .. "  " },
