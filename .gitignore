@@ -9,3 +9,6 @@ gatsby
 github-copilot
 grammarly-languageserver
 spotify-tui
+raycast
+.DS_Store
+gcloud/
