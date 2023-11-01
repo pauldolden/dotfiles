@@ -11,9 +11,9 @@ return {
   -- },
   {
   "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {},
+    lazy = false,
+    priority = 1000,
+    opts = {},
   },
   { "mg979/vim-visual-multi" },
   { "APZelos/blamer.nvim" },
