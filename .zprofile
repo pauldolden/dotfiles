@@ -50,6 +50,9 @@ alias tfw='terraform workspace'
 alias tfws='terraform workspace select'
 alias tfwl='terraform workspace list'
 alias tfwrm='terraform workspace delete'
+# GCP
+alias gcp='gcloud'
+alias gcpp='gcloud config set project'
 
 function kp() {
   kill -9 $(lsof -ti :$1)
