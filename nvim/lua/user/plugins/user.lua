@@ -15,9 +15,9 @@ return {
     priority = 1000,
     opts = {},
   },
-  { "mg979/vim-visual-multi" },
-  { "APZelos/blamer.nvim" },
-  { "wakatime/vim-wakatime" },
+  { "mg979/vim-visual-multi", lazy = false },
+  { "APZelos/blamer.nvim", lazy = false },
+  { "wakatime/vim-wakatime", lazy = false },
   {
     "zbirenbaum/copilot.lua",
     event = { "InsertEnter" },
