@@ -27,6 +27,8 @@ config.window_frame = {
 	font_size = 16.0,
 }
 
+config.font = wezterm.font("VictorMono Nerd Font Mono", { weight = "Bold" })
+
 -- This function returns the suggested title for a tab.
 -- It prefers the title that was set via `tab:set_title()`
 -- or `wezterm cli set-tab-title`, but falls back to the
@@ -51,42 +53,6 @@ wezterm.on("format-tab-title", function(tab)
 	end
 	return title
 end)
-
-config.colors = {
-	foreground = "#c0caf5",
-	background = "#1a1b26",
-	cursor_bg = "#c0caf5",
-	cursor_border = "#c0caf5",
-	cursor_fg = "#1a1b26",
-	selection_bg = "#283457",
-	selection_fg = "#c0caf5",
-	ansi = { "#15161e", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#a9b1d6" },
-	brights = { "#414868", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#c0caf5" },
-	tab_bar = {
-		inactive_tab_edge = "#16161e",
-		background = "#191b28",
-		active_tab = {
-			bg_color = "#7aa2f7",
-			fg_color = "#1a1b26",
-		},
-		inactive_tab = {
-			bg_color = "#16161e",
-			fg_color = "#545c7e",
-		},
-		inactive_tab_hover = {
-			bg_color = "#16161e",
-			fg_color = "#7aa2f7",
-		},
-		new_tab_hover = {
-			fg_color = "#16161e",
-			bg_color = "#7aa2f7",
-		},
-		new_tab = {
-			fg_color = "#7aa2f7",
-			bg_color = "#191b28",
-		},
-	},
-}
 
 config.keys = {
 	{
