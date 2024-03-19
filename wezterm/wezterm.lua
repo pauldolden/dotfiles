@@ -10,12 +10,10 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- This is where you actually apply your config choices
-config.font = wezterm.font("VictorMono Nerd Font Mono", { weight = "Bold" })
-
 -- For example, changing the color scheme:
 config.font_size = 17.0
 config.tab_bar_at_bottom = true
+config.enable_tab_bar = false
 config.show_tab_index_in_tab_bar = false
 config.show_new_tab_button_in_tab_bar = false
 config.use_fancy_tab_bar = false
@@ -27,11 +25,13 @@ config.window_frame = {
 	font_size = 16.0,
 }
 
+config.font = wezterm.font("VictorMono Nerd Font Mono", { weight = "Bold" })
+
 -- This function returns the suggested title for a tab.
 -- It prefers the title that was set via `tab:set_title()`
 -- or `wezterm cli set-tab-title`, but falls back to the
 -- title of the active pane in that tab.
-function tab_title(tab_info)
+local function tab_title(tab_info)
 	local title = tab_info.tab_title
 	-- if the tab title is explicitly set, take that
 	if title and #title > 0 then
