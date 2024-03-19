@@ -3530,3 +3530,23 @@
 {"signed_in":false,"milliseconds_since_first_event":105198,"type":"Action","source":"command palette","action":":quitall"}
 {"signed_in":false,"milliseconds_since_first_event":240007,"type":"Memory","memory_in_bytes":458735616,"virtual_memory_in_bytes":433915625472}
 {"signed_in":false,"milliseconds_since_first_event":240007,"type":"Cpu","usage_as_percentage":2.279885,"core_count":10}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Memory","memory_in_bytes":252182528,"virtual_memory_in_bytes":433904730112}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Cpu","usage_as_percentage":0.992284,"core_count":10}
+{"signed_in":false,"milliseconds_since_first_event":240009,"type":"Memory","memory_in_bytes":252510208,"virtual_memory_in_bytes":433904730112}
+{"signed_in":false,"milliseconds_since_first_event":240009,"type":"Cpu","usage_as_percentage":0.10336288,"core_count":10}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Memory","memory_in_bytes":220577792,"virtual_memory_in_bytes":433905303552}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Cpu","usage_as_percentage":0.111412376,"core_count":10}
+{"signed_in":false,"milliseconds_since_first_event":240010,"type":"Memory","memory_in_bytes":136003584,"virtual_memory_in_bytes":433904156672}
+{"signed_in":false,"milliseconds_since_first_event":240010,"type":"Cpu","usage_as_percentage":0.10534483,"core_count":10}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Memory","memory_in_bytes":138690560,"virtual_memory_in_bytes":433904730112}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Cpu","usage_as_percentage":0.08479725,"core_count":10}
+{"signed_in":false,"milliseconds_since_first_event":240002,"type":"Memory","memory_in_bytes":128909312,"virtual_memory_in_bytes":433904156672}
+{"signed_in":false,"milliseconds_since_first_event":240002,"type":"Cpu","usage_as_percentage":0.071211465,"core_count":10}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Memory","memory_in_bytes":109625344,"virtual_memory_in_bytes":433904156672}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Cpu","usage_as_percentage":0.117401,"core_count":10}
+{"signed_in":false,"milliseconds_since_first_event":240003,"type":"Memory","memory_in_bytes":111230976,"virtual_memory_in_bytes":433904156672}
+{"signed_in":false,"milliseconds_since_first_event":240003,"type":"Cpu","usage_as_percentage":0.0812766,"core_count":10}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Memory","memory_in_bytes":112459776,"virtual_memory_in_bytes":433905303552}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Cpu","usage_as_percentage":0.11426494,"core_count":10}
+{"signed_in":false,"milliseconds_since_first_event":240047,"type":"Memory","memory_in_bytes":88850432,"virtual_memory_in_bytes":433905303552}
+{"signed_in":false,"milliseconds_since_first_event":240047,"type":"Cpu","usage_as_percentage":0.10871074,"core_count":10}
