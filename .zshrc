@@ -4,8 +4,6 @@
 # precmd () { print -Pn "\e]0;${PWD##*/}\a" }
 eval "$(starship init zsh)"
 
-if [ "$TMUX" = "" ]; then tmux; fi
-
 function update_tmux_pane_title() {
     if [[ -n "$TMUX" ]]; then
         tmux rename-window "${PWD:t}"
