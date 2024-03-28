@@ -1,6 +1,5 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.pre.zsh"
-
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zprofile.pre.zsh"
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH="${PATH}:${HOME}/npm/bin"
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
@@ -9,6 +8,19 @@ export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 fp() {
   cd $(find ~/Development/Projects -type d -maxdepth $FZF_DEPTH -mindepth $FZF_DEPTH | fzf)
 }
+
+fpn() {
+  nvnvim $(find ~/Development/Projects -type d -maxdepth $FZF_DEPTH -mindepth $FZF_DEPTH | fzf)
+}
+
+fpc() {
+  code $(find ~/Development/Projects -type d -maxdepth $FZF_DEPTH -mindepth $FZF_DEPTH | fzf)
+}
+
+fpz() {
+  zed $(find ~/Development/Projects -type d -maxdepth $FZF_DEPTH -mindepth $FZF_DEPTH | fzf)
+}
+
 
 # Aliases
 ## Refresh
@@ -60,6 +72,5 @@ function kp() {
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.post.zsh"
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zprofile.post.zsh"
