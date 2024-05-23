@@ -17,12 +17,7 @@ return {
       "nvim-telescope/telescope.nvim"
     },
   },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   { "mg979/vim-visual-multi", lazy = false },
   { "APZelos/blamer.nvim", lazy = false },
