@@ -1,0 +1,156 @@
+[2024-09-15 14:28:45.018]	 List of discovered tpm plugins: tags
+[2024-09-15 14:28:45.031]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 14:28:45.457]	 Installing "tags"
+[2024-09-15 14:28:45.698]	   "tags" download fail
+[2024-09-15 14:28:45.711]	 Done.
+
+[2024-09-15 14:29:56.764]	 List of discovered tpm plugins: tags
+[2024-09-15 14:29:56.776]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 14:29:57.112]	 Installing "tags"
+[2024-09-15 14:29:57.367]	   "tags" download fail
+[2024-09-15 14:29:57.380]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 14:29:57.704]	 Updating all plugins!
+[2024-09-15 14:29:57.704]	 
+[2024-09-15 14:29:57.741]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 14:29:58.049]	 Done.
+
+[2024-09-15 14:40:27.432]	 List of discovered tpm plugins: tags
+[2024-09-15 14:40:27.443]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 14:40:27.638]	 Installing "tags"
+[2024-09-15 14:40:27.931]	   "tags" download fail
+[2024-09-15 14:40:27.946]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 14:40:28.106]	 Updating all plugins!
+[2024-09-15 14:40:28.106]	 
+[2024-09-15 14:40:28.133]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 14:40:28.173]	 Done.
+
+[2024-09-15 14:42:51.179]	 List of discovered tpm plugins: tags
+[2024-09-15 14:42:51.191]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 14:42:51.363]	 Installing "tags"
+[2024-09-15 14:42:51.604]	   "tags" download fail
+[2024-09-15 14:42:51.618]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 14:42:51.823]	 Updating all plugins!
+[2024-09-15 14:42:51.824]	 
+[2024-09-15 14:42:51.853]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 14:42:51.900]	 Done.
+
+[2024-09-15 14:49:06.679]	 List of discovered tpm plugins: tags
+[2024-09-15 14:49:06.691]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 14:49:06.869]	 Installing "tags"
+[2024-09-15 14:49:07.170]	   "tags" download fail
+[2024-09-15 14:49:07.197]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 14:49:07.382]	 Updating all plugins!
+[2024-09-15 14:49:07.383]	 
+[2024-09-15 14:49:07.410]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 14:49:07.451]	 Done.
+
+[2024-09-15 14:50:09.748]	 List of discovered tpm plugins: tags
+[2024-09-15 14:50:09.760]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 14:50:09.951]	 Installing "tags"
+[2024-09-15 14:50:10.324]	   "tags" download fail
+[2024-09-15 14:50:10.341]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 14:50:10.496]	 Updating all plugins!
+[2024-09-15 14:50:10.496]	 
+[2024-09-15 14:50:10.524]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 14:50:10.565]	 Done.
+
+[2024-09-15 14:51:23.531]	 List of discovered tpm plugins: tags
+[2024-09-15 14:51:23.543]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 14:51:23.745]	 Installing "tags"
+[2024-09-15 14:51:24.004]	   "tags" download fail
+[2024-09-15 14:51:24.030]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 14:51:24.194]	 Updating all plugins!
+[2024-09-15 14:51:24.195]	 
+[2024-09-15 14:51:24.222]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 14:51:24.263]	 Done.
+
+[2024-09-15 14:53:46.881]	 List of discovered tpm plugins: tags
+[2024-09-15 14:53:46.893]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 14:53:47.080]	 Installing "tags"
+[2024-09-15 14:53:47.558]	   "tags" download fail
+[2024-09-15 14:53:47.574]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 14:53:47.749]	 Updating all plugins!
+[2024-09-15 14:53:47.750]	 
+[2024-09-15 14:53:47.782]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 14:53:47.824]	 Done.
+
+[2024-09-15 14:56:38.615]	 List of discovered tpm plugins: tags
+[2024-09-15 14:56:38.627]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 14:56:38.841]	 Installing "tags"
+[2024-09-15 14:56:39.138]	   "tags" download fail
+[2024-09-15 14:56:39.153]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 14:56:39.325]	 Updating all plugins!
+[2024-09-15 14:56:39.325]	 
+[2024-09-15 14:56:39.355]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 14:56:39.396]	 Done.
+
+[2024-09-15 14:59:54.702]	 List of discovered tpm plugins: tags
+[2024-09-15 14:59:54.713]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 14:59:54.896]	 Installing "tags"
+[2024-09-15 14:59:55.493]	   "tags" download fail
+[2024-09-15 14:59:55.520]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 14:59:55.722]	 Updating all plugins!
+[2024-09-15 14:59:55.723]	 
+[2024-09-15 14:59:55.757]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 14:59:55.800]	 Done.
+
+[2024-09-15 15:01:15.104]	 List of discovered tpm plugins: tags
+[2024-09-15 15:01:15.116]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 15:01:15.309]	 Installing "tags"
+[2024-09-15 15:01:15.596]	   "tags" download fail
+[2024-09-15 15:01:15.614]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 15:01:15.770]	 Updating all plugins!
+[2024-09-15 15:01:15.771]	 
+[2024-09-15 15:01:15.798]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 15:01:15.839]	 Done.
+
+[2024-09-15 15:01:58.914]	 List of discovered tpm plugins: tags
+[2024-09-15 15:01:58.927]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 15:01:59.098]	 Installing "tags"
+[2024-09-15 15:01:59.349]	   "tags" download fail
+[2024-09-15 15:01:59.362]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 15:01:59.527]	 Updating all plugins!
+[2024-09-15 15:01:59.528]	 
+[2024-09-15 15:01:59.563]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 15:01:59.609]	 Done.
+
+[2024-09-15 15:02:27.035]	 List of discovered tpm plugins: tags
+[2024-09-15 15:02:27.047]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 15:02:27.221]	 Installing "tags"
+[2024-09-15 15:02:27.482]	   "tags" download fail
+[2024-09-15 15:02:27.495]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 15:02:27.674]	 Updating all plugins!
+[2024-09-15 15:02:27.674]	 
+[2024-09-15 15:02:27.706]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 15:02:27.751]	 Done.
+
+[2024-09-15 15:03:30.859]	 List of discovered tpm plugins: tags
+[2024-09-15 15:03:30.871]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 15:03:31.044]	 Installing "tags"
+[2024-09-15 15:03:31.283]	   "tags" download fail
+[2024-09-15 15:03:31.296]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 15:03:31.475]	 Updating all plugins!
+[2024-09-15 15:03:31.475]	 
+[2024-09-15 15:03:31.505]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 15:03:31.552]	 Done.
+
+[2024-09-15 15:10:10.269]	 List of discovered tpm plugins: tags
+[2024-09-15 15:10:10.280]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 15:10:10.480]	 Installing "tags"
+[2024-09-15 15:10:10.726]	   "tags" download fail
+[2024-09-15 15:10:10.745]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 15:10:10.934]	 Updating all plugins!
+[2024-09-15 15:10:10.935]	 
+[2024-09-15 15:10:10.965]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 15:10:11.009]	 Done.
+
+[2024-09-15 15:10:21.773]	 List of discovered tpm plugins: tags
+[2024-09-15 15:10:21.785]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 15:10:21.981]	 Installing "tags"
+[2024-09-15 15:10:22.184]	   "tags" download fail
+[2024-09-15 15:10:22.208]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 15:10:22.395]	 Updating all plugins!
+[2024-09-15 15:10:22.395]	 
+[2024-09-15 15:10:22.427]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 15:10:22.469]	 Done.
+

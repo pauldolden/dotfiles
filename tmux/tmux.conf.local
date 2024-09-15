@@ -83,24 +83,24 @@ tmux_conf_24b_colour=auto
 #   - tmux_conf_theme_synchronized
 tmux_conf_theme=enabled
 
-# default theme
-tmux_conf_theme_colour_1="#080808"    # dark gray
-tmux_conf_theme_colour_2="#303030"    # gray
-tmux_conf_theme_colour_3="#8a8a8a"    # light gray
-tmux_conf_theme_colour_4="#00afff"    # light blue
-tmux_conf_theme_colour_5="#ffff00"    # yellow
-tmux_conf_theme_colour_6="#080808"    # dark gray
-tmux_conf_theme_colour_7="#e4e4e4"    # white
-tmux_conf_theme_colour_8="#080808"    # dark gray
-tmux_conf_theme_colour_9="#ffff00"    # yellow
-tmux_conf_theme_colour_10="#ff00af"   # pink
-tmux_conf_theme_colour_11="#5fff00"   # green
-tmux_conf_theme_colour_12="#8a8a8a"   # light gray
-tmux_conf_theme_colour_13="#e4e4e4"   # white
-tmux_conf_theme_colour_14="#080808"   # dark gray
-tmux_conf_theme_colour_15="#080808"   # dark gray
-tmux_conf_theme_colour_16="#d70000"   # red
-tmux_conf_theme_colour_17="#e4e4e4"   # white
+# Catppuccin Theme
+tmux_conf_theme_colour_1="#181825"   # Mantle
+tmux_conf_theme_colour_2="#313244"   # Surface
+tmux_conf_theme_colour_3="#6c7086"   # Overlay
+tmux_conf_theme_colour_4="#74c7ec"   # Sapphire
+tmux_conf_theme_colour_5="#f9e2af"   # Yellow
+tmux_conf_theme_colour_6="#181825"   # Mantle
+tmux_conf_theme_colour_7="#181825"   # Text
+tmux_conf_theme_colour_8="#181825"   # Mantle
+tmux_conf_theme_colour_9="#f9e2af"   # Yellow
+tmux_conf_theme_colour_10="#f5c2e7"  # Pink
+tmux_conf_theme_colour_11="#a6e3a1"  # Green
+tmux_conf_theme_colour_12="#6c7086"  # Overlay
+tmux_conf_theme_colour_13="#cdd6f4"  # Text
+tmux_conf_theme_colour_14="#181825"  # Mantle
+tmux_conf_theme_colour_15="#181825"  # Mantle
+tmux_conf_theme_colour_16="#f38ba8"  # Red
+tmux_conf_theme_colour_17="#cdd6f4"  # Text
 
 # default theme (ansi)
 #tmux_conf_theme_colour_1="colour0"
@@ -120,11 +120,6 @@ tmux_conf_theme_colour_17="#e4e4e4"   # white
 #tmux_conf_theme_colour_15="colour0"
 #tmux_conf_theme_colour_16="colour1"
 #tmux_conf_theme_colour_17="colour15"
-
-# set -g @theme_variation 'moon'
-# set -g @theme_left_separator ''
-# set -g @theme_right_separator ''
-# set -g @theme_plugins 'datetime,weather,playerctl,yay'
 
 # window style
 tmux_conf_theme_window_fg="default"
@@ -240,10 +235,10 @@ tmux_conf_theme_left_separator_main=""
 tmux_conf_theme_left_separator_sub="|"
 tmux_conf_theme_right_separator_main=""
 tmux_conf_theme_right_separator_sub="|"
-#tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
-#tmux_conf_theme_left_separator_sub='\uE0B1'   #   you only need fonts patched with
-#tmux_conf_theme_right_separator_main='\uE0B2' #   Powerline symbols or the standalone
-#tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see README.md
+tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
+tmux_conf_theme_left_separator_sub='\uE0B1'   #   you only need fonts patched with
+tmux_conf_theme_right_separator_main='\uE0B2' #   Powerline symbols or the standalone
+tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see README.md
 
 # status left/right content:
 #   - separate main sections with "|"
@@ -326,32 +321,21 @@ tmux_conf_battery_bar_symbol_empty="◻"
 #   - a number, e.g. 5
 tmux_conf_battery_bar_length="auto"
 
-# battery bar palette, possible values are:
-#   - gradient (default)
-#   - heat
-#   - "colour_full_fg,colour_empty_fg,colour_bg"
-tmux_conf_battery_bar_palette="gradient"
-#tmux_conf_battery_bar_palette="#d70000,#e4e4e4,#000000"   # red, white, black
+# battery bar palette
+# tmux_conf_battery_bar_palette="heat"
+# tmux_conf_battery_bar_palette="#f38ba8,#cdd6f4,#1e1e2e"   # Red, Text, Base
 
-# battery hbar palette, possible values are:
-#   - gradient (default)
-#   - heat
-#   - "colour_low,colour_half,colour_full"
-tmux_conf_battery_hbar_palette="gradient"
-#tmux_conf_battery_hbar_palette="#d70000,#ff5f00,#5fff00"  # red, orange, green
+# battery hbar palette
+# tmux_conf_battery_hbar_palette="heat"
+# tmux_conf_battery_hbar_palette="#f38ba8,#fab387,#a6e3a1"  # Red, Peach, Green
 
-# battery vbar palette, possible values are:
-#   - gradient (default)
-#   - heat
-#   - "colour_low,colour_half,colour_full"
-tmux_conf_battery_vbar_palette="gradient"
-#tmux_conf_battery_vbar_palette="#d70000,#ff5f00,#5fff00"  # red, orange, green
+# battery vbar palette
+# tmux_conf_battery_vbar_palette="heat"
+# tmux_conf_battery_vbar_palette="#f38ba8,#fab387,#a6e3a1"  # Red, Peach, Green
 
 # symbols used to indicate whether battery is charging or discharging
-tmux_conf_battery_status_charging="↑"       # U+2191
-tmux_conf_battery_status_discharging="↓"    # U+2193
-#tmux_conf_battery_status_charging="🔌"     # U+1F50C
-#tmux_conf_battery_status_discharging="🔋"  # U+1F50B
+tmux_conf_battery_status_charging="🔌"     # U+1F50C
+tmux_conf_battery_status_discharging="🔋"  # U+1F50B
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
@@ -445,6 +429,10 @@ tmux_conf_uninstall_plugins_on_reload=true
 #set -g @plugin 'tmux-plugins/tmux-resurrect'
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
+set -g @plugin 'catppuccin/tmux#latest' # See https://github.com/catppuccin/tmux/tags for additional tags
+set -g @catppuccin_flavor 'mocha' # latte,frappe, macchiato or mocha
+
+bind r source-file ~/.config/tmux/tmux.conf \; display "Config Reloaded!"
 
 
 # -- custom variables ----------------------------------------------------------
