@@ -36,7 +36,7 @@ tmux_conf_new_session_retain_current_path=false
 #   - true
 #   - false (default)
 #   - disabled (do not modify new-window bindings)
-tmux_conf_new_window_retain_current_path=false
+tmux_conf_new_window_retain_current_path=true
 
 # new window tries to reconnect ssh sessions, possible values are:
 #   - true
@@ -100,7 +100,7 @@ tmux_conf_theme_colour_13="#181825"  # Text
 tmux_conf_theme_colour_14="#181825"  # Mantle
 tmux_conf_theme_colour_15="#181825"  # Mantle
 tmux_conf_theme_colour_16="#f38ba8"  # Red
-tmux_conf_theme_colour_17="#cdd6f4"  # Text
+tmux_conf_theme_colour_17="#f5c2e7"  # Text
 
 # default theme (ansi)
 #tmux_conf_theme_colour_1="colour0"
@@ -136,7 +136,7 @@ tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_colour_2"
 # pane border style, possible values are:
 #   - thin (default)
 #   - fat
-tmux_conf_theme_pane_border_style=thin
+tmux_conf_theme_pane_border_style=fat
 
 # pane borders colours:
 tmux_conf_theme_pane_border="$tmux_conf_theme_colour_2"
@@ -422,9 +422,6 @@ tmux_conf_uninstall_plugins_on_reload=true
 # visit https://github.com/tmux-plugins for available plugins
 set -g @plugin 'tmux-plugins/tmux-copycat'
 set -g @plugin 'tmux-plugins/tmux-cpu'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @continuum-restore 'on'
 
 bind r source-file ~/.config/tmux/tmux.conf \; display "Config Reloaded!"
 
