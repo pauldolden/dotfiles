@@ -434,3 +434,45 @@
 [2024-09-15 18:41:53.988]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
 [2024-09-15 18:41:54.034]	 Done.
 
+[2024-09-15 18:57:01.603]	 List of discovered tpm plugins: tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-15 18:57:01.615]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 18:57:01.806]	 Already installed "tmux-cpu"
+[2024-09-15 18:57:01.806]	 Already installed "tmux-copycat"
+[2024-09-15 18:57:01.818]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 18:57:01.972]	 Updating all plugins!
+[2024-09-15 18:57:01.972]	 
+[2024-09-15 18:57:02.466]	   "tmux-copycat" update success
+[2024-09-15 18:57:02.466]	   "tmux-cpu" update success
+[2024-09-15 18:57:02.468]	     | Already up to date.
+[2024-09-15 18:57:02.468]	     | Already up to date.
+[2024-09-15 18:57:02.481]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 18:57:02.527]	 Done.
+
+[2024-09-15 19:46:08.758]	 List of discovered tpm plugins: tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-15 19:46:08.769]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 19:46:09.015]	 Already installed "tmux-cpu"
+[2024-09-15 19:46:09.016]	 Already installed "tmux-copycat"
+[2024-09-15 19:46:09.029]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 19:46:09.178]	 Updating all plugins!
+[2024-09-15 19:46:09.179]	 
+[2024-09-15 19:46:09.738]	   "tmux-copycat" update success
+[2024-09-15 19:46:09.738]	   "tmux-cpu" update success
+[2024-09-15 19:46:09.740]	     | Already up to date.
+[2024-09-15 19:46:09.740]	     | Already up to date.
+[2024-09-15 19:46:09.753]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 19:46:09.799]	 Done.
+
+[2024-09-15 20:05:14.487]	 List of discovered tpm plugins: tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-15 20:05:14.501]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-15 20:05:14.756]	 Already installed "tmux-copycat"
+[2024-09-15 20:05:14.757]	 Already installed "tmux-cpu"
+[2024-09-15 20:05:14.778]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-15 20:05:15.009]	 Updating all plugins!
+[2024-09-15 20:05:15.009]	 
+[2024-09-15 20:05:15.851]	   "tmux-copycat" update success
+[2024-09-15 20:05:15.853]	   "tmux-cpu" update success
+[2024-09-15 20:05:15.853]	     | Already up to date.
+[2024-09-15 20:05:15.855]	     | Already up to date.
+[2024-09-15 20:05:15.871]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-15 20:05:15.936]	 Done.
+

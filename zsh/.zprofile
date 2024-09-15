@@ -22,8 +22,9 @@ alias vi='nvim'
 alias vim='nvim'
 alias nv='nvim'
 ## Zsh
-alias zshrc='nvim ~/.config/.zshrc'
-alias zprofile='nvim ~/.config/.zprofile'
+alias zshrc='nvim ~/.config/zsh/.zshrc'
+alias zshenv='nvim ~/.config/zsh/.zshenv'
+alias zprofile='nvim ~/.config/zsh/.zprofile'
 ## Dotfiles
 alias dot='cd ~/.config/ && nvim'
 ## Printenv
