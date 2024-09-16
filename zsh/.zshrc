@@ -70,8 +70,6 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-source ~/.config/zsh/fzf-tab/fzf-tab.plugin.zsh
-
 # Source plugins
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

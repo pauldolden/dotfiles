@@ -14,6 +14,8 @@
 #   - false (default)
 tmux_conf_preserve_stock_bindings=false
 
+bind r source-file ~/.config/tmux/tmux.conf \; display "Config Reloaded!"
+
 
 # -- session creation ----------------------------------------------------------
 
@@ -136,7 +138,7 @@ tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_colour_2"
 # pane border style, possible values are:
 #   - thin (default)
 #   - fat
-tmux_conf_theme_pane_border_style=fat
+tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
 tmux_conf_theme_pane_border="$tmux_conf_theme_colour_2"
@@ -420,11 +422,15 @@ tmux_conf_uninstall_plugins_on_reload=true
 
 # to enable a plugin, use the 'set -g @plugin' syntax:
 # visit https://github.com/tmux-plugins for available plugins
+
+set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'tmux-plugins/tmux-copycat'
-set -g @plugin 'tmux-plugins/tmux-cpu'
 
-bind r source-file ~/.config/tmux/tmux.conf \; display "Config Reloaded!"
-
+set -g @vim_navigator_mapping_left "C-Left C-h"  # use C-h and C-Left
+set -g @vim_navigator_mapping_right "C-Right C-l"
+set -g @vim_navigator_mapping_up "C-k"
+set -g @vim_navigator_mapping_down "C-j"
+set -g @vim_navigator_mapping_prev ""  # removes the C-\ binding
 
 # -- custom variables ----------------------------------------------------------
 

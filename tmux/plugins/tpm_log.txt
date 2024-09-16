@@ -1,0 +1,45 @@
+[2024-09-16 16:03:24.062]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator
+[2024-09-16 16:03:24.078]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-16 16:03:24.341]	 Installing "vim-tmux-navigator"
+[2024-09-16 16:03:25.106]	   "vim-tmux-navigator" download success
+[2024-09-16 16:03:25.120]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-16 16:03:25.377]	 Updating all plugins!
+[2024-09-16 16:03:25.378]	 
+[2024-09-16 16:03:25.940]	   "vim-tmux-navigator" update success
+[2024-09-16 16:03:25.943]	     | Already up to date.
+[2024-09-16 16:03:25.956]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-16 16:03:26.026]	 Done.
+
+[2024-09-16 16:07:27.079]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator
+[2024-09-16 16:07:27.093]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-16 16:07:27.208]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator
+[2024-09-16 16:07:27.222]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-16 16:07:27.290]	 Already installed "vim-tmux-navigator"
+[2024-09-16 16:07:27.290]	 Already installed "vim-tmux-navigator"
+[2024-09-16 16:07:27.304]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-16 16:07:27.304]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-16 16:07:27.463]	 Updating all plugins!
+[2024-09-16 16:07:27.464]	 
+[2024-09-16 16:07:28.058]	   "vim-tmux-navigator" update success
+[2024-09-16 16:07:28.061]	     | Already up to date.
+[2024-09-16 16:07:28.075]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-16 16:07:27.463]	 Updating all plugins!
+[2024-09-16 16:07:27.464]	 
+[2024-09-16 16:07:28.080]	   "vim-tmux-navigator" update success
+[2024-09-16 16:07:28.083]	     | Already up to date.
+[2024-09-16 16:07:28.097]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-16 16:07:28.132]	 Done.
+
+[2024-09-16 16:07:28.152]	 Done.
+
+[2024-09-16 16:09:00.941]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator
+[2024-09-16 16:09:00.955]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-16 16:09:01.161]	 Already installed "vim-tmux-navigator"
+[2024-09-16 16:09:01.179]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-16 16:09:01.346]	 Updating all plugins!
+[2024-09-16 16:09:01.346]	 
+[2024-09-16 16:09:01.917]	   "vim-tmux-navigator" update success
+[2024-09-16 16:09:01.920]	     | Already up to date.
+[2024-09-16 16:09:01.933]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-16 16:09:01.985]	 Done.
+
