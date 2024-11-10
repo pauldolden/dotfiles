@@ -1505,3 +1505,27 @@
 [2024-11-10 18:52:19.417]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
 [2024-11-10 18:52:19.494]	 Done.
 
+[2024-11-10 19:13:23.377]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-11-10 19:13:23.392]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-11-10 19:13:23.658]	 Already installed "tmux-cpu"
+[2024-11-10 19:13:23.658]	 Already installed "vim-tmux-navigator"
+[2024-11-10 19:13:23.658]	 Already installed "tmux-copycat"
+[2024-11-10 19:13:23.670]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-11-10 19:13:23.824]	 Updating all plugins!
+[2024-11-10 19:13:23.824]	 
+[2024-11-10 19:13:24.277]	   "vim-tmux-navigator" update fail
+[2024-11-10 19:13:24.279]	     | Already up to date.
+[2024-11-10 19:13:24.279]	     | fatal: No url found for submodule path '../tmux-copycat' in .gitmodules
+[2024-11-10 19:13:24.463]	   "tmux-copycat" update success
+[2024-11-10 19:13:24.465]	     | Already up to date.
+[2024-11-10 19:13:24.539]	   "tmux-cpu" update success
+[2024-11-10 19:13:24.541]	     | From https://github.com/tmux-plugins/tmux-cpu
+[2024-11-10 19:13:24.541]	     |    98d7871..bcb110d  master     -> origin/master
+[2024-11-10 19:13:24.541]	     | Updating 98d7871..bcb110d
+[2024-11-10 19:13:24.541]	     | Fast-forward
+[2024-11-10 19:13:24.541]	     |  README.md                 | 2 +-
+[2024-11-10 19:13:24.541]	     |  scripts/cpu_percentage.sh | 2 +-
+[2024-11-10 19:13:24.541]	     |  2 files changed, 2 insertions(+), 2 deletions(-)
+[2024-11-10 19:13:24.553]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-11-10 19:13:24.609]	 Done.
+
