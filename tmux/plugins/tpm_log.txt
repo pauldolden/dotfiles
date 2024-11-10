@@ -813,3 +813,678 @@
 [2024-09-17 21:32:30.001]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
 [2024-09-17 21:32:30.094]	 Done.
 
+[2024-09-18 08:50:24.679]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-18 08:50:24.707]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-18 08:50:24.981]	 Already installed "vim-tmux-navigator"
+[2024-09-18 08:50:24.984]	 Already installed "tmux-copycat"
+[2024-09-18 08:50:24.988]	 Already installed "tmux-cpu"
+[2024-09-18 08:50:25.004]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-18 08:50:25.185]	 Updating all plugins!
+[2024-09-18 08:50:25.185]	 
+[2024-09-18 08:50:25.866]	   "tmux-copycat" update success
+[2024-09-18 08:50:25.866]	   "vim-tmux-navigator" update success
+[2024-09-18 08:50:25.869]	     | Already up to date.
+[2024-09-18 08:50:25.869]	     | Already up to date.
+[2024-09-18 08:50:25.871]	   "tmux-cpu" update success
+[2024-09-18 08:50:25.874]	     | Already up to date.
+[2024-09-18 08:50:25.888]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-18 08:50:25.976]	 Done.
+
+[2024-09-18 15:03:46.737]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-18 15:03:46.754]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-18 15:03:47.043]	 Already installed "vim-tmux-navigator"
+[2024-09-18 15:03:47.053]	 Already installed "tmux-cpu"
+[2024-09-18 15:03:47.053]	 Already installed "tmux-copycat"
+[2024-09-18 15:03:47.075]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-18 15:03:47.289]	 Updating all plugins!
+[2024-09-18 15:03:47.290]	 
+[2024-09-18 15:03:47.998]	   "vim-tmux-navigator" update success
+[2024-09-18 15:03:48.001]	     | Already up to date.
+[2024-09-18 15:03:48.040]	   "tmux-copycat" update success
+[2024-09-18 15:03:48.043]	     | Already up to date.
+[2024-09-18 15:03:48.071]	   "tmux-cpu" update success
+[2024-09-18 15:03:48.074]	     | Already up to date.
+[2024-09-18 15:03:48.090]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-18 15:03:48.183]	 Done.
+
+[2024-09-18 15:23:01.104]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-18 15:23:01.120]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-18 15:23:01.355]	 Already installed "vim-tmux-navigator"
+[2024-09-18 15:23:01.358]	 Already installed "tmux-copycat"
+[2024-09-18 15:23:01.358]	 Already installed "tmux-cpu"
+[2024-09-18 15:23:01.374]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-18 15:23:01.583]	 Updating all plugins!
+[2024-09-18 15:23:01.584]	 
+[2024-09-18 15:23:02.219]	   "vim-tmux-navigator" update success
+[2024-09-18 15:23:02.222]	     | Already up to date.
+[2024-09-18 15:23:02.240]	   "tmux-cpu" update success
+[2024-09-18 15:23:02.243]	     | Already up to date.
+[2024-09-18 15:23:02.280]	   "tmux-copycat" update success
+[2024-09-18 15:23:02.284]	     | Already up to date.
+[2024-09-18 15:23:02.299]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-18 15:23:02.384]	 Done.
+
+[2024-09-18 19:31:22.517]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-18 19:31:22.532]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-18 19:31:22.775]	 Already installed "vim-tmux-navigator"
+[2024-09-18 19:31:22.776]	 Already installed "tmux-copycat"
+[2024-09-18 19:31:22.778]	 Already installed "tmux-cpu"
+[2024-09-18 19:31:22.798]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-18 19:31:22.958]	 Updating all plugins!
+[2024-09-18 19:31:22.959]	 
+[2024-09-18 19:31:23.584]	   "vim-tmux-navigator" update success
+[2024-09-18 19:31:23.586]	     | Already up to date.
+[2024-09-18 19:31:23.603]	   "tmux-cpu" update success
+[2024-09-18 19:31:23.606]	     | Already up to date.
+[2024-09-18 19:31:23.625]	   "tmux-copycat" update success
+[2024-09-18 19:31:23.628]	     | Already up to date.
+[2024-09-18 19:31:23.642]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-18 19:31:23.711]	 Done.
+
+[2024-09-19 10:22:50.558]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-19 10:22:50.573]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-19 10:22:50.809]	 Already installed "tmux-copycat"
+[2024-09-19 10:22:50.809]	 Already installed "vim-tmux-navigator"
+[2024-09-19 10:22:50.810]	 Already installed "tmux-cpu"
+[2024-09-19 10:22:50.824]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-19 10:22:51.020]	 Updating all plugins!
+[2024-09-19 10:22:51.021]	 
+[2024-09-19 10:22:51.658]	   "vim-tmux-navigator" update success
+[2024-09-19 10:22:51.661]	     | Already up to date.
+[2024-09-19 10:22:51.699]	   "tmux-copycat" update success
+[2024-09-19 10:22:51.702]	     | Already up to date.
+[2024-09-19 10:22:51.743]	   "tmux-cpu" update success
+[2024-09-19 10:22:51.746]	     | Already up to date.
+[2024-09-19 10:22:51.760]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-19 10:22:51.840]	 Done.
+
+[2024-09-20 07:59:46.154]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-20 07:59:46.196]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-20 07:59:46.979]	 Already installed "vim-tmux-navigator"
+[2024-09-20 07:59:46.980]	 Already installed "tmux-copycat"
+[2024-09-20 07:59:46.982]	 Already installed "tmux-cpu"
+[2024-09-20 07:59:47.083]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-20 07:59:47.396]	 Updating all plugins!
+[2024-09-20 07:59:47.397]	 
+[2024-09-20 07:59:48.603]	   "vim-tmux-navigator" update success
+[2024-09-20 07:59:48.607]	     | Already up to date.
+[2024-09-20 07:59:48.823]	   "tmux-cpu" update success
+[2024-09-20 07:59:48.823]	   "tmux-copycat" update success
+[2024-09-20 07:59:48.827]	     | Already up to date.
+[2024-09-20 07:59:48.827]	     | Already up to date.
+[2024-09-20 07:59:48.852]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-20 07:59:48.948]	 Done.
+
+[2024-09-20 08:57:42.420]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-20 08:57:42.441]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-20 08:57:42.734]	 Already installed "vim-tmux-navigator"
+[2024-09-20 08:57:42.737]	 Already installed "tmux-copycat"
+[2024-09-20 08:57:42.739]	 Already installed "tmux-cpu"
+[2024-09-20 08:57:42.755]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-20 08:57:42.934]	 Updating all plugins!
+[2024-09-20 08:57:42.935]	 
+[2024-09-20 08:57:43.664]	   "vim-tmux-navigator" update success
+[2024-09-20 08:57:43.664]	   "tmux-copycat" update success
+[2024-09-20 08:57:43.667]	     | Already up to date.
+[2024-09-20 08:57:43.668]	     | Already up to date.
+[2024-09-20 08:57:43.693]	   "tmux-cpu" update success
+[2024-09-20 08:57:43.696]	     | Already up to date.
+[2024-09-20 08:57:43.711]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-20 08:57:43.796]	 Done.
+
+[2024-09-21 19:56:52.250]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-21 19:56:52.265]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-21 19:56:52.472]	 Already installed "tmux-copycat"
+[2024-09-21 19:56:52.473]	 Already installed "vim-tmux-navigator"
+[2024-09-21 19:56:52.473]	 Already installed "tmux-cpu"
+[2024-09-21 19:56:52.486]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-21 19:56:52.641]	 Updating all plugins!
+[2024-09-21 19:56:52.641]	 
+[2024-09-21 19:56:53.223]	   "vim-tmux-navigator" update success
+[2024-09-21 19:56:53.225]	     | Already up to date.
+[2024-09-21 19:56:53.229]	   "tmux-cpu" update success
+[2024-09-21 19:56:53.232]	     | Already up to date.
+[2024-09-21 19:56:53.270]	   "tmux-copycat" update success
+[2024-09-21 19:56:53.272]	     | Already up to date.
+[2024-09-21 19:56:53.285]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-21 19:56:53.365]	 Done.
+
+[2024-09-21 20:40:37.645]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-21 20:40:37.667]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-21 20:40:38.060]	 Already installed "vim-tmux-navigator"
+[2024-09-21 20:40:38.124]	 Already installed "tmux-copycat"
+[2024-09-21 20:40:38.124]	 Already installed "tmux-cpu"
+[2024-09-21 20:40:38.144]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-21 20:40:38.369]	 Updating all plugins!
+[2024-09-21 20:40:38.370]	 
+[2024-09-21 20:40:39.965]	   "vim-tmux-navigator" update success
+[2024-09-21 20:40:39.965]	   "tmux-copycat" update success
+[2024-09-21 20:40:39.969]	     | Already up to date.
+[2024-09-21 20:40:39.971]	     | Already up to date.
+[2024-09-21 20:40:40.468]	   "tmux-cpu" update success
+[2024-09-21 20:40:40.472]	     | Already up to date.
+[2024-09-21 20:40:40.491]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-21 20:40:40.651]	 Done.
+
+[2024-09-22 12:25:34.663]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-22 12:25:34.678]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-22 12:25:34.918]	 Already installed "tmux-copycat"
+[2024-09-22 12:25:34.919]	 Already installed "vim-tmux-navigator"
+[2024-09-22 12:25:34.920]	 Already installed "tmux-cpu"
+[2024-09-22 12:25:34.934]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-22 12:25:35.119]	 Updating all plugins!
+[2024-09-22 12:25:35.119]	 
+[2024-09-22 12:25:35.791]	   "vim-tmux-navigator" update success
+[2024-09-22 12:25:35.794]	     | Already up to date.
+[2024-09-22 12:25:35.807]	   "tmux-cpu" update success
+[2024-09-22 12:25:35.810]	     | Already up to date.
+[2024-09-22 12:25:35.812]	   "tmux-copycat" update success
+[2024-09-22 12:25:35.814]	     | Already up to date.
+[2024-09-22 12:25:35.827]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-22 12:25:35.894]	 Done.
+
+[2024-09-22 18:29:05.982]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-22 18:29:05.997]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-22 18:29:06.222]	 Already installed "vim-tmux-navigator"
+[2024-09-22 18:29:06.222]	 Already installed "tmux-copycat"
+[2024-09-22 18:29:06.223]	 Already installed "tmux-cpu"
+[2024-09-22 18:29:06.236]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-22 18:29:06.466]	 Updating all plugins!
+[2024-09-22 18:29:06.466]	 
+[2024-09-22 18:29:07.246]	   "tmux-copycat" update success
+[2024-09-22 18:29:07.248]	     | Already up to date.
+[2024-09-22 18:29:07.259]	   "tmux-cpu" update success
+[2024-09-22 18:29:07.262]	     | Already up to date.
+[2024-09-22 18:29:07.266]	   "vim-tmux-navigator" update success
+[2024-09-22 18:29:07.269]	     | Already up to date.
+[2024-09-22 18:29:07.285]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-22 18:29:07.354]	 Done.
+
+[2024-09-22 19:50:11.354]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-22 19:50:11.371]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-22 19:50:11.625]	 Already installed "vim-tmux-navigator"
+[2024-09-22 19:50:11.628]	 Already installed "tmux-copycat"
+[2024-09-22 19:50:11.634]	 Already installed "tmux-cpu"
+[2024-09-22 19:50:11.649]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-22 19:50:11.835]	 Updating all plugins!
+[2024-09-22 19:50:11.836]	 
+[2024-09-22 19:50:12.669]	   "vim-tmux-navigator" update success
+[2024-09-22 19:50:12.671]	     | Already up to date.
+[2024-09-22 19:50:12.699]	   "tmux-cpu" update success
+[2024-09-22 19:50:12.702]	     | Already up to date.
+[2024-09-22 19:50:12.731]	   "tmux-copycat" update success
+[2024-09-22 19:50:12.734]	     | Already up to date.
+[2024-09-22 19:50:12.748]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-22 19:50:12.813]	 Done.
+
+[2024-09-23 15:10:41.536]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-23 15:10:41.551]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-23 15:10:41.773]	 Already installed "vim-tmux-navigator"
+[2024-09-23 15:10:41.780]	 Already installed "tmux-copycat"
+[2024-09-23 15:10:41.783]	 Already installed "tmux-cpu"
+[2024-09-23 15:10:41.797]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-23 15:10:41.995]	 Updating all plugins!
+[2024-09-23 15:10:41.996]	 
+[2024-09-23 15:10:42.743]	   "tmux-cpu" update success
+[2024-09-23 15:10:42.743]	   "vim-tmux-navigator" update success
+[2024-09-23 15:10:42.743]	   "tmux-copycat" update success
+[2024-09-23 15:10:42.746]	     | Already up to date.
+[2024-09-23 15:10:42.746]	     | Already up to date.
+[2024-09-23 15:10:42.746]	     | Already up to date.
+[2024-09-23 15:10:42.761]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-23 15:10:42.858]	 Done.
+
+[2024-09-23 19:02:41.837]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-23 19:02:41.853]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-23 19:02:42.122]	 Already installed "vim-tmux-navigator"
+[2024-09-23 19:02:42.128]	 Already installed "tmux-copycat"
+[2024-09-23 19:02:42.130]	 Already installed "tmux-cpu"
+[2024-09-23 19:02:42.145]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-23 19:02:42.315]	 Updating all plugins!
+[2024-09-23 19:02:42.315]	 
+[2024-09-23 19:02:43.042]	   "tmux-cpu" update success
+[2024-09-23 19:02:43.042]	   "tmux-copycat" update success
+[2024-09-23 19:02:43.042]	   "vim-tmux-navigator" update success
+[2024-09-23 19:02:43.045]	     | Already up to date.
+[2024-09-23 19:02:43.045]	     | Already up to date.
+[2024-09-23 19:02:43.045]	     | Already up to date.
+[2024-09-23 19:02:43.058]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-23 19:02:43.127]	 Done.
+
+[2024-09-23 19:04:31.975]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-23 19:04:31.989]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-23 19:04:32.207]	 Already installed "vim-tmux-navigator"
+[2024-09-23 19:04:32.210]	 Already installed "tmux-copycat"
+[2024-09-23 19:04:32.216]	 Already installed "tmux-cpu"
+[2024-09-23 19:04:32.230]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-23 19:04:32.387]	 Updating all plugins!
+[2024-09-23 19:04:32.388]	 
+[2024-09-23 19:04:33.003]	   "vim-tmux-navigator" update success
+[2024-09-23 19:04:33.006]	     | Already up to date.
+[2024-09-23 19:04:33.051]	   "tmux-copycat" update success
+[2024-09-23 19:04:33.054]	     | Already up to date.
+[2024-09-23 19:04:33.122]	   "tmux-cpu" update success
+[2024-09-23 19:04:33.125]	     | Already up to date.
+[2024-09-23 19:04:33.140]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-23 19:04:33.202]	 Done.
+
+[2024-09-24 11:11:18.554]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-24 11:11:18.570]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-24 11:11:18.842]	 Already installed "tmux-cpu"
+[2024-09-24 11:11:18.842]	 Already installed "tmux-copycat"
+[2024-09-24 11:11:18.844]	 Already installed "vim-tmux-navigator"
+[2024-09-24 11:11:18.859]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-24 11:11:19.043]	 Updating all plugins!
+[2024-09-24 11:11:19.043]	 
+[2024-09-24 11:11:19.542]	   "vim-tmux-navigator" update success
+[2024-09-24 11:11:19.545]	     | Already up to date.
+[2024-09-24 11:11:19.599]	   "tmux-copycat" update success
+[2024-09-24 11:11:19.599]	   "tmux-cpu" update success
+[2024-09-24 11:11:19.602]	     | Already up to date.
+[2024-09-24 11:11:19.602]	     | Already up to date.
+[2024-09-24 11:11:19.616]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-24 11:11:19.685]	 Done.
+
+[2024-09-24 14:00:53.823]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-24 14:00:53.852]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-24 14:00:54.181]	 Already installed "tmux-copycat"
+[2024-09-24 14:00:54.181]	 Already installed "vim-tmux-navigator"
+[2024-09-24 14:00:54.184]	 Already installed "tmux-cpu"
+[2024-09-24 14:00:54.200]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-24 14:00:54.374]	 Updating all plugins!
+[2024-09-24 14:00:54.374]	 
+[2024-09-24 14:00:55.033]	   "vim-tmux-navigator" update success
+[2024-09-24 14:00:55.036]	     | Already up to date.
+[2024-09-24 14:00:55.078]	   "tmux-cpu" update success
+[2024-09-24 14:00:55.081]	     | Already up to date.
+[2024-09-24 14:00:55.100]	   "tmux-copycat" update success
+[2024-09-24 14:00:55.103]	     | Already up to date.
+[2024-09-24 14:00:55.118]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-24 14:00:55.192]	 Done.
+
+[2024-09-24 16:12:00.604]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-24 16:12:00.620]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-24 16:12:00.863]	 Already installed "tmux-copycat"
+[2024-09-24 16:12:00.863]	 Already installed "vim-tmux-navigator"
+[2024-09-24 16:12:00.864]	 Already installed "tmux-cpu"
+[2024-09-24 16:12:00.878]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-24 16:12:01.032]	 Updating all plugins!
+[2024-09-24 16:12:01.032]	 
+[2024-09-24 16:12:01.694]	   "tmux-cpu" update success
+[2024-09-24 16:12:01.697]	     | Already up to date.
+[2024-09-24 16:12:01.713]	   "tmux-copycat" update success
+[2024-09-24 16:12:01.715]	     | Already up to date.
+[2024-09-24 16:12:01.826]	   "vim-tmux-navigator" update success
+[2024-09-24 16:12:01.829]	     | Already up to date.
+[2024-09-24 16:12:01.843]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-24 16:12:01.915]	 Done.
+
+[2024-09-26 11:12:56.348]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-26 11:12:56.364]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-26 11:12:56.626]	 Already installed "vim-tmux-navigator"
+[2024-09-26 11:12:56.628]	 Already installed "tmux-copycat"
+[2024-09-26 11:12:56.637]	 Already installed "tmux-cpu"
+[2024-09-26 11:12:56.652]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-26 11:12:56.923]	 Updating all plugins!
+[2024-09-26 11:12:56.924]	 
+[2024-09-26 11:12:57.676]	   "tmux-cpu" update success
+[2024-09-26 11:12:57.676]	   "tmux-copycat" update success
+[2024-09-26 11:12:57.679]	     | Already up to date.
+[2024-09-26 11:12:57.679]	     | Already up to date.
+[2024-09-26 11:12:57.696]	   "vim-tmux-navigator" update success
+[2024-09-26 11:12:57.700]	     | Already up to date.
+[2024-09-26 11:12:57.716]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-26 11:12:57.795]	 Done.
+
+[2024-09-27 11:04:30.394]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-27 11:04:30.410]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-27 11:04:30.681]	 Already installed "vim-tmux-navigator"
+[2024-09-27 11:04:30.690]	 Already installed "tmux-copycat"
+[2024-09-27 11:04:30.692]	 Already installed "tmux-cpu"
+[2024-09-27 11:04:30.707]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-27 11:04:30.883]	 Updating all plugins!
+[2024-09-27 11:04:30.883]	 
+[2024-09-27 11:04:31.600]	   "tmux-cpu" update success
+[2024-09-27 11:04:31.600]	   "vim-tmux-navigator" update success
+[2024-09-27 11:04:31.603]	     | Already up to date.
+[2024-09-27 11:04:31.604]	     | Already up to date.
+[2024-09-27 11:04:31.669]	   "tmux-copycat" update success
+[2024-09-27 11:04:31.672]	     | Already up to date.
+[2024-09-27 11:04:31.686]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-27 11:04:31.772]	 Done.
+
+[2024-09-27 20:12:43.545]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-27 20:12:43.564]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-27 20:12:43.799]	 Already installed "tmux-copycat"
+[2024-09-27 20:12:43.800]	 Already installed "vim-tmux-navigator"
+[2024-09-27 20:12:43.802]	 Already installed "tmux-cpu"
+[2024-09-27 20:12:43.817]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-27 20:12:43.995]	 Updating all plugins!
+[2024-09-27 20:12:43.995]	 
+[2024-09-27 20:12:44.678]	   "vim-tmux-navigator" update success
+[2024-09-27 20:12:44.678]	   "tmux-cpu" update success
+[2024-09-27 20:12:44.681]	     | Already up to date.
+[2024-09-27 20:12:44.681]	     | Already up to date.
+[2024-09-27 20:12:44.707]	   "tmux-copycat" update success
+[2024-09-27 20:12:44.710]	     | Already up to date.
+[2024-09-27 20:12:44.724]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-27 20:12:44.799]	 Done.
+
+[2024-09-27 20:38:47.425]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-27 20:38:47.439]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-27 20:38:47.711]	 Already installed "vim-tmux-navigator"
+[2024-09-27 20:38:47.715]	 Already installed "tmux-copycat"
+[2024-09-27 20:38:47.728]	 Already installed "tmux-cpu"
+[2024-09-27 20:38:47.743]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-27 20:38:47.919]	 Updating all plugins!
+[2024-09-27 20:38:47.920]	 
+[2024-09-27 20:38:48.637]	   "vim-tmux-navigator" update success
+[2024-09-27 20:38:48.640]	     | Already up to date.
+[2024-09-27 20:38:48.661]	   "tmux-cpu" update success
+[2024-09-27 20:38:48.664]	     | Already up to date.
+[2024-09-27 20:38:48.695]	   "tmux-copycat" update success
+[2024-09-27 20:38:48.697]	     | Already up to date.
+[2024-09-27 20:38:48.710]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-27 20:38:48.779]	 Done.
+
+[2024-09-27 21:18:13.232]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-09-27 21:18:13.249]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-09-27 21:18:13.466]	 Already installed "vim-tmux-navigator"
+[2024-09-27 21:18:13.473]	 Already installed "tmux-copycat"
+[2024-09-27 21:18:13.481]	 Already installed "tmux-cpu"
+[2024-09-27 21:18:13.500]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-09-27 21:18:13.729]	 Updating all plugins!
+[2024-09-27 21:18:13.729]	 
+[2024-09-27 21:18:14.445]	   "tmux-copycat" update success
+[2024-09-27 21:18:14.445]	   "vim-tmux-navigator" update success
+[2024-09-27 21:18:14.448]	     | Already up to date.
+[2024-09-27 21:18:14.448]	     | Already up to date.
+[2024-09-27 21:18:14.466]	   "tmux-cpu" update success
+[2024-09-27 21:18:14.469]	     | Already up to date.
+[2024-09-27 21:18:14.485]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-09-27 21:18:14.567]	 Done.
+
+[2024-10-05 14:37:02.294]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-10-05 14:37:02.308]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-10-05 14:37:02.594]	 Already installed "vim-tmux-navigator"
+[2024-10-05 14:37:02.595]	 Already installed "tmux-copycat"
+[2024-10-05 14:37:02.596]	 Already installed "tmux-cpu"
+[2024-10-05 14:37:02.611]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-10-05 14:37:02.801]	 Updating all plugins!
+[2024-10-05 14:37:02.802]	 
+[2024-10-05 14:37:03.485]	   "tmux-copycat" update success
+[2024-10-05 14:37:03.485]	   "vim-tmux-navigator" update success
+[2024-10-05 14:37:03.489]	     | Already up to date.
+[2024-10-05 14:37:03.489]	     | Already up to date.
+[2024-10-05 14:37:03.508]	   "tmux-cpu" update success
+[2024-10-05 14:37:03.510]	     | Already up to date.
+[2024-10-05 14:37:03.524]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-10-05 14:37:03.600]	 Done.
+
+[2024-10-06 09:59:03.956]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-10-06 09:59:03.970]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-10-06 09:59:04.243]	 Already installed "vim-tmux-navigator"
+[2024-10-06 09:59:04.246]	 Already installed "tmux-copycat"
+[2024-10-06 09:59:04.247]	 Already installed "tmux-cpu"
+[2024-10-06 09:59:04.262]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-10-06 09:59:04.451]	 Updating all plugins!
+[2024-10-06 09:59:04.451]	 
+[2024-10-06 09:59:05.150]	   "tmux-copycat" update success
+[2024-10-06 09:59:05.150]	   "vim-tmux-navigator" update success
+[2024-10-06 09:59:05.153]	     | Already up to date.
+[2024-10-06 09:59:05.153]	     | Already up to date.
+[2024-10-06 09:59:05.177]	   "tmux-cpu" update success
+[2024-10-06 09:59:05.180]	     | Already up to date.
+[2024-10-06 09:59:05.193]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-10-06 09:59:05.264]	 Done.
+
+[2024-10-08 09:16:33.005]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-10-08 09:16:33.022]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-10-08 09:16:33.312]	 Already installed "vim-tmux-navigator"
+[2024-10-08 09:16:33.315]	 Already installed "tmux-copycat"
+[2024-10-08 09:16:33.318]	 Already installed "tmux-cpu"
+[2024-10-08 09:16:33.334]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-10-08 09:16:33.522]	 Updating all plugins!
+[2024-10-08 09:16:33.522]	 
+[2024-10-08 09:16:34.258]	   "tmux-copycat" update success
+[2024-10-08 09:16:34.258]	   "vim-tmux-navigator" update success
+[2024-10-08 09:16:34.261]	     | Already up to date.
+[2024-10-08 09:16:34.261]	     | Already up to date.
+[2024-10-08 09:16:34.471]	   "tmux-cpu" update success
+[2024-10-08 09:16:34.474]	     | From https://github.com/tmux-plugins/tmux-cpu
+[2024-10-08 09:16:34.474]	     |    98d7871..bcb110d  master     -> origin/master
+[2024-10-08 09:16:34.474]	     | Updating 98d7871..bcb110d
+[2024-10-08 09:16:34.474]	     | Fast-forward
+[2024-10-08 09:16:34.474]	     |  README.md                 | 2 +-
+[2024-10-08 09:16:34.474]	     |  scripts/cpu_percentage.sh | 2 +-
+[2024-10-08 09:16:34.474]	     |  2 files changed, 2 insertions(+), 2 deletions(-)
+[2024-10-08 09:16:34.489]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-10-08 09:16:34.564]	 Done.
+
+[2024-10-08 22:15:22.014]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-10-08 22:15:22.029]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-10-08 22:15:22.277]	 Already installed "tmux-copycat"
+[2024-10-08 22:15:22.277]	 Already installed "vim-tmux-navigator"
+[2024-10-08 22:15:22.279]	 Already installed "tmux-cpu"
+[2024-10-08 22:15:22.294]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-10-08 22:15:22.477]	 Updating all plugins!
+[2024-10-08 22:15:22.478]	 
+[2024-10-08 22:15:23.135]	   "tmux-copycat" update success
+[2024-10-08 22:15:23.135]	   "vim-tmux-navigator" update success
+[2024-10-08 22:15:23.138]	     | Already up to date.
+[2024-10-08 22:15:23.138]	     | Already up to date.
+[2024-10-08 22:15:23.170]	   "tmux-cpu" update success
+[2024-10-08 22:15:23.173]	     | Already up to date.
+[2024-10-08 22:15:23.186]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-10-08 22:15:23.257]	 Done.
+
+[2024-10-09 05:49:16.874]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-10-09 05:49:16.889]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-10-09 05:49:17.147]	 Already installed "vim-tmux-navigator"
+[2024-10-09 05:49:17.148]	 Already installed "tmux-copycat"
+[2024-10-09 05:49:17.151]	 Already installed "tmux-cpu"
+[2024-10-09 05:49:17.166]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-10-09 05:49:17.381]	 Updating all plugins!
+[2024-10-09 05:49:17.381]	 
+[2024-10-09 05:49:18.214]	   "vim-tmux-navigator" update success
+[2024-10-09 05:49:18.214]	   "tmux-copycat" update success
+[2024-10-09 05:49:18.214]	   "tmux-cpu" update success
+[2024-10-09 05:49:18.217]	     | Already up to date.
+[2024-10-09 05:49:18.217]	     | Already up to date.
+[2024-10-09 05:49:18.217]	     | Already up to date.
+[2024-10-09 05:49:18.233]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-10-09 05:49:18.306]	 Done.
+
+[2024-10-14 14:00:38.350]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-10-14 14:00:38.366]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-10-14 14:00:38.613]	 Already installed "vim-tmux-navigator"
+[2024-10-14 14:00:38.623]	 Already installed "tmux-copycat"
+[2024-10-14 14:00:38.625]	 Already installed "tmux-cpu"
+[2024-10-14 14:00:38.640]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-10-14 14:00:38.827]	 Updating all plugins!
+[2024-10-14 14:00:38.827]	 
+[2024-10-14 14:00:39.599]	   "vim-tmux-navigator" update success
+[2024-10-14 14:00:39.599]	   "tmux-copycat" update success
+[2024-10-14 14:00:39.599]	   "tmux-cpu" update success
+[2024-10-14 14:00:39.602]	     | Already up to date.
+[2024-10-14 14:00:39.602]	     | Already up to date.
+[2024-10-14 14:00:39.602]	     | Already up to date.
+[2024-10-14 14:00:39.617]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-10-14 14:00:39.703]	 Done.
+
+[2024-10-14 15:43:55.854]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-10-14 15:43:55.869]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-10-14 15:43:56.133]	 Already installed "vim-tmux-navigator"
+[2024-10-14 15:43:56.139]	 Already installed "tmux-cpu"
+[2024-10-14 15:43:56.139]	 Already installed "tmux-copycat"
+[2024-10-14 15:43:56.153]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-10-14 15:43:56.370]	 Updating all plugins!
+[2024-10-14 15:43:56.370]	 
+[2024-10-14 15:43:57.116]	   "vim-tmux-navigator" update success
+[2024-10-14 15:43:57.120]	     | Already up to date.
+[2024-10-14 15:43:57.132]	   "tmux-cpu" update success
+[2024-10-14 15:43:57.135]	     | Already up to date.
+[2024-10-14 15:43:57.140]	   "tmux-copycat" update success
+[2024-10-14 15:43:57.143]	     | Already up to date.
+[2024-10-14 15:43:57.157]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-10-14 15:43:57.238]	 Done.
+
+[2024-10-19 20:00:33.742]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-10-19 20:00:33.758]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-10-19 20:00:33.995]	 Already installed "tmux-cpu"
+[2024-10-19 20:00:33.996]	 Already installed "tmux-copycat"
+[2024-10-19 20:00:33.996]	 Already installed "vim-tmux-navigator"
+[2024-10-19 20:00:34.011]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-10-19 20:00:34.192]	 Updating all plugins!
+[2024-10-19 20:00:34.193]	 
+[2024-10-19 20:00:34.883]	   "tmux-copycat" update success
+[2024-10-19 20:00:34.883]	   "tmux-cpu" update success
+[2024-10-19 20:00:34.883]	   "vim-tmux-navigator" update success
+[2024-10-19 20:00:34.886]	     | Already up to date.
+[2024-10-19 20:00:34.886]	     | Already up to date.
+[2024-10-19 20:00:34.886]	     | Already up to date.
+[2024-10-19 20:00:34.901]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-10-19 20:00:35.002]	 Done.
+
+[2024-10-25 07:24:16.214]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-10-25 07:24:16.229]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-10-25 07:24:16.469]	 Already installed "vim-tmux-navigator"
+[2024-10-25 07:24:16.471]	 Already installed "tmux-copycat"
+[2024-10-25 07:24:16.472]	 Already installed "tmux-cpu"
+[2024-10-25 07:24:16.486]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-10-25 07:24:16.681]	 Updating all plugins!
+[2024-10-25 07:24:16.682]	 
+[2024-10-25 07:24:17.325]	   "vim-tmux-navigator" update success
+[2024-10-25 07:24:17.328]	     | Already up to date.
+[2024-10-25 07:24:17.336]	   "tmux-copycat" update success
+[2024-10-25 07:24:17.339]	     | Already up to date.
+[2024-10-25 07:24:17.370]	   "tmux-cpu" update success
+[2024-10-25 07:24:17.373]	     | Already up to date.
+[2024-10-25 07:24:17.389]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-10-25 07:24:17.464]	 Done.
+
+[2024-10-30 13:29:46.327]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-10-30 13:29:46.342]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-10-30 13:29:46.554]	 Already installed "vim-tmux-navigator"
+[2024-10-30 13:29:46.562]	 Already installed "tmux-copycat"
+[2024-10-30 13:29:46.563]	 Already installed "tmux-cpu"
+[2024-10-30 13:29:46.576]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-10-30 13:29:46.759]	 Updating all plugins!
+[2024-10-30 13:29:46.759]	 
+[2024-10-30 13:29:47.467]	   "vim-tmux-navigator" update success
+[2024-10-30 13:29:47.467]	   "tmux-copycat" update success
+[2024-10-30 13:29:47.470]	     | Already up to date.
+[2024-10-30 13:29:47.470]	     | Already up to date.
+[2024-10-30 13:29:47.497]	   "tmux-cpu" update success
+[2024-10-30 13:29:47.500]	     | Already up to date.
+[2024-10-30 13:29:47.514]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-10-30 13:29:47.588]	 Done.
+
+[2024-11-04 13:22:02.262]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-11-04 13:22:02.284]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-11-04 13:22:02.526]	 Already installed "vim-tmux-navigator"
+[2024-11-04 13:22:02.526]	 Already installed "tmux-cpu"
+[2024-11-04 13:22:02.526]	 Already installed "tmux-copycat"
+[2024-11-04 13:22:02.541]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-11-04 13:22:02.703]	 Updating all plugins!
+[2024-11-04 13:22:02.704]	 
+[2024-11-04 13:22:03.330]	   "tmux-copycat" update success
+[2024-11-04 13:22:03.333]	     | Already up to date.
+[2024-11-04 13:22:03.374]	   "tmux-cpu" update success
+[2024-11-04 13:22:03.377]	     | Already up to date.
+[2024-11-04 13:22:03.520]	   "vim-tmux-navigator" update success
+[2024-11-04 13:22:03.523]	     | From https://github.com/christoomey/vim-tmux-navigator
+[2024-11-04 13:22:03.523]	     |    a9b52e7..424b5ca  master     -> origin/master
+[2024-11-04 13:22:03.523]	     | Updating a9b52e7..424b5ca
+[2024-11-04 13:22:03.523]	     | Fast-forward
+[2024-11-04 13:22:03.523]	     |  README.md               |  8 ++++++++
+[2024-11-04 13:22:03.523]	     |  vim-tmux-navigator.tmux | 23 ++++++++++++++---------
+[2024-11-04 13:22:03.523]	     |  2 files changed, 22 insertions(+), 9 deletions(-)
+[2024-11-04 13:22:03.538]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-11-04 13:22:03.616]	 Done.
+
+[2024-11-05 14:14:16.287]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-11-05 14:14:16.304]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-11-05 14:14:16.603]	 Already installed "tmux-copycat"
+[2024-11-05 14:14:16.603]	 Already installed "vim-tmux-navigator"
+[2024-11-05 14:14:16.606]	 Already installed "tmux-cpu"
+[2024-11-05 14:14:16.622]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-11-05 14:14:16.823]	 Updating all plugins!
+[2024-11-05 14:14:16.826]	 
+[2024-11-05 14:14:17.616]	   "tmux-copycat" update success
+[2024-11-05 14:14:17.616]	   "vim-tmux-navigator" update success
+[2024-11-05 14:14:17.616]	   "tmux-cpu" update success
+[2024-11-05 14:14:17.620]	     | Already up to date.
+[2024-11-05 14:14:17.620]	     | Already up to date.
+[2024-11-05 14:14:17.620]	     | Already up to date.
+[2024-11-05 14:14:17.636]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-11-05 14:14:17.715]	 Done.
+
+[2024-11-06 13:01:32.190]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-11-06 13:01:32.207]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-11-06 13:01:32.467]	 Already installed "vim-tmux-navigator"
+[2024-11-06 13:01:32.472]	 Already installed "tmux-cpu"
+[2024-11-06 13:01:32.472]	 Already installed "tmux-copycat"
+[2024-11-06 13:01:32.487]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-11-06 13:01:32.672]	 Updating all plugins!
+[2024-11-06 13:01:32.672]	 
+[2024-11-06 13:01:33.397]	   "tmux-cpu" update success
+[2024-11-06 13:01:33.397]	   "vim-tmux-navigator" update success
+[2024-11-06 13:01:33.397]	   "tmux-copycat" update success
+[2024-11-06 13:01:33.401]	     | Already up to date.
+[2024-11-06 13:01:33.401]	     | Already up to date.
+[2024-11-06 13:01:33.401]	     | Already up to date.
+[2024-11-06 13:01:33.416]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-11-06 13:01:33.511]	 Done.
+
+[2024-11-06 13:27:38.150]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-11-06 13:27:38.164]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-11-06 13:27:38.390]	 Already installed "vim-tmux-navigator"
+[2024-11-06 13:27:38.392]	 Already installed "tmux-copycat"
+[2024-11-06 13:27:38.399]	 Already installed "tmux-cpu"
+[2024-11-06 13:27:38.414]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-11-06 13:27:38.598]	 Updating all plugins!
+[2024-11-06 13:27:38.599]	 
+[2024-11-06 13:27:39.861]	   "tmux-copycat" update success
+[2024-11-06 13:27:39.863]	     | Already up to date.
+[2024-11-06 13:27:40.302]	   "tmux-cpu" update success
+[2024-11-06 13:27:40.304]	     | Already up to date.
+[2024-11-06 13:27:40.310]	   "vim-tmux-navigator" update success
+[2024-11-06 13:27:40.313]	     | Already up to date.
+[2024-11-06 13:27:40.325]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-11-06 13:27:40.395]	 Done.
+
+[2024-11-09 11:38:09.506]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-11-09 11:38:09.521]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-11-09 11:38:09.756]	 Already installed "tmux-cpu"
+[2024-11-09 11:38:09.756]	 Already installed "vim-tmux-navigator"
+[2024-11-09 11:38:09.756]	 Already installed "tmux-copycat"
+[2024-11-09 11:38:09.770]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-11-09 11:38:09.952]	 Updating all plugins!
+[2024-11-09 11:38:09.952]	 
+[2024-11-09 11:38:10.642]	   "tmux-copycat" update success
+[2024-11-09 11:38:10.642]	   "vim-tmux-navigator" update success
+[2024-11-09 11:38:10.645]	     | Already up to date.
+[2024-11-09 11:38:10.645]	     | Already up to date.
+[2024-11-09 11:38:10.662]	   "tmux-cpu" update success
+[2024-11-09 11:38:10.664]	     | Already up to date.
+[2024-11-09 11:38:10.678]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-11-09 11:38:10.766]	 Done.
+
+[2024-11-09 12:12:26.767]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2024-11-09 12:12:26.782]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2024-11-09 12:12:27.004]	 Already installed "vim-tmux-navigator"
+[2024-11-09 12:12:27.004]	 Already installed "tmux-copycat"
+[2024-11-09 12:12:27.012]	 Already installed "tmux-cpu"
+[2024-11-09 12:12:27.027]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2024-11-09 12:12:27.201]	 Updating all plugins!
+[2024-11-09 12:12:27.202]	 
+[2024-11-09 12:12:27.892]	   "vim-tmux-navigator" update success
+[2024-11-09 12:12:27.892]	   "tmux-copycat" update success
+[2024-11-09 12:12:27.895]	     | Already up to date.
+[2024-11-09 12:12:27.895]	     | Already up to date.
+[2024-11-09 12:12:27.936]	   "tmux-cpu" update success
+[2024-11-09 12:12:27.939]	     | Already up to date.
+[2024-11-09 12:12:27.954]	 Invoking /Users/PDolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2024-11-09 12:12:28.029]	 Done.
+

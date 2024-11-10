@@ -27,3 +27,4 @@ alias pp='cd ~/Development/Projects/personal'
 alias wd='cd ~/Development/Projects/weirddeer'
 # Docker
 alias dpull='docker pull --platform linux/amd64'
+alias kc='kubectl'

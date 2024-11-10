@@ -5,14 +5,7 @@ fp() {
   cd $(find ~/Development -type d -maxdepth $FZF_DEPTH -mindepth $FZF_DEPTH | fzf)
 }
 
-# GCloud Proxy
-# $1 is stage (dev, uat, prod)
-# $2 is port
 function dbp() {
-  # if $1 is dev, then set a port to 5000
-  # if $1 is uat, then set a port to 5001
-  # if $1 is prod, then set a port to 5002
-  # Otherwise return unknown stage
   case $1 in
     dev)
       PORT=5000
@@ -32,7 +25,7 @@ function dbp() {
 }
 
 function dbppg() {
-  ~/cloud_sql_proxy -instances=the-fa-sandbox:europe-west2:helix-pg=tcp:5000
+  ~/cloud_sql_proxy -instances=the-fa-sandbox:europe-west2:helix=tcp:5000
 }
 
 function twf() {
@@ -51,3 +44,14 @@ function twf() {
 function kp() {
   kill -9 $(lsof -ti :"$1")
 }
+
+function get_pod_logs() {
+  if [ -z "$1" ]; then
+    echo "Please provide a pod name filter."
+    return 1
+  fi
+
+  pod_filter=$1
+  kubectl get pods -n helix-obs | grep "$pod_filter" | awk '{print $1}' | xargs -I {} kubectl logs -n helix-obs {}
+}
+
