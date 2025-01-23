@@ -16,3 +16,12 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- Search and replace word under cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+
+local function debug_definition()
+    vim.lsp.buf_request(0, "textDocument/definition", vim.lsp.util.make_position_params(), function(_, result)
+        print(vim.inspect(result))
+    end)
+end
+
+vim.keymap.set("n", "<leader>dd", debug_definition, { noremap = true, silent = true })

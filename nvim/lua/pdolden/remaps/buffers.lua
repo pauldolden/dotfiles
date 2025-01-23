@@ -1,6 +1,3 @@
--- Cycle through buffers
-vim.keymap.set("n", "<C-n>", ":bnext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-K>", ":bprevious<CR>", { noremap = true, silent = true })
 -- Close buffer
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close the current buffer' })
 vim.keymap.set('n', '<leader>bw', ':bw<CR>', { desc = 'Close the buffer and window' })

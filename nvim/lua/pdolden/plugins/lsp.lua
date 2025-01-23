@@ -23,6 +23,18 @@ return {
 			cmp_lsp.default_capabilities()
 		)
 
+		-- Diagnostics settings
+		vim.diagnostic.config({
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = "always",
+				header = "",
+				prefix = "",
+			},
+		})
+
 		require("fidget").setup({})
 		require("mason").setup()
 		require("mason-lspconfig").setup({
@@ -51,6 +63,44 @@ return {
 						},
 					})
 				end,
+
+				["vtsls"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.vtsls.setup({
+						capabilities = capabilities,
+						on_attach = function(_, bufnr)
+							-- Key mappings for LSP actions
+							local opts = { noremap = true, silent = true, buffer = bufnr }
+							vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+							vim.keymap.set("n", "gD", function()
+								local params = vim.lsp.util.make_position_params()
+								vim.lsp.buf_request(0, "textDocument/declaration", params, function(_, result, _, _)
+									if not result or vim.tbl_isempty(result) then
+										vim.notify("No declaration found")
+										return
+									end
+									if vim.tbl_islist(result) then
+										vim.lsp.util.jump_to_location(result[1])
+									else
+										vim.lsp.util.jump_to_location(result)
+									end
+								end)
+							end, opts)
+							vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+							vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+							vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
+						end,
+						root_dir = require("lspconfig").util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+						settings = {
+							typescript = {
+								inlayHints = {
+									includeInlayParameterNameHints = "all",
+									includeInlayFunctionParameterTypeHints = true,
+								},
+							},
+						},
+					})
+				end,
 			},
 		})
 
@@ -65,27 +115,15 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-				["<C-y>"] = cmp.mapping.confirm({ select = true }),
+				["<CR>"] = cmp.mapping.confirm({ select = true }),
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
-				{ name = "luasnip" }, -- For luasnip users.
+				{ name = "luasnip" },
 			}, {
 				{ name = "buffer" },
 			}),
-		})
-
-		vim.diagnostic.config({
-			-- update_in_insert = true,
-			float = {
-				focusable = false,
-				style = "minimal",
-				border = "rounded",
-				source = "always",
-				header = "",
-				prefix = "",
-			},
 		})
 	end,
 }

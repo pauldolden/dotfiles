@@ -3,10 +3,10 @@ vim.g.mapleader = " "
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.tabstop = 2        -- Number of spaces a <Tab> represents
+vim.opt.softtabstop = 2    -- Number of spaces a <Tab> counts for while editing
+vim.opt.shiftwidth = 2     -- Number of spaces used for auto-indent
+vim.opt.expandtab = true   -- Use spaces instead of tabs
 
 vim.opt.smartindent = true
 
