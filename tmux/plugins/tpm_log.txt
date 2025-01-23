@@ -1763,3 +1763,39 @@
 [2025-01-13 19:09:14.460]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
 [2025-01-13 19:09:14.515]	 Done.
 
+[2025-01-21 18:38:29.568]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2025-01-21 18:38:29.578]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2025-01-21 18:38:29.764]	 Already installed "tmux-cpu"
+[2025-01-21 18:38:29.764]	 Already installed "vim-tmux-navigator"
+[2025-01-21 18:38:29.764]	 Already installed "tmux-copycat"
+[2025-01-21 18:38:29.774]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2025-01-21 18:38:29.908]	 Updating all plugins!
+[2025-01-21 18:38:29.908]	 
+[2025-01-21 18:38:30.414]	   "vim-tmux-navigator" update fail
+[2025-01-21 18:38:30.417]	     | Already up to date.
+[2025-01-21 18:38:30.417]	     | fatal: No url found for submodule path '../tmux-copycat' in .gitmodules
+[2025-01-21 18:38:30.456]	   "tmux-cpu" update success
+[2025-01-21 18:38:30.459]	     | Already up to date.
+[2025-01-21 18:38:30.459]	   "tmux-copycat" update success
+[2025-01-21 18:38:30.462]	     | Already up to date.
+[2025-01-21 18:38:30.472]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2025-01-21 18:38:30.529]	 Done.
+
+[2025-01-23 06:40:34.561]	 List of discovered tpm plugins: christoomey/vim-tmux-navigator tmux-plugins/tmux-copycat tmux-plugins/tmux-cpu
+[2025-01-23 06:40:34.571]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/install_plugins
+[2025-01-23 06:40:34.794]	 Already installed "tmux-cpu"
+[2025-01-23 06:40:34.794]	 Already installed "vim-tmux-navigator"
+[2025-01-23 06:40:34.794]	 Already installed "tmux-copycat"
+[2025-01-23 06:40:34.805]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/update_plugins all
+[2025-01-23 06:40:34.990]	 Updating all plugins!
+[2025-01-23 06:40:34.991]	 
+[2025-01-23 06:40:35.562]	   "tmux-copycat" update success
+[2025-01-23 06:40:35.562]	   "vim-tmux-navigator" update fail
+[2025-01-23 06:40:35.565]	     | Already up to date.
+[2025-01-23 06:40:35.565]	     | Already up to date.
+[2025-01-23 06:40:35.565]	     | fatal: No url found for submodule path '../tmux-copycat' in .gitmodules
+[2025-01-23 06:40:35.597]	   "tmux-cpu" update success
+[2025-01-23 06:40:35.600]	     | Already up to date.
+[2025-01-23 06:40:35.610]	 Invoking /Users/pauldolden/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2025-01-23 06:40:35.665]	 Done.
+
