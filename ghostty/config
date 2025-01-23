@@ -1,4 +1,4 @@
-theme = Cyberdyne
+theme = tokyonight_night
 
 keybind = global:cmd+shift+`=toggle_quick_terminal
 
