@@ -11,8 +11,8 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { noremap = true, silent = true, desc 
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { noremap = true, silent = true, desc = "Cut to clipboard" })
 
--- Format file
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { noremap = true, silent = true, desc = "Format file" })
+-- Format buffer
+vim.keymap.set("n", "<leader>fb", vim.lsp.buf.format, { noremap = true, silent = true, desc = "Format file" })
 
 -- Search and replace word under cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { noremap = true, silent = true, desc = "Search and replace word under cursor" })
