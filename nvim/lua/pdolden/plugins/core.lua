@@ -33,7 +33,7 @@ return {
       {
         "<leader>?",
         function()
-          require("which-key").show({ global = false })
+          require("which-key").show({ global = true })
         end,
         desc = "Buffer Local Keymaps (which-key)",
       },
@@ -87,8 +87,8 @@ return {
           bottom_search = true,         -- use a classic bottom cmdline for search
           command_palette = true,       -- position the cmdline and popupmenu together
           long_message_to_split = true, -- long messages will be sent to a split
-          inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-          lsp_doc_border = false,       -- add a border to hover docs and signature help
+          inc_rename = true,            -- enables an input dialog for inc-rename.nvim
+          lsp_doc_border = true,        -- add a border to hover docs and signature help
         },
       })
     end,
@@ -98,7 +98,20 @@ return {
     keys = {
       { "<leader>bl", function() require("snipe").open_buffer_menu() end, desc = "Open Snipe buffer menu" }
     },
-    opts = {}
+    opts = {
+      ui = {
+        position = "cursor",
+        -- Override options passed to `nvim_open_win`
+        -- Be careful with this as snipe will not validate
+        -- anything you override here. See `:h nvim_open_win`
+        -- Preselect the currently open buffer
+        preselect_current = true,
+        open_win_override = {
+          -- title = "My Window Title",
+          border = "rounded", -- use "rounded" for rounded border
+        },
+      }
+    }
   },
   {
     'jinh0/eyeliner.nvim',
@@ -108,7 +121,7 @@ return {
         highlight_on_key = true,
 
         -- dim all other characters if set to true (recommended!)
-        dim = false,
+        dim = true,
 
         -- set the maximum number of characters eyeliner.nvim will check from
         -- your current cursor position; this is useful if you are dealing with
@@ -129,5 +142,10 @@ return {
         default_keymaps = true,
       }
     end
+  },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
   }
 }

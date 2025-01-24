@@ -7,4 +7,3 @@ end
 -- Command and keymap
 vim.api.nvim_create_user_command('LazyGit', open, { desc = "Open lazygit in a floating window" })
 vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { desc = 'Open lazygit in a floating window' })
-vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'Open lazygit in a floating window' })
