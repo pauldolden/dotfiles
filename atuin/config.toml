@@ -175,4 +175,4 @@ enter_accept = true
 #common_prefix = ["sudo"]
 
 [theme]
-name = "catppuccin-mocha"
+name = "TokyoNight"

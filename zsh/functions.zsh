@@ -1,4 +1,4 @@
-FZF_DEPTH=2
+FZF_DEPTH=3
 
 # Project Finder
 fp() {
