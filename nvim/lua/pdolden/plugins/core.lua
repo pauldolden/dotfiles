@@ -10,7 +10,16 @@ return {
   {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {}
+    opts = {},
+    config = function()
+      require('fzf-lua').setup({
+        files = {
+          -- Use `rg` and include hidden files but exclude .git directory
+          cmd = "rg --files --hidden --glob '!.git/'"
+        }
+      })
+    end
+
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -144,8 +153,10 @@ return {
     end
   },
   {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    dependencies = { "nvim-lua/plenary.nvim" }
-  }
+    'echasnovski/mini.surround',
+    version = '*',
+    config = function()
+      require('mini.surround').setup()
+    end
+  },
 }
