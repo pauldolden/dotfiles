@@ -1,5 +1,5 @@
 -- autoload.lua in .config/nvim/lua
-local function load_directory(directory)
+local function load_dir(directory)
     local path = vim.fn.stdpath('config') .. '/lua/pdolden/' .. directory
     local scan = vim.loop.fs_scandir(path)
     if not scan then
@@ -30,6 +30,4 @@ local function load_directory(directory)
     end
 end
 
-return {
-    load_directory = load_directory
-}
+return load_dir
