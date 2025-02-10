@@ -37,16 +37,64 @@ return {
 
     require("fidget").setup({})
     require("mason").setup()
+
+    -- Common on_attach to bind LSP-related key mappings across servers
+    local on_attach = function(client, bufnr)
+      local opts = { noremap = true, silent = true, buffer = bufnr }
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+      vim.keymap.set("n", "gD", function()
+        local params = vim.lsp.util.make_position_params()
+        vim.lsp.buf_request(0, "textDocument/declaration", params, function(_, result, _, _)
+          if not result or vim.tbl_isempty(result) then
+            vim.notify("No declaration found")
+            return
+          end
+          if vim.tbl_islist(result) then
+            vim.lsp.util.jump_to_location(result[1])
+          else
+            vim.lsp.util.jump_to_location(result)
+          end
+        end)
+      end, opts)
+      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+      vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+      vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
+
+      -- For Go, auto-organize imports on save
+      if client.name == "gopls" then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          callback = function()
+            local params = vim.lsp.util.make_range_params()
+            params.context = { only = { "source.organizeImports" } }
+            local result = vim.lsp.buf_request_sync(bufnr, "textDocument/codeAction", params, 1000)
+            for _, res in pairs(result or {}) do
+              for _, r in pairs(res.result or {}) do
+                if r.edit then
+                  vim.lsp.util.apply_workspace_edit(r.edit, "utf-16")
+                else
+                  vim.lsp.buf.execute_command(r.command)
+                end
+              end
+            end
+          end,
+        })
+      end
+    end
+
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
         "rust_analyzer",
         "vtsls",
+        "gopls",
+        "zls", -- Added Zig LSP
       },
       handlers = {
-        function(server_name) -- default handler (optional)
+        function(server_name) -- default handler for servers without a dedicated config
           require("lspconfig")[server_name].setup({
             capabilities = capabilities,
+            on_attach = on_attach,
           })
         end,
 
@@ -54,6 +102,7 @@ return {
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup({
             capabilities = capabilities,
+            on_attach = on_attach,
             settings = {
               Lua = {
                 diagnostics = {
@@ -66,8 +115,9 @@ return {
 
         ["gopls"] = function()
           local lspconfig = require("lspconfig")
-
           lspconfig.gopls.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
             settings = {
               gopls = {
                 analyses = {
@@ -84,29 +134,8 @@ return {
           local lspconfig = require("lspconfig")
           lspconfig.vtsls.setup({
             capabilities = capabilities,
-            on_attach = function(_, bufnr)
-              -- Key mappings for LSP actions
-              local opts = { noremap = true, silent = true, buffer = bufnr }
-              vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-              vim.keymap.set("n", "gD", function()
-                local params = vim.lsp.util.make_position_params()
-                vim.lsp.buf_request(0, "textDocument/declaration", params, function(_, result, _, _)
-                  if not result or vim.tbl_isempty(result) then
-                    vim.notify("No declaration found")
-                    return
-                  end
-                  if vim.tbl_islist(result) then
-                    vim.lsp.util.jump_to_location(result[1])
-                  else
-                    vim.lsp.util.jump_to_location(result)
-                  end
-                end)
-              end, opts)
-              vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-              vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-              vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
-            end,
-            root_dir = require("lspconfig").util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+            on_attach = on_attach,
+            root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
             settings = {
               typescript = {
                 inlayHints = {
@@ -117,6 +146,15 @@ return {
             },
           })
         end,
+
+        ["zls"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.zls.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            -- Add any specific Zig settings here if needed.
+          })
+        end,
       },
     })
 
@@ -125,10 +163,10 @@ return {
     cmp.setup({
       snippet = {
         expand = function(args)
-          require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+          require("luasnip").lsp_expand(args.body)
         end,
       },
-      mapping = cmp.mapping.preset.insert({
+     mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
         ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
