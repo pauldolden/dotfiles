@@ -3,22 +3,9 @@ return {
     "nvim-lua/plenary.nvim",
     name = "plenary",
   },
-  "github/copilot.vim",
-  "gpanders/editorconfig.nvim",
-  { 'wakatime/vim-wakatime', lazy = false },
-  {
-    "ibhagwan/fzf-lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
-    config = function()
-      require('fzf-lua').setup({
-        files = {
-          -- Use `rg` and include hidden files but exclude .git directory
-          cmd = "rg --files --hidden --glob '!.git/'"
-        }
-      })
-    end
-  },
+  { "github/copilot.vim" },
+  { "gpanders/editorconfig.nvim" },
+  { 'wakatime/vim-wakatime',     lazy = false },
   {
     'stevearc/conform.nvim',
     opts = {
@@ -54,23 +41,6 @@ return {
     },
   },
   {
-    "nvim-pack/nvim-spectre",
-    config = function()
-      -- Configure nvim-spectre
-      require("spectre").setup({
-        -- Add your custom configuration here if needed
-      })
-      local keymap = vim.keymap.set
-      keymap('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', { desc = "Toggle Spectre" })
-      keymap('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
-        { desc = "Search current word" })
-      keymap('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>',
-        { desc = "Search current word (visual)" })
-      keymap('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
-        { desc = "Search in current file" })
-    end,
-  },
-  {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
@@ -93,7 +63,6 @@ return {
       words = { enabled = true },
       styles = {
         notification = {
-          -- wo = { wrap = true } -- Wrap notifications
         }
       }
     },
@@ -103,7 +72,6 @@ return {
       { "<leader>,",       function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
       { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
       { "<leader>:",       function() Snacks.picker.command_history() end,                         desc = "Command History" },
-      { "<leader>n",       function() Snacks.picker.notifications() end,                           desc = "Notification History" },
       { "<leader>e",       function() Snacks.explorer() end,                                       desc = "File Explorer" },
       -- find
       { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
@@ -122,26 +90,12 @@ return {
       -- Grep
       { "<leader>sb",      function() Snacks.picker.lines() end,                                   desc = "Buffer Lines" },
       { "<leader>sB",      function() Snacks.picker.grep_buffers() end,                            desc = "Grep Open Buffers" },
-      { "<leader>sg",      function() Snacks.picker.grep() end,                                    desc = "Grep" },
       { "<leader>sw",      function() Snacks.picker.grep_word() end,                               desc = "Visual selection or word", mode = { "n", "x" } },
-      -- ch
-      { '<leader>s"',      function() Snacks.picker.registers() end,                               desc = "Registers" },
+      -- Search
       { '<leader>s/',      function() Snacks.picker.search_history() end,                          desc = "Search History" },
-      { "<leader>sa",      function() Snacks.picker.autocmds() end,                                desc = "Autocmds" },
       { "<leader>sb",      function() Snacks.picker.lines() end,                                   desc = "Buffer Lines" },
-      { "<leader>sc",      function() Snacks.picker.command_history() end,                         desc = "Command History" },
       { "<leader>sC",      function() Snacks.picker.commands() end,                                desc = "Commands" },
-      { "<leader>sd",      function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
-      { "<leader>sD",      function() Snacks.picker.diagnostics_buffer() end,                      desc = "Buffer Diagnostics" },
-      { "<leader>sh",      function() Snacks.picker.help() end,                                    desc = "Help Pages" },
-      { "<leader>sH",      function() Snacks.picker.highlights() end,                              desc = "Highlights" },
-      { "<leader>sj",      function() Snacks.picker.jumps() end,                                   desc = "Jumps" },
       { "<leader>sk",      function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
-      { "<leader>sm",      function() Snacks.picker.marks() end,                                   desc = "Marks" },
-      { "<leader>sM",      function() Snacks.picker.man() end,                                     desc = "Man Pages" },
-      { "<leader>sp",      function() Snacks.picker.lazy() end,                                    desc = "Search for Plugin Spec" },
-      { "<leader>sq",      function() Snacks.picker.qflist() end,                                  desc = "Quickfix List" },
-      { "<leader>sR",      function() Snacks.picker.resume() end,                                  desc = "Resume" },
       { "<leader>su",      function() Snacks.picker.undo() end,                                    desc = "Undo History" },
       { "<leader>uC",      function() Snacks.picker.colorschemes() end,                            desc = "Colorschemes" },
       -- LSP
@@ -158,24 +112,6 @@ return {
       { "<leader>un",      function() Snacks.notifier.hide() end,                                  desc = "Dismiss All Notifications" },
       { "]]",              function() Snacks.words.jump(vim.v.count1) end,                         desc = "Next Reference",           mode = { "n", "t" } },
       { "[[",              function() Snacks.words.jump(-vim.v.count1) end,                        desc = "Prev Reference",           mode = { "n", "t" } },
-      {
-        "<leader>N",
-        desc = "Neovim News",
-        function()
-          Snacks.win({
-            file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
-            width = 0.6,
-            height = 0.6,
-            wo = {
-              spell = false,
-              wrap = false,
-              signcolumn = "yes",
-              statuscolumn = " ",
-              conceallevel = 3,
-            },
-          })
-        end,
-      }
     },
     init = function()
       vim.api.nvim_create_autocmd("User", {
