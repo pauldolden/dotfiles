@@ -166,7 +166,7 @@ return {
           require("luasnip").lsp_expand(args.body)
         end,
       },
-     mapping = cmp.mapping.preset.insert({
+      mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
         ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
