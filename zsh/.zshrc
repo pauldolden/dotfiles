@@ -1,5 +1,6 @@
 # Source aliases early to ensure they are available
 source ~/.config/zsh/aliases.zsh
+source ~/.config/zsh/exports.zsh
 
 # Lazy load nvm
 export NVM_DIR="$HOME/.nvm"
