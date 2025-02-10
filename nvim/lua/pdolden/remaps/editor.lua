@@ -15,8 +15,12 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { noremap = true, silent = tr
 vim.keymap.set("n", "<leader>fb", vim.lsp.buf.format, { noremap = true, silent = true, desc = "Format file" })
 
 -- Search and replace word under cursor
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { noremap = true, silent = true, desc = "Search and replace word under cursor" })
-
+vim.keymap.set("n", "<leader>sw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { noremap = true, silent = true, desc = "Search and replace word under cursor" })
+vim.keymap.set("n", "<leader>ss", [[:%s/<C-r>//<C-r>/gI<Left><Left><Left>]], {
+  noremap = true,
+  silent = true,
+  desc = "Search and replace last searched pattern",
+})
 vim.keymap.set("n", "<leader>R", function()
   local search_term = vim.fn.getreg("/") -- Get last searched pattern
   if search_term == "" then

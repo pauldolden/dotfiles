@@ -15,6 +15,7 @@ nvm() {
 }
 
 # Source plugins
+export PATH="$HOME/zig:$PATH"
 source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

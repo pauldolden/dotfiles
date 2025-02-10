@@ -7,7 +7,3 @@ load('extras')
 
 -- Initialize lazy.nvim
 require('pdolden.init_lazy')
-
--- Load dependent config
-load('autocmds')
-load('cmds')
