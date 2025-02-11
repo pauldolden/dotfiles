@@ -1,6 +1,6 @@
 # Project Finder
 fp() {
-  cd $(find ~/Work -type d -maxdepth $FZF_DEPTH -mindepth $FZF_DEPTH | fzf)
+  cd $(find ~/dev -type d -maxdepth $FZF_DEPTH -mindepth $FZF_DEPTH | fzf)
 }
 
 function dbp() {
