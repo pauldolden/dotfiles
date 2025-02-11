@@ -3,6 +3,8 @@ return {
     "nvim-lua/plenary.nvim",
     name = "plenary",
   },
+  -- fzf-lua
+  { "ibhagwan/fzf-lua" },
   { "github/copilot.vim" },
   { "gpanders/editorconfig.nvim" },
   { 'wakatime/vim-wakatime',     lazy = false },

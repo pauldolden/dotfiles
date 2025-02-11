@@ -7,6 +7,24 @@ return {
     bigfile = { enabled = true },
     dashboard = {
       enabled = true,
+      preset = {
+        keys = {
+          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+          {
+            icon = " ",
+            desc = "Find Projects",
+            action = ":FindProjects",
+            key = "p",
+          },
+          { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+          { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+          { icon = "", key = "M", desc = "LSPs", action = ":Mason" },
+          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+        },
+      },
       sections = {
         {
           section = "terminal",
@@ -15,10 +33,14 @@ return {
           height = 17,
           padding = 1,
         },
-        { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+        {
+          icon = " ",
+          title = "Keymaps",
+          section = "keys",
+          indent = 2,
+          padding = 1,
+        },
         { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-        { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-        { section = "startup" },
       },
     },
     explorer = { enabled = true },
@@ -51,7 +73,6 @@ return {
     { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
     { "<leader>ff",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
     { "<leader>fg",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
-    { "<leader>fp",      function() Snacks.picker.projects() end,                                desc = "Projects" },
     { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
     -- git
     { "<leader>gb",      function() Snacks.picker.git_branches() end,                            desc = "Git Branches" },

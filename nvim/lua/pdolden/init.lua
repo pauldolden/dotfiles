@@ -7,3 +7,6 @@ load('extras')
 
 -- Initialize lazy.nvim
 require('pdolden.init_lazy')
+
+-- Load Cmds
+load('cmds')
