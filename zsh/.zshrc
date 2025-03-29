@@ -2,6 +2,8 @@
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/exports.zsh
 
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 # Lazy load nvm
 export NVM_DIR="$HOME/.nvm"
 lazy_load_nvm() {
@@ -84,3 +86,13 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 "
 
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/PDolden/.bun/_bun" ] && source "/Users/PDolden/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/PDolden/.codeium/windsurf/bin:$PATH"

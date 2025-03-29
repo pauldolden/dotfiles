@@ -22,7 +22,7 @@ alias appsup='cd /Users/PDolden/Library/Application\ Support/ && nvim'
 ## Printenv
 alias pe='printenv'
 # Projects
-alias proj='cd ~/Development/Projects'
+alias proj='cd ~/dev/code/Projects'
 alias pp='cd ~/Development/Projects/personal'
 alias wd='cd ~/Development/Projects/weirddeer'
 # Docker

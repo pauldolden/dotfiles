@@ -24,3 +24,5 @@ adjust-underline-position = 4
 clipboard-read = allow
 clipboard-write = allow
 clipboard-trim-trailing-spaces = true
+
+macos-option-as-alt = left

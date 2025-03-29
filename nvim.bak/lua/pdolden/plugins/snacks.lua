@@ -26,13 +26,8 @@ return {
         },
       },
       sections = {
-        {
-          section = "terminal",
-          cmd =
-          "chafa ~/.config/nvim/assets/lightspeed.png --format symbols --symbols vhalf --size 60x17 --stretch; sleep .1",
-          height = 17,
-          padding = 1,
-        },
+        { section = "header" },
+        { section = "startup" },
         {
           icon = " ",
           title = "Keymaps",

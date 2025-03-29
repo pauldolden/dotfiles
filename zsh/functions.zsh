@@ -22,8 +22,20 @@ function dbp() {
   ~/cloud_sql_proxy -instances=the-fa-api-"$1":europe-west2:pps=tcp:"$PORT"
 }
 
-function dbppg() {
-  ~/cloud_sql_proxy -instances=the-fa-sandbox:europe-west2:helix=tcp:5000
+function corev2() {
+  case $1 in
+    uat)
+      PORT=5001
+      ;;
+    prod)
+      PORT=5002
+      ;;
+    *)
+      echo "Unknown stage"
+      return 1
+      ;;
+  esac
+  ~/cloud_sql_proxy -instances=the-fa-helix-"$1":europe-west2:helix=tcp:"$PORT"
 }
 
 function twf() {

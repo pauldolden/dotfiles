@@ -3,11 +3,51 @@ return {
     "nvim-lua/plenary.nvim",
     name = "plenary",
   },
+  -- Spectre
+  {
+    "nvim-pack/nvim-spectre",
+    event = "BufRead",
+    config = function()
+      require("spectre").setup()
+    end,
+  },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      local harpoon = require("harpoon")
+      harpoon:setup()
+
+      vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end,
+        { silent = true, desc = "Add a file to Harpoon" })
+
+      vim.keymap.set("n", "<leader>A", function() harpoon:list():remove() end,
+        { silent = true, desc = "Remove a file from Harpoon" })
+
+      vim.keymap.set("n", "<C-a>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+        { silent = true, desc = "Toggle Harpoon" })
+
+      vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end, { silent = true, desc = "Select Buffer 1" })
+      vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end, { silent = true, desc = "Select Buffer 2" })
+      vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end, { silent = true, desc = "Select Buffer 3" })
+      vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end, { silent = true, desc = "Select Buffer 4" })
+
+      -- Toggle previous & next buffers stored within Harpoon list
+      vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end, { silent = true, desc = "Previous Buffer" })
+      vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end, { silent = true, desc = "Next Buffer" })
+
+      local harpoon_extensions = require("harpoon.extensions")
+      harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
+    end,
+  },
   -- fzf-lua
   { "ibhagwan/fzf-lua" },
   { "github/copilot.vim" },
   { "gpanders/editorconfig.nvim" },
-  { 'wakatime/vim-wakatime',     lazy = false },
+  { 'wakatime/vim-wakatime',       lazy = false },
+  -- nvim-web-devicons
+  { "kyazdani42/nvim-web-devicons" },
   {
     'stevearc/conform.nvim',
     opts = {
@@ -21,7 +61,7 @@ return {
       -- Go will run goimports and gofmt
       go = { "goimports", "gofmt" },
       -- Zig will run zig fmt
-      zig = { "zig fmt" },
+      zig = { "zig fmt" }
     },
     config = function()
       require("conform").setup({
