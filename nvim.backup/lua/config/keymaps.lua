@@ -10,3 +10,8 @@ vim.keymap.set(
   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { noremap = true, silent = true, desc = "Search and replace word under cursor" }
 )
+
+-- open new tmux tab
+vim.keymap.set("n", "<leader>tn", function()
+  vim.fn.system("tmux new-window")
+end, { desc = "open new tmux tab" })
