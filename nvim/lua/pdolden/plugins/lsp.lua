@@ -81,7 +81,7 @@ return {
         end, opts)
       end
 
-      -- Common on_attach with Go-specific autocommands
+      -- Common on_attach with language-specific autocommands
       local function on_attach(client, bufnr)
         setup_keymaps(bufnr)
 
@@ -114,7 +114,7 @@ return {
           "lua_ls",
           "rust_analyzer",
           "gopls",
-          "ts_ls", -- Updated from tsserver/vtsls
+          "ts_ls",
           "zls",
         },
         automatic_installation = true,
@@ -128,7 +128,7 @@ return {
           end,
 
           -- Lua with Neovim-specific settings
-          lua_ls = function()
+          ["lua_ls"] = function()
             require("lspconfig").lua_ls.setup({
               capabilities = capabilities,
               on_attach = on_attach,
@@ -152,7 +152,7 @@ return {
           end,
 
           -- Go with comprehensive settings
-          gopls = function()
+          ["gopls"] = function()
             require("lspconfig").gopls.setup({
               capabilities = capabilities,
               on_attach = on_attach,
@@ -196,7 +196,7 @@ return {
           end,
 
           -- TypeScript with modern settings
-          ts_ls = function()
+          ["ts_ls"] = function()
             require("lspconfig").ts_ls.setup({
               capabilities = capabilities,
               on_attach = on_attach,
@@ -228,7 +228,7 @@ return {
           end,
 
           -- Rust with Clippy and comprehensive settings
-          rust_analyzer = function()
+          ["rust_analyzer"] = function()
             require("lspconfig").rust_analyzer.setup({
               capabilities = capabilities,
               on_attach = on_attach,
@@ -285,6 +285,14 @@ return {
                   },
                 },
               },
+            })
+          end,
+
+          -- Zig language server
+          ["zls"] = function()
+            require("lspconfig").zls.setup({
+              capabilities = capabilities,
+              on_attach = on_attach,
             })
           end,
         },

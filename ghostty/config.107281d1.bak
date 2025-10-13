@@ -1,6 +1,6 @@
 keybind = global:cmd+shift+`=toggle_quick_terminal
 
-theme = TokyoNight Night
+theme = tokyonight_night
 font-family = "ZedMono Nerd Font Mono"
 
 bold-is-bright = true
@@ -26,4 +26,3 @@ clipboard-write = allow
 clipboard-trim-trailing-spaces = true
 
 macos-option-as-alt = left
-keybind = shift+enter=text:\x1b\r
