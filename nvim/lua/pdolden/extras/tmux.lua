@@ -1,4 +1,4 @@
-local tmux = require('pdolden.cmds.tmux')
+local tmux = require('pdolden.utils.tmux')
 
 -- Fast operations
 vim.keymap.set('n', '<leader>ts', tmux.create_or_switch_session,
@@ -19,10 +19,10 @@ vim.keymap.set('n', '<leader>tr', tmux.rename_session,
 vim.keymap.set('n', '<leader>tk', tmux.kill_session,
   { desc = 'Tmux: Kill session' })
 
-vim.keymap.set('n', '<leader>fd', require('pdolden.cmds.tmux').open_dotfiles,
+vim.keymap.set('n', '<leader>fd', tmux.open_dotfiles,
   { desc = 'Open dotfiles' })
 
-vim.keymap.set('n', '<leader><leader>', require('pdolden.cmds.tmux').toggle_last_session,
+vim.keymap.set('n', '<leader><leader>', tmux.toggle_last_session,
   { desc = 'Toggle last tmux session' })
 
 tmux.setup_auto_rename()
