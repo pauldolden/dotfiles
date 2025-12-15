@@ -12,6 +12,8 @@ return {
           "c",
           "lua",
           "rust",
+          "go",
+          "zig",
           "jsdoc",
           "bash",
         },

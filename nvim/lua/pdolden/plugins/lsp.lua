@@ -59,16 +59,11 @@ return {
 			local function setup_keymaps(bufnr)
 				local opts = { noremap = true, silent = true, buffer = bufnr }
 
-				-- Navigation
-				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-				vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
-
+				-- Navigation (gd/gD/gr/gI/gy handled by Snacks picker)
+					
 				-- Documentation
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+				vim.keymap.set("n", "<C-s>", vim.lsp.buf.signature_help, opts)
 
 				-- Workspace
 				vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
@@ -84,10 +79,6 @@ return {
 				vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 				vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
 
-				-- Format
-				vim.keymap.set("n", "<leader>f", function()
-					vim.lsp.buf.format({ async = true })
-				end, opts)
 			end
 
 			-- Common on_attach with language-specific autocommands
@@ -118,8 +109,22 @@ return {
 			end
 
 			-- Configure LSP servers using new vim.lsp.config API
+		-- Helper function to safely configure LSP servers
+		local function configure_lsp(server_name, binary_name, config)
+			if vim.fn.executable(binary_name) ~= 1 then
+				vim.notify(
+					string.format("LSP: %s not found (install via Mason)", server_name),
+					vim.log.levels.WARN,
+					{ title = "LSP Config" }
+				)
+				return false
+			end
+			vim.lsp.config(server_name, config)
+			return true
+		end
+
 			-- Lua Language Server
-			vim.lsp.config("lua_ls", {
+			configure_lsp("lua_ls", "lua-language-server", {
 				cmd = { "lua-language-server" },
 				filetypes = { "lua" },
 				root_markers = {
@@ -153,7 +158,7 @@ return {
 			})
 
 			-- Go Language Server
-			vim.lsp.config("gopls", {
+			configure_lsp("gopls", "gopls", {
 				cmd = { "gopls" },
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
 				root_markers = { "go.work", "go.mod", ".git" },
@@ -204,7 +209,7 @@ return {
 			})
 
 			-- TypeScript Language Server
-			vim.lsp.config("ts_ls", {
+			configure_lsp("ts_ls", "typescript-language-server", {
 				cmd = { "typescript-language-server", "--stdio" },
 				filetypes = {
 					"javascript",
@@ -244,7 +249,7 @@ return {
 			})
 
 			-- Rust Analyzer
-			vim.lsp.config("rust_analyzer", {
+			configure_lsp("rust_analyzer", "rust-analyzer", {
 				cmd = { "rust-analyzer" },
 				filetypes = { "rust" },
 				root_markers = { "Cargo.toml", "rust-project.json" },
@@ -306,7 +311,7 @@ return {
 			})
 
 			-- Zig Language Server
-			vim.lsp.config("zls", {
+			configure_lsp("zls", "zls", {
 				cmd = { "zls" },
 				filetypes = { "zig", "zir" },
 				root_markers = { "zls.json", "build.zig", ".git" },

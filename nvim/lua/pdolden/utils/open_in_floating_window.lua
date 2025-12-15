@@ -7,7 +7,7 @@ local function open_in_floating_window(app_command)
   local col    = math.floor((ui.width - width) / 2)    -- center horizontally
 
   local buf = vim.api.nvim_create_buf(false, true)
-  vim.api.nvim_buf_set_option(buf, 'bufhidden', 'wipe')
+  vim.bo[buf].bufhidden = 'wipe'
   local win = vim.api.nvim_open_win(buf, true, {
     relative = 'editor',
     width = width,

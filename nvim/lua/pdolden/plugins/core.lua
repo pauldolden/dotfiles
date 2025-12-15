@@ -11,8 +11,6 @@ return {
       require("spectre").setup()
     end,
   },
-  -- fzf-lua
-  { "ibhagwan/fzf-lua" },
   { "gpanders/editorconfig.nvim" },
   { 'wakatime/vim-wakatime',       lazy = false },
   -- nvim-web-devicons

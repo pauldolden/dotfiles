@@ -25,5 +25,5 @@ clipboard-read = allow
 clipboard-write = allow
 clipboard-trim-trailing-spaces = true
 
-macos-option-as-alt = left
+macos-option-as-alt = false
 keybind = shift+enter=text:\x1b\r
