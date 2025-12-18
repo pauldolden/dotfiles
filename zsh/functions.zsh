@@ -1,6 +1,15 @@
-# Project Finder
+# Project Finder - fuzzy find and cd to project
 fp() {
-  cd $(find ~/dev -type d -maxdepth $FZF_DEPTH -mindepth $FZF_DEPTH | fzf)
+  local depth=${FZF_DEPTH:-3}
+  local selected=$(fd . ~/dev --min-depth $depth --max-depth $depth --type d | \
+    fzf --preview 'eza --tree --level=2 --color=always {} 2>/dev/null || ls -la {}' \
+        --preview-window=right:60% \
+        --header="Find Project (depth: $depth)")
+
+  if [ -n "$selected" ]; then
+    # Use builtin cd to bypass zoxide alias
+    builtin cd "$selected"
+  fi
 }
 
 function dbp() {

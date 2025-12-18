@@ -18,13 +18,11 @@ alias zshenv='nvim ~/.zshenv'
 alias zprofile='nvim ~/.config/zsh/.zprofile'
 ## Dotfiles
 alias dot='cd ~/.config/ && nvim'
-alias appsup='cd /Users/PDolden/Library/Application\ Support/ && nvim'
+alias appsup='cd ~/Library/Application\ Support/ && nvim'
 ## Printenv
 alias pe='printenv'
 # Projects
 alias proj='cd ~/dev/personal/'
-alias pp='cd ~/Development/Projects/personal'
-alias wd='cd ~/Development/Projects/weirddeer'
 # Docker & Kubernetes
 alias dpull='docker pull --platform linux/amd64'
 alias kc='kubectl'

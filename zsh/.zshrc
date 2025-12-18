@@ -1,6 +1,7 @@
-# Source aliases early to ensure they are available
+# Source configuration files
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/exports.zsh
+source ~/.config/zsh/functions.zsh
 
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
@@ -23,14 +24,19 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/theme.zsh
 
-# Set up completion
+# Set up completion (optimized - only run dump once per day)
 autoload -Uz compinit
-# Use a cached zcompdump file to speed up compinit
-if [[ -f ~/.zcompdump ]]; then
-  compinit -C -d ~/.zcompdump
+setopt EXTENDEDGLOB
+local zcompdump="$HOME/.zcompdump"
+# Check if zcompdump is older than 24 hours
+if [[ -n $zcompdump(#qNmh-24) ]]; then
+  # Use cached version if less than 24 hours old
+  compinit -C -d "$zcompdump"
 else
-  compinit -C
+  # Regenerate completion dump
+  compinit -d "$zcompdump"
 fi
+unsetopt EXTENDEDGLOB
 
 # Update tmux pane title
 function update_tmux_pane_title() {
@@ -40,21 +46,33 @@ function update_tmux_pane_title() {
 }
 precmd_functions+=update_tmux_pane_title
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
-  . "$HOME/google-cloud-sdk/path.zsh.inc"
-fi
+# Lazy load Google Cloud SDK
+lazy_load_gcloud() {
+  if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
+    . "$HOME/google-cloud-sdk/path.zsh.inc"
+  fi
+  if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
+    . "$HOME/google-cloud-sdk/completion.zsh.inc"
+  fi
+}
 
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
-  . "$HOME/google-cloud-sdk/completion.zsh.inc"
-fi
+gcloud() {
+  unset -f gcloud gsutil
+  lazy_load_gcloud
+  gcloud "$@"
+}
+
+gsutil() {
+  unset -f gcloud gsutil
+  lazy_load_gcloud
+  gsutil "$@"
+}
 
 # Initialize Atuin
 eval "$(atuin init zsh)"
 
 # pnpm configuration
-export PNPM_HOME="/Users/PDolden/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -112,11 +130,11 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # bun completions
-[ -s "/Users/PDolden/.bun/_bun" ] && source "/Users/PDolden/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Added by Windsurf
-export PATH="/Users/PDolden/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
