@@ -4,6 +4,7 @@ source ~/.config/zsh/exports.zsh
 source ~/.config/zsh/functions.zsh
 
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+export COREPACK_ENABLE_AUTO_PIN=0
 
 # Lazy load nvm
 export NVM_DIR="$HOME/.nvm"
@@ -138,3 +139,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Added by Windsurf
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+
+. "$HOME/.local/bin/env"
