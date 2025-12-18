@@ -2,7 +2,7 @@
 # A clean, dark theme inspired by Tokyo's neon lights
 
 # Manager
-[mgr]
+[manager]
 cwd = { fg = "#7aa2f7" }
 
 # Hovered
