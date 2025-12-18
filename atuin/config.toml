@@ -42,4 +42,13 @@ enter_accept = true
 #common_prefix = ["sudo"]
 
 [theme]
-name = "TokyoNight"
+# TokyoNight color scheme
+foreground = "c0caf5"
+background = "1a1b26"
+border = "3b4261"
+selected_background = "283457"
+selected_foreground = "7aa2f7"
+cursor = "7aa2f7"
+search = "7dcfff"
+time = "9ece6a"
+command = "c0caf5"

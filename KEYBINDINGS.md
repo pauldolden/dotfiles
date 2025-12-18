@@ -70,7 +70,7 @@ Quick reference for all terminal tools and their keybindings.
 
 #### Session Management
 - `prefix + s` - Session switcher (fzf)
-- `prefix + f` - Find and switch to project (tmux-sessionizer)
+- `prefix + F` - Find and switch to project (tmux-sessionizer)
 
 #### Tools
 - `prefix + g` - Open lazygit popup
@@ -295,7 +295,7 @@ When using `<leader>fp`:
 
 ### Start Your Day
 1. `tmux` - Start tmux
-2. `prefix + f` - Find project
+2. `prefix + F` - Find project (Shift+F)
 3. Opens tmux session with nvim
 4. `<leader>od` - Open today's daily note
 
@@ -323,7 +323,7 @@ prefix + g (in tmux) → lazygit → stage/commit/push
 
 **Switch projects:**
 ```
-prefix + f (tmux) or fp (shell) → select project
+prefix + F (tmux) or fp (shell) → select project
 ```
 
 ---
