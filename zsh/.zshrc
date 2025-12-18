@@ -66,7 +66,12 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --info=inline-right \
   --ansi \
   --layout=reverse \
-  --border=none
+  --border=none \
+  --height=80% \
+  --preview-window=right:60% \
+  --bind='ctrl-/:toggle-preview' \
+  --bind='ctrl-u:preview-half-page-up' \
+  --bind='ctrl-d:preview-half-page-down' \
   --color=bg+:#283457 \
   --color=bg:#16161e \
   --color=border:#27a1b9 \
@@ -85,7 +90,26 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=spinner:#ff007c \
 "
 
+# Use fd for faster file finding
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+
+# Use bat for file preview with syntax highlighting
+export FZF_CTRL_T_OPTS="
+  --preview 'bat --style=numbers --color=always --line-range :500 {}'
+  --bind 'ctrl-/:toggle-preview'
+"
+
+# Preview directory contents with eza/ls
+export FZF_ALT_C_OPTS="
+  --preview 'eza --tree --level=2 --color=always {} 2>/dev/null || ls -la {}'
+"
+
 eval "$(starship init zsh)"
+
+# Initialize zoxide (smarter cd)
+eval "$(zoxide init zsh)"
 
 # bun completions
 [ -s "/Users/PDolden/.bun/_bun" ] && source "/Users/PDolden/.bun/_bun"

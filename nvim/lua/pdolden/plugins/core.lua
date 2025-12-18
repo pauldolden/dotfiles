@@ -97,4 +97,78 @@ return {
       require('blame').setup {}
     end,
   },
+  {
+    "mikavilpas/yazi.nvim",
+    event = "VeryLazy",
+    keys = {
+      {
+        "<leader>e",
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi file manager",
+      },
+      {
+        "<leader>E",
+        "<cmd>Yazi cwd<cr>",
+        desc = "Open yazi in current working directory",
+      },
+    },
+    opts = {
+      open_for_directories = false,
+      keymaps = {
+        show_help = '<f1>',
+      },
+    },
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "vault",
+          path = "~/vault",
+        },
+      },
+      daily_notes = {
+        folder = "Daily Notes",
+        date_format = "%Y-%m-%d",
+      },
+      completion = {
+        nvim_cmp = true,
+        min_chars = 2,
+      },
+      mappings = {
+        ["gf"] = {
+          action = function()
+            return require("obsidian").util.gf_passthrough()
+          end,
+          opts = { noremap = false, expr = true, buffer = true },
+        },
+        ["<leader>ch"] = {
+          action = function()
+            return require("obsidian").util.toggle_checkbox()
+          end,
+          opts = { buffer = true },
+        },
+      },
+      ui = {
+        enable = true,
+        checkboxes = {
+          [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+          ["x"] = { char = "", hl_group = "ObsidianDone" },
+        },
+      },
+      -- Disable frontmatter if you don't use it, or configure as needed
+      disable_frontmatter = false,
+      -- Follow Obsidian's link format
+      note_id_func = function(title)
+        return title
+      end,
+    },
+  },
 }

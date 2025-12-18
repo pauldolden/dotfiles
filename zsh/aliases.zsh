@@ -22,9 +22,26 @@ alias appsup='cd /Users/PDolden/Library/Application\ Support/ && nvim'
 ## Printenv
 alias pe='printenv'
 # Projects
-alias proj='cd ~/dev/code/Projects'
+alias proj='cd ~/dev/personal/'
 alias pp='cd ~/Development/Projects/personal'
 alias wd='cd ~/Development/Projects/weirddeer'
-# Docker
+# Docker & Kubernetes
 alias dpull='docker pull --platform linux/amd64'
 alias kc='kubectl'
+alias k='kubectl'
+alias k9='k9s'
+# System monitoring
+alias mon='btop'
+# File listing
+alias ls='eza --icons'
+alias ll='eza -la --icons'
+alias lt='eza --tree --icons'
+# Notes (Obsidian vault)
+alias notes='cd ~/vault && nvim'
+alias vault='cd ~/vault && nvim'
+alias today='nvim ~/vault/Daily\ Notes/$(date +%Y-%m-%d).md'
+# File management
+alias y='yazi'
+# Zoxide (smart cd)
+alias cd='z'
+alias cdi='zi'  # Interactive selection
