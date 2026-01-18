@@ -33,9 +33,11 @@ nvm() {
 # Source plugins
 export PATH="$HOME/zig:$PATH"
 
-# zsh-autocomplete
-[[ -f ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]] && \
+# zsh-autocomplete (fix terminfo for minimal systems like Pi)
+if [[ -f ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]]; then
+    [[ -z "$terminfo[kcbt]" ]] && terminfo[kcbt]=$'\e[Z'
     source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+fi
 
 # zsh-autosuggestions (Homebrew on Mac, local on Linux)
 if [[ "$IS_MAC" == true ]] && [[ -f "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
