@@ -30,16 +30,23 @@ alias k='kubectl'
 alias k9='k9s'
 # System monitoring
 alias mon='btop'
-# File listing
-alias ls='eza --icons'
-alias ll='eza -la --icons'
-alias lt='eza --tree --icons'
+# File listing (use eza if available, fallback to standard ls)
+if command -v eza &>/dev/null; then
+    alias ls='eza --icons'
+    alias ll='eza -la --icons'
+    alias lt='eza --tree --icons'
+else
+    alias ll='ls -la'
+    alias lt='ls -la'
+fi
 # Notes (Obsidian vault)
 alias notes='cd ~/vault && nvim'
 alias vault='cd ~/vault && nvim'
 alias today='nvim ~/vault/Daily\ Notes/$(date +%Y-%m-%d).md'
 # File management
 alias y='yazi'
-# Zoxide (smart cd)
-alias cd='z'
-alias cdi='zi'  # Interactive selection
+# Zoxide (smart cd) - only if installed
+if command -v zoxide &>/dev/null; then
+    alias cd='z'
+    alias cdi='zi'  # Interactive selection
+fi
