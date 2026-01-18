@@ -140,4 +140,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Added by Windsurf
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Auto-load nvm default version on shell start
+export PATH="$HOME/.nvm/versions/node/v25.2.1/bin:$PATH"

@@ -383,7 +383,7 @@ return {
 					enabled = true,
 					auto_trigger = true,
 					keymap = {
-						accept = "<Tab>",
+						accept = false, -- Handled by nvim-cmp
 						accept_word = false,
 						accept_line = false,
 						next = "<M-]>",

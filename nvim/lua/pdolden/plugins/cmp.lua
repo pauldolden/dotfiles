@@ -31,10 +31,12 @@ return {
 						behavior = cmp.ConfirmBehavior.Replace,
 						select = true,
 					}),
-					-- Note: Copilot.lua handles Tab internally for suggestions
-					-- If no Copilot suggestion, Tab falls through to cmp/luasnip
 					["<Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
+						local copilot_ok, copilot_suggestion = pcall(require, "copilot.suggestion")
+						-- Check for Copilot suggestion first
+						if copilot_ok and copilot_suggestion.is_visible() then
+							copilot_suggestion.accept()
+						elseif cmp.visible() then
 							cmp.select_next_item()
 						elseif luasnip.expand_or_locally_jumpable() then
 							luasnip.expand_or_jump()
