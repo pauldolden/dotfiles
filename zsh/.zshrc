@@ -3,7 +3,19 @@ source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/exports.zsh
 source ~/.config/zsh/functions.zsh
 
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# Detect OS
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    IS_MAC=true
+    BREW_PREFIX=$(brew --prefix 2>/dev/null || echo "/opt/homebrew")
+else
+    IS_MAC=false
+fi
+
+# zsh-vi-mode (macOS only via Homebrew)
+if [[ "$IS_MAC" == true ]] && [[ -f "$BREW_PREFIX/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh" ]]; then
+    source "$BREW_PREFIX/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+fi
+
 export COREPACK_ENABLE_AUTO_PIN=0
 
 # Lazy load nvm
@@ -20,10 +32,28 @@ nvm() {
 
 # Source plugins
 export PATH="$HOME/zig:$PATH"
-source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/zsh-syntax-highlighting/theme.zsh
+
+# zsh-autocomplete
+[[ -f ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]] && \
+    source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# zsh-autosuggestions (Homebrew on Mac, local on Linux)
+if [[ "$IS_MAC" == true ]] && [[ -f "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+    source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+elif [[ -f ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# zsh-syntax-highlighting (Homebrew on Mac, local on Linux)
+if [[ "$IS_MAC" == true ]] && [[ -f "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+    source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+elif [[ -f ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# Theme (if exists)
+[[ -f ~/.config/zsh/zsh-syntax-highlighting/theme.zsh ]] && \
+    source ~/.config/zsh/zsh-syntax-highlighting/theme.zsh
 
 # Set up completion (optimized - only run dump once per day)
 autoload -Uz compinit
@@ -69,11 +99,15 @@ gsutil() {
   gsutil "$@"
 }
 
-# Initialize Atuin
-eval "$(atuin init zsh)"
+# Initialize Atuin (if installed)
+command -v atuin &>/dev/null && eval "$(atuin init zsh)"
 
 # pnpm configuration
-export PNPM_HOME="$HOME/Library/pnpm"
+if [[ "$IS_MAC" == true ]]; then
+    export PNPM_HOME="$HOME/Library/pnpm"
+else
+    export PNPM_HOME="$HOME/.local/share/pnpm"
+fi
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -125,10 +159,11 @@ export FZF_ALT_C_OPTS="
   --preview 'eza --tree --level=2 --color=always {} 2>/dev/null || ls -la {}'
 "
 
-eval "$(starship init zsh)"
+# Initialize starship prompt (if installed)
+command -v starship &>/dev/null && eval "$(starship init zsh)"
 
-# Initialize zoxide (smarter cd)
-eval "$(zoxide init zsh)"
+# Initialize zoxide (smarter cd, if installed)
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
@@ -143,5 +178,9 @@ export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 export PATH="$HOME/.local/bin:$PATH"
 
-# Auto-load nvm default version on shell start
-export PATH="$HOME/.nvm/versions/node/v25.2.1/bin:$PATH"
+# Auto-load nvm default version on shell start (if nvm is installed)
+if [[ -d "$HOME/.nvm/versions/node" ]]; then
+    # Use the default or latest installed version
+    NVM_DEFAULT=$(ls -1 "$HOME/.nvm/versions/node" 2>/dev/null | sort -V | tail -1)
+    [[ -n "$NVM_DEFAULT" ]] && export PATH="$HOME/.nvm/versions/node/$NVM_DEFAULT/bin:$PATH"
+fi
