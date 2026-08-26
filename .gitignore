@@ -20,6 +20,13 @@ zsh/completions.local.zsh
 ai/claude/settings.json
 ai/AGENTS.local.md
 ai/mcp-servers.local.json
+# LazyVim: the lockfile is only meaningful against the enabled extras, and the
+# extras set is which languages a machine works in. Sharing one while the other
+# differs means every :Lazy sync rewrites it. Both are machine-local; the base
+# set is seeded from lazyvim.json.example.
+nvim/lazyvim.json
+nvim/lazy-lock.json
+nvim/lua/plugins/local.lua
 Brewfile.local
 mise/conf.d/local.toml
 
