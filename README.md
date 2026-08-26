@@ -57,6 +57,7 @@ git clone git@github.com:pauldolden/dotfiles.git ~/.config
 > | `Brewfile.local` | One machine's toolchain, installed after the shared Brewfile |
 > | `mise/conf.d/local.toml` | Version pins a cluster or project forces |
 > | `theme/palette.local.toml` | Slot overrides, so one machine can retune without forking the palette |
+> | `profile.local.toml` | Which modules this machine runs — see below |
 > | `ai/claude/settings.json` | Claude Code writes a generated threat model back into this file — never tracked |
 >
 > Signing method lives in `config.local` rather than the tracked `git/config`
@@ -147,6 +148,30 @@ corepack enable      # yarn/pnpm shims, once
 | `macos/` | System `defaults` the input config depends on |
 | `docs/` | Decision records — why the browser and input stack are what they are |
 | `KEYBINDINGS.md` | Cheatsheet for every tool's bindings — nvim, tmux, AeroSpace, shell |
+
+## Modules
+
+`profile.toml` declares what a machine runs. A module that is off skips its
+bootstrap steps rather than configuring something nothing will read — which
+matters because this repo *is* `~/.config`, so a rendered config is read by its
+app the moment that app exists, whether or not you wanted it.
+
+| Module | Off means |
+| --- | --- |
+| `aerospace` | Not started, not checked |
+| `hammerspoon` | `~/.hammerspoon/init.lua` not linked, not started |
+| `firefox` | No profile discovery, no policies written into the app bundle |
+| `containers` | podman machine not initialised, compose plugin not wired |
+| `rust` | rustup not installed — `mise install` cannot build rust |
+
+Everything defaults on, and an **unknown name is treated as on**, so a profile
+written before a module existed still gets it. Override per machine in an
+untracked `profile.local.toml`; never edit `profile.toml` to turn something off
+for one machine, or every other machine inherits the decision.
+
+Turning a module off does not uninstall its packages — the Brewfile is a flat
+list with no notion of which package belongs to which module. That is tracked
+separately.
 
 ## Conventions
 

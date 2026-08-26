@@ -1,0 +1,26 @@
+# What this machine runs. A module that is off skips its bootstrap steps
+# instead of configuring something nothing will read.
+#
+# Everything defaults on, and an unknown name is treated as on, so a profile
+# written before a module existed still gets it. Override per machine in an
+# untracked profile.local.toml — never edit this file to turn something off
+# for one machine, or every other machine inherits the decision.
+
+[modules]
+# Tiling window manager. Off: AeroSpace is neither started nor checked.
+aerospace = true
+
+# Scroll direction and mouse buttons via event taps. Off: ~/.hammerspoon/init.lua
+# is not linked and Hammerspoon is not started.
+hammerspoon = true
+
+# Browser prefs, chrome CSS and add-on policies. Off: no profile discovery, no
+# policies written into the app bundle.
+firefox = true
+
+# podman machine and the docker compose plugin. Off: neither is initialised.
+containers = true
+
+# rustup, which mise's rust plugin drives rather than shipping its own
+# toolchain. Off: not installed, and `mise install` cannot build rust.
+rust = true

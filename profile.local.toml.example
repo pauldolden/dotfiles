@@ -1,0 +1,9 @@
+# Machine-local module overrides. Untracked — seeded from this file by
+# bootstrap.sh. Merged over profile.toml, so a name here wins.
+#
+# Turn off what this machine has no use for. The bootstrap then reports the
+# step as skipped rather than half-configuring it.
+
+# [modules]
+# firefox = false
+# containers = false

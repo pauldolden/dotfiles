@@ -12,6 +12,7 @@ zsh/secrets.zsh
 git/config.local
 bootstrap.local
 theme/palette.local.toml
+profile.local.toml
 zsh/aliases.local.zsh
 zsh/functions.local.zsh
 zsh/completions.local.zsh

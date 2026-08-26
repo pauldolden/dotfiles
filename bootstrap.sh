@@ -25,6 +25,30 @@ ATUIN_BACKUP_VAULT="${ATUIN_BACKUP_VAULT:-Private}"
 
 [ -d "$CONFIG/.git" ] || { echo "Run after cloning this repo to ~/.config" >&2; exit 1; }
 
+# Modules. profile.toml declares what this machine runs; an untracked
+# profile.local.toml overrides it. Read once into the environment rather than
+# shelling out per check. An unset name defaults to on, so a profile written
+# before a module existed still gets it.
+eval "$(CONFIG="$CONFIG" python3 - <<'PYEOF'
+import os, pathlib, tomllib
+cfg = pathlib.Path(os.environ["CONFIG"])
+mods = {}
+for name in ("profile.toml", "profile.local.toml"):
+    f = cfg / name
+    if f.exists():
+        mods |= tomllib.loads(f.read_text()).get("modules", {})
+for k, v in mods.items():
+    if k.replace("_", "").isalnum():
+        print(f'MODULE_{k}={"true" if v else "false"}')
+PYEOF
+)"
+
+# module <name> — false only when a profile explicitly turns it off.
+module() {
+	local var="MODULE_$1"
+	[ "${!var:-true}" = "true" ]
+}
+
 step "Checking prerequisites"
 for c in brew git; do
 	command -v "$c" >/dev/null || { echo "missing: $c" >&2; exit 1; }
@@ -65,9 +89,13 @@ step "Linking Hammerspoon config"
 # Hammerspoon reads ~/.hammerspoon, not XDG, so this is the one input config
 # that needs a link. The directory stays real — Spoons and its own state live
 # there and do not belong in this repo.
-mkdir -p "$HOME/.hammerspoon"
-ln -sfn "$CONFIG/hammerspoon/init.lua" "$HOME/.hammerspoon/init.lua"
-skip "init.lua -> hammerspoon/init.lua"
+if module hammerspoon; then
+	mkdir -p "$HOME/.hammerspoon"
+	ln -sfn "$CONFIG/hammerspoon/init.lua" "$HOME/.hammerspoon/init.lua"
+	skip "init.lua -> hammerspoon/init.lua"
+else
+	skip "hammerspoon module off — init.lua not linked"
+fi
 
 step "Configuring git hooks"
 # Set as a tilde path rather than "$CONFIG" so the value committed to git/config
@@ -169,20 +197,24 @@ step "Wiring Firefox"
 # config here the destination cannot be declared — it has to be discovered.
 # sync-theme.py renders to a fixed path in the repo and this step owns the one
 # variable hop, which keeps the renderer unaware of the profile layout.
-ff_profile=$(find "$HOME/Library/Application Support/Firefox/Profiles" \
-	-maxdepth 1 -type d -name '*.default-release' 2>/dev/null | head -1)
-if [ ! -d /Applications/Firefox.app ]; then
-	warn "Firefox not installed (brew bundle incomplete) — skipping profile wiring"
-elif [ -z "$ff_profile" ]; then
-	warn "no Firefox profile yet — launch Firefox once to create one, then re-run"
-elif [ -d "$ff_profile/chrome" ] && [ ! -L "$ff_profile/chrome" ]; then
-	# Never deleted: ln -sfn onto a real directory silently nests the link
-	# inside it, and the contents are the user's, not this repo's.
-	warn "$ff_profile/chrome is a real directory — move it aside, then re-run"
+if module firefox; then
+	ff_profile=$(find "$HOME/Library/Application Support/Firefox/Profiles" \
+		-maxdepth 1 -type d -name '*.default-release' 2>/dev/null | head -1)
+	if [ ! -d /Applications/Firefox.app ]; then
+		warn "Firefox not installed (brew bundle incomplete) — skipping profile wiring"
+	elif [ -z "$ff_profile" ]; then
+		warn "no Firefox profile yet — launch Firefox once to create one, then re-run"
+	elif [ -d "$ff_profile/chrome" ] && [ ! -L "$ff_profile/chrome" ]; then
+		# Never deleted: ln -sfn onto a real directory silently nests the link
+		# inside it, and the contents are the user's, not this repo's.
+		warn "$ff_profile/chrome is a real directory — move it aside, then re-run"
+	else
+		ln -sfn "$CONFIG/firefox/user.js" "$ff_profile/user.js"
+		ln -sfn "$CONFIG/firefox/chrome" "$ff_profile/chrome"
+		skip "user.js + chrome/ -> ${ff_profile##*/}"
+	fi
 else
-	ln -sfn "$CONFIG/firefox/user.js" "$ff_profile/user.js"
-	ln -sfn "$CONFIG/firefox/chrome" "$ff_profile/chrome"
-	skip "user.js + chrome/ -> ${ff_profile##*/}"
+	skip "firefox module off — profile not wired"
 fi
 
 step "Installing Firefox policies"
@@ -191,13 +223,17 @@ step "Installing Firefox policies"
 # replaces the bundle and drops it. Re-running restores it; the telemetry prefs
 # in user.js are what hold the line in between. Writing there is TCC-gated:
 # macOS will not let one app modify another's signed bundle without the grant.
-ff_dist="/Applications/Firefox.app/Contents/Resources/distribution"
-if [ ! -d /Applications/Firefox.app ]; then
-	skip "Firefox not installed — skipping policies"
-elif mkdir -p "$ff_dist" && cp "$CONFIG/firefox/policies.json" "$ff_dist/policies.json"; then
-	skip "Sidebery auto-install, telemetry off"
+if module firefox; then
+	ff_dist="/Applications/Firefox.app/Contents/Resources/distribution"
+	if [ ! -d /Applications/Firefox.app ]; then
+		skip "Firefox not installed — skipping policies"
+	elif mkdir -p "$ff_dist" && cp "$CONFIG/firefox/policies.json" "$ff_dist/policies.json"; then
+		skip "Sidebery auto-install, telemetry off"
+	else
+		warn "could not write policies.json into Firefox.app — grant your terminal App Management in System Settings > Privacy & Security > App Management"
+	fi
 else
-	warn "could not write policies.json into Firefox.app — grant your terminal App Management in System Settings > Privacy & Security > App Management"
+	skip "firefox module off — policies not installed"
 fi
 
 step "Bringing up the macOS input stack"
@@ -207,28 +243,36 @@ step "Bringing up the macOS input stack"
 # privileged process can grant them on the user's behalf — not even one running
 # as root. So: detect and instruct.
 # Non-fatal throughout; a missing grant must not abandon the run.
-if [ -d "/Applications/AeroSpace.app" ]; then
-	pgrep -x AeroSpace >/dev/null 2>&1 || open -a AeroSpace
-	if aerospace list-workspaces --focused >/dev/null 2>&1; then
-		skip "AeroSpace running and responding"
+if module aerospace; then
+	if [ -d "/Applications/AeroSpace.app" ]; then
+		pgrep -x AeroSpace >/dev/null 2>&1 || open -a AeroSpace
+		if aerospace list-workspaces --focused >/dev/null 2>&1; then
+			skip "AeroSpace running and responding"
+		else
+			warn "AeroSpace not responding — grant Accessibility in System Settings > Privacy & Security > Accessibility"
+		fi
 	else
-		warn "AeroSpace not responding — grant Accessibility in System Settings > Privacy & Security > Accessibility"
+		warn "AeroSpace not installed — brew bundle incomplete"
 	fi
 else
-	warn "AeroSpace not installed — brew bundle incomplete"
+	skip "aerospace module off"
 fi
 
-if [ -d "/Applications/Hammerspoon.app" ]; then
-	pgrep -x Hammerspoon >/dev/null 2>&1 || open -a Hammerspoon
-	# A running process is not a working one: without Accessibility the event taps
-	# start and then silently never fire. hs.ipc in init.lua exposes this check.
-	if [ "$(hs -c "hs.accessibilityState()" 2>/dev/null)" = "true" ]; then
-		skip "Hammerspoon running with Accessibility"
+if module hammerspoon; then
+	if [ -d "/Applications/Hammerspoon.app" ]; then
+		pgrep -x Hammerspoon >/dev/null 2>&1 || open -a Hammerspoon
+		# A running process is not a working one: without Accessibility the event taps
+		# start and then silently never fire. hs.ipc in init.lua exposes this check.
+		if [ "$(hs -c "hs.accessibilityState()" 2>/dev/null)" = "true" ]; then
+			skip "Hammerspoon running with Accessibility"
+		else
+			warn "Hammerspoon needs Accessibility — System Settings > Privacy & Security > Accessibility"
+		fi
 	else
-		warn "Hammerspoon needs Accessibility — System Settings > Privacy & Security > Accessibility"
+		warn "Hammerspoon not installed — brew bundle incomplete"
 	fi
 else
-	warn "Hammerspoon not installed — brew bundle incomplete"
+	skip "hammerspoon module off"
 fi
 
 step "Starting the podman machine"
@@ -236,20 +280,24 @@ step "Starting the podman machine"
 # cannot create it. krunkit is the hypervisor binary for podman's default
 # libkrun provider on Apple Silicon and is missing from brew's podman formula,
 # which is why the Brewfile pins the libkrun/krun tap — without it, init fails.
-if ! command -v podman >/dev/null; then
-	warn "podman not installed (brew bundle incomplete) — skipping machine init"
-elif ! podman machine inspect podman-machine-default >/dev/null 2>&1; then
-	if podman machine init --now; then
-		skip "podman-machine-default created and started"
+if module containers; then
+	if ! command -v podman >/dev/null; then
+		warn "podman not installed (brew bundle incomplete) — skipping machine init"
+	elif ! podman machine inspect podman-machine-default >/dev/null 2>&1; then
+		if podman machine init --now; then
+			skip "podman-machine-default created and started"
+		else
+			warn "podman machine init failed — check krunkit installed: brew list krunkit"
+		fi
+	elif [ "$(podman machine inspect podman-machine-default --format '{{.State}}' 2>/dev/null)" = "running" ]; then
+		skip "podman-machine-default already running"
+	elif podman machine start; then
+		skip "podman-machine-default started"
 	else
-		warn "podman machine init failed — check krunkit installed: brew list krunkit"
+		warn "podman machine start failed — check krunkit installed: brew list krunkit"
 	fi
-elif [ "$(podman machine inspect podman-machine-default --format '{{.State}}' 2>/dev/null)" = "running" ]; then
-	skip "podman-machine-default already running"
-elif podman machine start; then
-	skip "podman-machine-default started"
 else
-	warn "podman machine start failed — check krunkit installed: brew list krunkit"
+	skip "containers module off — podman machine not started"
 fi
 
 step "Wiring the docker compose plugin"
@@ -258,7 +306,9 @@ step "Wiring the docker compose plugin"
 # form does not, which reads as a broken install rather than a missing setting.
 # Merged in place, not written: the same file gains registry auth on
 # `docker login`, which is why it cannot simply be tracked in this repo.
-if ! command -v docker >/dev/null; then
+if ! module containers; then
+	skip "containers module off — compose plugin not wired"
+elif ! command -v docker >/dev/null; then
 	warn "docker not installed (brew bundle incomplete) — skipping compose plugin"
 elif python3 -c '
 import json, pathlib, sys
@@ -279,12 +329,16 @@ fi
 step "Ensuring rustup is present"
 # mise's rust plugin drives rustup rather than shipping a toolchain, and its
 # install dir is a symlink to ~/.cargo/bin — so rustup must exist first.
-if command -v rustup >/dev/null || [ -x "$HOME/.cargo/bin/rustup" ]; then
-	skip "rustup already installed"
-elif curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path; then
-	skip "rustup installed"
+if module rust; then
+	if command -v rustup >/dev/null || [ -x "$HOME/.cargo/bin/rustup" ]; then
+		skip "rustup already installed"
+	elif curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path; then
+		skip "rustup installed"
+	else
+		warn "rustup install failed — 'mise install' will not be able to build rust"
+	fi
 else
-	warn "rustup install failed — 'mise install' will not be able to build rust"
+	skip "rust module off — rustup not installed"
 fi
 
 step "Installing language runtimes (mise)"
