@@ -106,3 +106,118 @@ git -C ~/.config log -1 --format=%H
 Same SHA on two machines means the same tracked tree. That is the whole check.
 
 Once `doctor.sh` is clean, `rm -rf ~/.config.old`. Not before.
+
+---
+
+## Appendix: what a complete overlay looks like
+
+A worked example, from the second machine this repo was split for. Placeholders
+stand in for the real project, cluster and organisation names — that machine's
+actual overlay stays on that machine, which is the point of the layer.
+
+Reading it top to bottom shows the rule: **nothing here names a thing that is
+true of more than one machine.**
+
+`zsh/aliases.local.zsh`
+
+```zsh
+## Extra PATH entries, consumed by the path+= block in .zshrc.
+ZSH_LOCAL_PATH=($HOME/bin)
+
+alias proj='cd ~/dev/work/'
+
+## Apps in this machine's daily loop
+alias wt='wo "Microsoft Teams"'
+alias wd='wo TablePlus'
+```
+
+`zsh/functions.local.zsh` — employer infrastructure, the clearest case for the
+layer. Nothing below means anything on another machine.
+
+```zsh
+function dbp() {
+  case $1 in
+    dev)  PORT=6003 ;;
+    uat)  PORT=6004 ;;
+    prod) PORT=6005 ;;
+    *)    echo "Unknown stage"; return 1 ;;
+  esac
+  cloud-sql-proxy <project>-"$1":<region>:<instance> --port "$PORT"
+}
+
+function get_pod_logs() {
+  [ -z "$1" ] && { echo "Please provide a pod name filter."; return 1; }
+  kubectl get pods -n <namespace> | grep "$1" | awk '{print $1}' |
+    xargs -I {} kubectl logs -n <namespace> {}
+}
+```
+
+`zsh/completions.local.zsh` — separate from the above because it is sourced
+after `compinit`. A `compdef` call in `functions.local.zsh` is silently skipped,
+which looks exactly like a completion that does not work.
+
+```zsh
+if type compdef &>/dev/null; then
+  # generated completion blocks go here
+fi
+```
+
+`mise/conf.d/local.toml`
+
+```toml
+[tools]
+# One minor either side of the cluster, not latest.
+kubectl = "1.36"
+# Upstream still tags v1 as latest, and v1 takes different flags.
+cloud-sql-proxy = "2"
+```
+
+`Brewfile.local`
+
+```ruby
+tap "fluxcd/tap"
+brew "libpq"
+```
+
+`profile.local.toml` — the input stack is off by default; a managed machine may
+not be able to grant Accessibility at all.
+
+```toml
+[modules]
+# aerospace = true
+# hammerspoon = true
+```
+
+`ai/mcp-servers.local.json` — secrets stay as `op://` references, resolved at
+run time. A literal credential never belongs here, tracked or not.
+
+```json
+{
+  "servers": {
+    "sonarqube": {
+      "targets": ["claude"],
+      "type": "stdio",
+      "command": "op",
+      "env": { "SONARQUBE_TOKEN": "op://<vault>/<item>/credential" }
+    }
+  }
+}
+```
+
+`ai/AGENTS.local.md` — instructions true of one employer's codebases only:
+compliance rules, internal service names, house conventions.
+
+`git/config.local` — identity, and the signing *method*, which differs by
+machine: GPG on one, an SSH key held by the 1Password agent on another.
+
+```gitconfig
+[user]
+	name = Your Name
+	email = you@example.com
+	signingkey = ssh-ed25519 AAAA...
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+	allowedSignersFile = ~/.config/git/allowed_signers
+```
