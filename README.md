@@ -146,7 +146,7 @@ corepack enable      # yarn/pnpm shims, once
 | `aerospace/` | Tiling WM — read from `~/.config` natively, no symlink |
 | `hammerspoon/` | Scroll direction + mouse buttons — `init.lua` symlinked into `~/.hammerspoon` |
 | `macos/` | System `defaults` the input config depends on |
-| `docs/` | Decision records — why the browser and input stack are what they are |
+| `docs/` | Decision records, and `MIGRATING.md` for moving an existing setup onto this repo |
 | `KEYBINDINGS.md` | Cheatsheet for every tool's bindings — nvim, tmux, AeroSpace, shell |
 
 ## Modules
