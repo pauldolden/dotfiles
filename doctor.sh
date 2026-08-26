@@ -130,10 +130,13 @@ if command -v mise >/dev/null; then
 	fi
 fi
 if command -v brew >/dev/null; then
-	if HOMEBREW_NO_AUTO_UPDATE=1 brew bundle check --file="$CONFIG/Brewfile" >/dev/null 2>&1; then
+	# Both Brewfiles, concatenated through --file=-. Checking only the shared
+	# one reports every machine-local package as missing.
+	if cat "$CONFIG/Brewfile" "$CONFIG/Brewfile.local" 2>/dev/null |
+		HOMEBREW_NO_AUTO_UPDATE=1 brew bundle check --file=- >/dev/null 2>&1; then
 		ok "Brewfile satisfied"
 	else
-		bad "Brewfile not satisfied — run 'brew bundle --file=$CONFIG/Brewfile'"
+		bad "Brewfile not satisfied — run 'cat $CONFIG/Brewfile $CONFIG/Brewfile.local | brew bundle --file=-'"
 	fi
 fi
 
