@@ -1,0 +1,228 @@
+# TokyoNight theme for Yazi
+# A clean, dark theme inspired by Tokyo's neon lights
+
+# Manager
+[mgr]
+cwd = { fg = "#ff4fa3" }
+
+# Hovered
+hovered = { fg = "#141021", bg = "#ff4fa3" }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword = { fg = "#e8bd76", italic = true }
+find_position = { fg = "#c9aefc", bg = "reset", italic = true }
+
+# Marker
+marker_selected = { fg = "#a6dd70", bg = "#a6dd70" }
+marker_copied = { fg = "#e8bd76", bg = "#e8bd76" }
+marker_cut = { fg = "#ff8fa3", bg = "#ff8fa3" }
+
+# Tab
+tab_active = { fg = "#141021", bg = "#ff4fa3" }
+tab_inactive = { fg = "#c3b3e8", bg = "#1f1930" }
+tab_width = 1
+
+# Border
+border_symbol = "│"
+border_style = { fg = "#2c2246" }
+
+# Highlighting
+syntect_theme = ""
+
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "#2c2246", bg = "#2c2246" }
+
+# Mode
+mode_normal = { fg = "#141021", bg = "#ff4fa3", bold = true }
+mode_select = { fg = "#141021", bg = "#a6dd70", bold = true }
+mode_unset = { fg = "#141021", bg = "#c9aefc", bold = true }
+
+# Progress
+progress_label = { fg = "#e9e2f8", bold = true }
+progress_normal = { fg = "#ff4fa3", bg = "#2c2246" }
+progress_error = { fg = "#ff8fa3", bg = "#2c2246" }
+
+# Permissions
+permissions_t = { fg = "#a6dd70" }
+permissions_r = { fg = "#e8bd76" }
+permissions_w = { fg = "#ff8fa3" }
+permissions_x = { fg = "#8ce6ff" }
+permissions_s = { fg = "#9c8cc4" }
+
+[input]
+border = { fg = "#ff4fa3" }
+title = {}
+value = {}
+selected = { reversed = true }
+
+[select]
+border = { fg = "#ff4fa3" }
+active = { fg = "#c9aefc" }
+inactive = {}
+
+[tasks]
+border = { fg = "#ff4fa3" }
+title = {}
+hovered = { underline = true }
+
+[which]
+mask = { bg = "#0e0b17" }
+cand = { fg = "#8ce6ff" }
+rest = { fg = "#9c8cc4" }
+desc = { fg = "#c9aefc" }
+separator = "  "
+separator_style = { fg = "#9c8cc4" }
+
+[help]
+on = { fg = "#a6dd70" }
+run = { fg = "#c9aefc" }
+desc = {}
+hovered = { bg = "#2c2246", bold = true }
+footer = { fg = "#2c2246", bg = "#e9e2f8" }
+
+[filetype]
+
+rules = [
+  # Images
+  { mime = "image/*", fg = "#8ce6ff" },
+
+  # Videos
+  { mime = "video/*", fg = "#e8bd76" },
+  { mime = "audio/*", fg = "#e8bd76" },
+
+  # Archives
+  { mime = "application/zip", fg = "#c9aefc" },
+  { mime = "application/gzip", fg = "#c9aefc" },
+  { mime = "application/x-tar", fg = "#c9aefc" },
+  { mime = "application/x-bzip", fg = "#c9aefc" },
+  { mime = "application/x-bzip2", fg = "#c9aefc" },
+  { mime = "application/x-7z-compressed", fg = "#c9aefc" },
+  { mime = "application/x-rar", fg = "#c9aefc" },
+
+  # Documents
+  { mime = "application/pdf", fg = "#ff8fa3" },
+
+  # Fallback
+  { name = "*", fg = "#e9e2f8" },
+  { name = "*/", fg = "#ff4fa3" }
+]
+
+[icons]
+"Desktop/"     = ""
+"Documents/"   = ""
+"Downloads/"   = ""
+"Pictures/"    = ""
+"Music/"       = ""
+"Movies/"      = ""
+"Videos/"      = ""
+"Public/"      = ""
+"Library/"     = ""
+"Development/" = ""
+"dev/"         = ""
+".config/"     = ""
+".git/"        = ""
+
+# Git
+".gitignore"           = ""
+".gitmodules"          = ""
+".gitattributes"       = ""
+
+# Dotfiles
+".DS_Store"            = ""
+".bashrc"              = ""
+".bash_profile"        = ""
+".zshrc"               = ""
+".zshenv"              = ""
+".vimrc"               = ""
+
+# Text
+"*.txt"                = ""
+"*.md"                 = ""
+
+# Archives
+"*.zip"                = ""
+"*.tar"                = ""
+"*.gz"                 = ""
+"*.7z"                 = ""
+
+# Audio
+"*.mp3"                = ""
+"*.flac"               = ""
+"*.wav"                = ""
+
+# Images
+"*.png"                = ""
+"*.jpg"                = ""
+"*.jpeg"               = ""
+"*.gif"                = ""
+"*.webp"               = ""
+"*.svg"                = ""
+
+# Videos
+"*.mp4"                = ""
+"*.mkv"                = ""
+"*.avi"                = ""
+"*.mov"                = ""
+
+# Documents
+"*.pdf"                = ""
+"*.doc"                = ""
+"*.docx"               = ""
+"*.xls"                = ""
+"*.xlsx"               = ""
+"*.ppt"                = ""
+"*.pptx"               = ""
+
+# Programming
+"*.c"                  = ""
+"*.cpp"                = ""
+"*.h"                  = ""
+"*.hpp"                = ""
+"*.rs"                 = ""
+"*.go"                 = ""
+"*.py"                 = ""
+"*.js"                 = ""
+"*.ts"                 = ""
+"*.jsx"                = ""
+"*.tsx"                = ""
+"*.vue"                = ""
+"*.java"               = ""
+"*.class"              = ""
+"*.sh"                 = ""
+"*.fish"               = ""
+"*.lua"                = ""
+"*.vim"                = ""
+"*.rb"                 = ""
+"*.php"                = ""
+
+# Configs
+"*.json"               = ""
+"*.toml"               = ""
+"*.yaml"               = ""
+"*.yml"                = ""
+"*.xml"                = ""
+"*.ini"                = ""
+"*.conf"               = ""
+
+# Node
+"package.json"         = ""
+"node_modules/"        = ""
+
+# Rust
+"Cargo.toml"           = ""
+"Cargo.lock"           = ""
+
+# Go
+"go.mod"               = ""
+"go.sum"               = ""
+
+# Docker
+"Dockerfile"           = ""
+"docker-compose.yml"   = ""
+
+# Default
+"*"                    = ""
+"*/"                   = ""

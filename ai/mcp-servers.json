@@ -1,0 +1,28 @@
+{
+  "_comment": [
+    "Canonical MCP server definitions for Claude Code and Copilot CLI.",
+    "No literal secrets: credentials are 1Password op:// references resolved at spawn",
+    "time by `op run`. Safe to commit.",
+    "Run `ai/sync-mcp.py` to render the tool-specific config files.",
+    "`targets` selects which tools receive a server — Claude Code already gets",
+    "playwright and github via its plugin marketplace, so they are copilot-only.",
+    "Project-scoped servers live in ~/.claude.json under projects",
+    "and are deliberately not managed here; sync-mcp.py leaves that key alone."
+  ],
+  "servers": {
+    "playwright": {
+      "targets": ["copilot"],
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "github": {
+      "targets": ["copilot"],
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    }
+  }
+}

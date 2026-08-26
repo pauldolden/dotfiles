@@ -1,0 +1,7 @@
+# SSH public keys whose commit signatures are trusted, one per line:
+#
+#   you@example.com ssh-ed25519 AAAA...
+#
+# Only consulted when git is configured for SSH signing (gpg.format = ssh).
+# This machine signs with GPG today, so the file is a placeholder kept in step
+# with the work repo — populate it if you move to the 1Password SSH agent.

@@ -1,0 +1,38 @@
+name: verify
+
+on: [push, pull_request]
+
+# doctor.sh is deliberately absent from this workflow. It asserts that a live
+# macOS machine is reading this repo — symlinks in $HOME, k9s and lazygit
+# resolving their config dir, a tmux server holding the config on disk. A runner
+# has none of that, so it could only be made to pass by weakening the very
+# assertions it exists to make. It stays a machine-side check.
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install zsh
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq zsh
+
+      - name: zsh parses
+        run: |
+          for f in zsh/.zshrc zsh/.zprofile zsh/.zshenv zsh/*.zsh; do
+            zsh -n "$f"
+          done
+
+      - name: shellcheck
+        run: |
+          # Derived, not enumerated, so a script added tomorrow is covered the
+          # day it lands. The shebang match excludes zsh — \bsh\b finds no word
+          # boundary inside "zsh" — which is correct: shellcheck cannot parse it.
+          {
+            git ls-files '*.sh'
+            git ls-files | while read -r f; do
+              head -1 "$f" | grep -qE '^#!.*\b(ba)?sh\b' && printf '%s\n' "$f"
+            done
+          } | sort -u | xargs shellcheck -S warning
+
+      - name: theme output is not stale
+        run: python3 theme/sync-theme.py --check

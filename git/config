@@ -1,0 +1,44 @@
+[init]
+	defaultBranch = main
+[core]
+	hooksPath = ~/.config/git/hooks
+	excludesfile = ~/.config/git/ignore
+	editor = nvim
+	autocrlf = input
+	pager = delta
+[commit]
+	gpgsign = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	light = false
+	side-by-side = true
+	line-numbers = true
+	syntax-theme = tokyonight_night
+	features = decorations
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
+	hunk-header-decoration-style = cyan box ul
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
+[pull]
+	rebase = false
+[push]
+	default = simple
+	autoSetupRemote = true
+[fetch]
+	prune = true
+[rebase]
+	autoStash = true
+# Identity and signing method live in an untracked file, so this config stays
+# portable between machines that sign differently — this one signs with GPG,
+# the work machine with an SSH key held by the 1Password agent. bootstrap.sh
+# seeds it from config.local.example. Included last so local values win.
+# A missing include path is silently ignored by git.
+[include]
+	path = ~/.config/git/config.local

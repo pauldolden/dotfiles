@@ -1,0 +1,9 @@
+# Machine-local Homebrew packages. Untracked — seeded from this file by
+# bootstrap.sh, which runs it after the shared Brewfile.
+#
+# The shared Brewfile carries what every machine needs. This carries what one
+# machine needs: an employer's toolchain, a hobby toolchain, a cask that only
+# makes sense on hardware you own.
+
+# tap "fluxcd/tap"
+# brew "libpq"

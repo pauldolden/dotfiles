@@ -1,0 +1,29 @@
+# Copy to ~/.config/git/config.local and fill in your own details.
+# That file is gitignored — it is per-machine and must never be committed.
+#
+#   cp ~/.config/git/config.local.example ~/.config/git/config.local
+#
+# Identity AND signing method both live here, because the two machines sign
+# differently: GPG on the personal machine, an SSH key held by the 1Password
+# agent on the work one. Uncomment the block that matches this machine.
+
+[user]
+	name = Your Name
+	email = you@example.com
+
+# --- GPG signing -------------------------------------------------------------
+# signingKey is the long key id: gpg --list-secret-keys --keyid-format LONG
+# [user]
+# 	signingKey = 0000000000000000
+
+# --- 1Password SSH signing ---------------------------------------------------
+# signingKey is your SSH *public* key. With the 1Password agent it is under
+# Settings > Developer, or: op item get <key> --fields public_key
+# Requires the SSH agent enabled in 1Password first, or commits fail to sign.
+# [user]
+# 	signingKey = ssh-ed25519 AAAA...
+# [gpg]
+# 	format = ssh
+# [gpg "ssh"]
+# 	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+# 	allowedSignersFile = ~/.config/git/allowed_signers

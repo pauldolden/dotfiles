@@ -1,0 +1,58 @@
+style = "auto"
+inline_height = 0
+# Enter puts the command on the line to review; a second Enter runs it.
+# true would execute the highlighted entry immediately.
+enter_accept = false
+
+# Both up-arrow and ctrl-r search all history, not just this session
+filter_mode = "global"
+filter_mode_shell_up_key_binding = "global"
+
+
+## Defaults to "emacs".  This specifies the keymap on the startup of `atuin
+## search`.  If this is set to "auto", the startup keymap mode in the Atuin
+## search is automatically selected based on the shell's keymap where the
+## keybinding is defined.  If this is set to "emacs", "vim-insert", or
+## "vim-normal", the startup keymap mode in the Atuin search is forced to be
+## the specified one.
+# keymap_mode = "auto"
+
+## Cursor style in each keymap mode.  If specified, the cursor style is changed
+## in entering the cursor shape.  Available values are "default" and
+## "{blink,steady}-{block,underilne,bar}".
+# keymap_cursor = { emacs = "blink-block", vim_insert = "blink-block", vim_normal = "steady-block" }
+
+# network_connect_timeout = 5
+# network_timeout = 5
+
+## Timeout (in seconds) for acquiring a local database connection (sqlite)
+# local_timeout = 5
+
+## Set this to true and Atuin will minimize motion in the UI - timers will not update live, etc. 
+## Alternatively, set env NO_MOTION=true
+# prefers_reduced_motion = false
+
+#[stats]
+# Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
+#common_subcommands = [
+#  "cargo",
+#  "go",
+#  "git",
+#  "npm",
+#  "yarn",
+#  "pnpm",
+#  "kubectl",
+#]
+#
+# Set commands that should be totally stripped and ignored from stats
+#common_prefix = ["sudo"]
+
+[theme]
+name = "pinknight"
+
+[tmux]
+## Requires tmux >= 3.2. Route interactive search through a tmux popup
+## instead of taking over the current pane.
+enabled = true
+width = "80%"
+height = "60%"

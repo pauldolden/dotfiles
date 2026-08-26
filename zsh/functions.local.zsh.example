@@ -1,0 +1,15 @@
+# Machine-local functions. Untracked — seeded from this file by bootstrap.sh.
+#
+# Sourced after functions.zsh. Employer infrastructure belongs here and not in
+# the shared set: database proxies, cluster log helpers, anything naming an
+# internal project, namespace or hostname.
+
+## Example — a cloud-sql-proxy wrapper per environment.
+# function dbp() {
+#   case $1 in
+#     dev)  PORT=6003 ;;
+#     prod) PORT=6004 ;;
+#     *)    echo "Unknown stage"; return 1 ;;
+#   esac
+#   cloud-sql-proxy "$1":region:instance --port "$PORT"
+# }

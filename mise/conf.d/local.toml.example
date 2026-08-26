@@ -1,0 +1,11 @@
+# Machine-local runtime and tool versions. Untracked — seeded from this file by
+# bootstrap.sh. mise merges every *.toml in this directory over config.toml, so
+# a version named here wins.
+#
+# The shared config.toml tracks current stable. Pin here only when a machine has
+# a reason the other does not — a cluster's supported skew, a project stuck on
+# an older runtime.
+
+# [tools]
+# kubectl = "1.36"          # one minor either side of the cluster, not latest
+# cloud-sql-proxy = "2"     # v1 is still tagged latest upstream and takes different flags

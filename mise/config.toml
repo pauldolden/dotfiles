@@ -1,0 +1,43 @@
+[tools]
+node = "24"
+python = "3.14"
+go = "1.27"
+rust = "stable"
+# Package manager and task runner for projects that use it.
+bun = "latest"
+# Tools, not runtimes. Unpinned: their version changes nothing about how
+# project code behaves, so tracking latest costs nothing and saves bumps.
+uv = "latest"
+pnpm = "latest"
+act = "latest"
+actionlint = "latest"
+bat = "latest"
+delta = "latest"
+fd = "latest"
+fzf = "latest"
+gh = "latest"
+jq = "latest"
+k9s = "latest"
+kubectl = "latest"
+lazygit = "latest"
+# Document conversion — epub/docx/pdf.
+pandoc = "latest"
+ripgrep = "latest"
+shellcheck = "latest"
+starship = "latest"
+yazi = "latest"
+zoxide = "latest"
+
+# Global npm packages. Declared here rather than as Brewfile `npm` directives:
+# brew bundle runs without mise on PATH, so it can never see them and reports
+# them missing on every run. corepack provides the yarn and pnpm shims and
+# honours each repo's packageManager field — run `corepack enable` once.
+"npm:codex" = "latest"
+# nvim-treesitter needs this to compile parsers. Mason cannot install it
+# reliably (it shells out to npm, which is not on PATH for a headless nvim),
+# so declaring it here makes it a first-class tool instead.
+"npm:tree-sitter-cli" = "latest"
+
+[settings]
+# Trust project-level .mise.toml only after explicit `mise trust`
+experimental = false

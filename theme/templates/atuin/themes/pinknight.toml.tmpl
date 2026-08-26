@@ -1,0 +1,16 @@
+[theme]
+name = "pinknight"
+
+[colors]
+AlertInfo = "{{info}}"        # Info
+AlertWarn = "{{warn}}"        # Warn
+AlertError = "{{err_bright}}" # Error
+Annotation = "{{fg}}"         # Foreground
+Base = "{{bg}}"               # Background
+Guidance = "{{special}}"      # Guidance
+# Carries the accent because atuin never draws Title. Verified against 18.19.0
+# by forcing Title to pure green and capturing the TUI through a pty: the marker
+# colour never appears at any inline_height. Mapping the accent to Title alone
+# left atuin as the one themed config with no trace of the palette's identity.
+Important = "{{accent}}"      # Accent
+Title = "{{accent}}"          # Accent (unused by the current TUI; kept for future versions)

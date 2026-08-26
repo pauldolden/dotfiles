@@ -1,0 +1,152 @@
+# Canonical colour source for every terminal application in this repo.
+#
+# Retheme by editing [slots] only. Keys are ROLES, never colour names — a slot
+# called "accent" survives a move from pink to violet; one called "pink" does
+# not, and the coupling reappears in every consumer.
+#
+# Semantic slots (ok/warn/err/info) stay legible on purpose. btop's temperature
+# gradient, lazygit's diffs and atuin's alerts encode meaning in hue; recolour
+# those to match the chrome and the signal is gone.
+
+schemaVersion = 1
+name = "pinknight"
+
+[slots]
+# Surfaces — deep purple, darkest first
+bg            = "#141021"
+bg_dark       = "#0e0b17"
+bg_highlight  = "#1f1930"
+bg_selection  = "#2c2246"
+bar           = "#1a1530"
+panel         = "#272044"
+
+# Text
+fg            = "#e9e2f8"
+fg_dim        = "#c3b3e8"
+muted         = "#9c8cc4"
+ink           = "#140f1c"
+
+# Chrome accents — the pink identity
+accent        = "#ff4fa3"
+accent_bright = "#ff7ab8"
+accent_deep   = "#c93d80"
+purple        = "#c9aefc"
+purple_deep   = "#ab8df3"
+
+# Semantic — hue carries meaning, retune with care
+ok            = "#a6dd70"
+warn          = "#e8bd76"
+err           = "#ff8fa3"
+err_bright    = "#ef5f5f"
+info          = "#8ce6ff"
+info_deep     = "#4bb8d9"
+info_light    = "#b3f0ff"
+teal          = "#85ecd6"
+special       = "#ffab77"
+
+# Pairs asserted on every render. Rendering aborts below the floor, so a
+# retune can never silently ship unreadable chrome.
+[[contrast]]
+fg = "fg"
+bg = "bg"
+min = 12.0
+[[contrast]]
+fg = "fg_dim"
+bg = "bg"
+min = 9.0
+[[contrast]]
+fg = "muted"
+bg = "bg"
+min = 5.5
+[[contrast]]
+fg = "info"
+bg = "bg"
+min = 11.0
+[[contrast]]
+fg = "accent"
+bg = "bg"
+min = 5.5
+[[contrast]]
+fg = "purple"
+bg = "bg"
+min = 8.0
+[[contrast]]
+fg = "fg"
+bg = "bar"
+min = 11.0
+[[contrast]]
+fg = "fg_dim"
+bg = "bar"
+min = 7.0
+[[contrast]]
+fg = "fg"
+bg = "panel"
+min = 9.0
+[[contrast]]
+fg = "ink"
+bg = "accent"
+min = 4.5
+[[contrast]]
+fg = "ok"
+bg = "bg"
+min = 6.0
+[[contrast]]
+fg = "warn"
+bg = "bg"
+min = 6.0
+[[contrast]]
+fg = "err"
+bg = "bg"
+min = 6.0
+
+# Upstream Tokyo Night hex -> slot. Vendored theme files are rewritten through
+# this map, so adopting a new upstream theme means extending this table rather
+# than hand-editing eleven config files.
+[source]
+"#1a1b26" = "bg"
+"#16161e" = "bg_dark"
+"#24283b" = "bg_highlight"
+"#3b4261" = "bg_selection"
+"#283457" = "bg_selection"
+"#414868" = "bg_selection"
+"#363b54" = "bg_highlight"
+"#c0caf5" = "fg"
+"#c0cefc" = "fg"
+"#cfc9c2" = "fg"
+"#a9b1d6" = "fg_dim"
+"#9aa5ce" = "fg_dim"
+"#9abdf5" = "fg_dim"
+"#565f89" = "muted"
+"#545c7e" = "muted"
+"#4e5579" = "muted"
+"#444b6a" = "muted"
+"#747ca1" = "muted"
+"#7aa2f7" = "accent"
+"#6d91de" = "accent_deep"
+"#6183bb" = "accent_deep"
+"#ff007c" = "accent_bright"
+"#ba3c97" = "accent_deep"
+"#bb9af7" = "purple"
+"#9d7cd8" = "purple_deep"
+"#b267e6" = "purple_deep"
+"#9d599d" = "purple_deep"
+"#9ece6a" = "ok"
+"#e0af68" = "warn"
+"#ffdb69" = "warn"
+"#dbc08a" = "warn"
+"#ff9e64" = "special"
+"#ffa300" = "special"
+"#f7768e" = "err"
+"#db4b4b" = "err_bright"
+"#fc7b7b" = "err_bright"
+"#914c54" = "err_bright"
+"#7dcfff" = "info"
+"#89ddff" = "info_light"
+"#61bdf2" = "info_light"
+"#b4f9f8" = "info_light"
+"#2ac3de" = "info"
+"#0db9d7" = "info_deep"
+"#27a1b9" = "info_deep"
+"#449dab" = "info_deep"
+"#41a6b5" = "info_deep"
+"#73daca" = "teal"

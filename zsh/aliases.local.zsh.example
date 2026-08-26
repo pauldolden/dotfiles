@@ -1,0 +1,20 @@
+# Machine-local aliases. Untracked — seeded from this file by bootstrap.sh.
+#
+# Sourced after aliases.zsh, so anything here overrides the shared set rather
+# than colliding with it. This is where a machine's own shape goes: where
+# projects live, which apps are in the daily loop, per-employer tooling.
+# Nothing that belongs on every machine should end up in this file.
+
+## Extra PATH entries. Consumed by the path+= block in .zshrc, which runs
+## after this file is sourced.
+# ZSH_LOCAL_PATH=($HOME/bin)
+
+## Projects — the root `proj` and the fzf project finder walk.
+# alias proj='cd ~/dev/'
+
+## Apps in the daily loop. All resolve through `wo`, so they raise an existing
+## window rather than starting a second copy.
+# alias wn='wo Obsidian'
+
+## Notes, vaults, scratch dirs — anything rooted outside this repo.
+# alias notes='cd ~/notes && nvim'

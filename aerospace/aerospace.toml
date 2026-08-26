@@ -1,0 +1,118 @@
+# AeroSpace — i3-like tiling WM. Replaces native Spaces and the BetterTouchTool
+# gesture bindings. See docs/MACOS_INPUT.md.
+#
+# Read natively from ~/.config/aerospace, so this file needs no bootstrap symlink.
+
+config-version = 2
+
+start-at-login = true
+auto-reload-config = true
+
+# 'workspace next|prev' walks every workspace on the monitor in alphabetical
+# order, including empty ones. The mouse thumb buttons drive exactly that, so
+# the upstream default of 31 persistent workspaces (1-9, A-Z) would mean 31
+# clicks to wrap. A short list is the whole point.
+persistent-workspaces = ["1", "2", "3", "4", "5", "6"]
+
+gaps.inner.horizontal = 6
+gaps.inner.vertical = 6
+gaps.outer.top = 6
+gaps.outer.bottom = 6
+gaps.outer.left = 6
+gaps.outer.right = 6
+
+[mode.main.binding]
+
+# AeroSpace arranges windows; it never opens them. Without this there is no
+# i3-style "give me a terminal in this tile" and every new window has to come
+# from Spotlight.
+#
+# Not `open -na Ghostty`: -n starts a second Ghostty *instance* rather than a
+# second window, and the extra process outlives the window it was opened for.
+# Ghostty's own `+new-window` answers "not supported on this platform" on macOS.
+#
+# Clicking the menu item rather than sending cmd-n, because a global keystroke
+# races `activate` — it lands on whatever is frontmost at the moment it fires,
+# which is not Ghostty whenever this binding is most useful. Addressing the
+# process explicitly removes the race.
+alt-enter = '''exec-and-forget osascript -e 'tell application "Ghostty" to activate' -e 'tell application "System Events" to tell process "Ghostty" to click menu item "New Window" of menu "File" of menu bar 1' '''
+
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+
+# AeroSpace has no i3-style split: the tree holds windows, never empty panes, so
+# there is nothing to split *into*. Nesting is made after the fact by wrapping
+# two existing siblings under a new container, which is what join-with does.
+# alt-ctrl continues the hjkl rows above — alt focuses, alt-shift moves,
+# alt-ctrl nests.
+alt-ctrl-h = 'join-with left'
+alt-ctrl-j = 'join-with down'
+alt-ctrl-k = 'join-with up'
+alt-ctrl-l = 'join-with right'
+
+# The way back out. join-with nests without limit and a deep tree is very hard
+# to read from the geometry alone, so flatten is the only non-destructive reset
+# short of closing windows.
+alt-shift-slash = 'flatten-workspace-tree'
+alt-shift-equal = 'balance-sizes'
+
+# --no-outer-gaps because the 6px border is chrome for tiled windows; keeping
+# it around a window explicitly asked to fill the screen defeats the request.
+alt-f = 'fullscreen --no-outer-gaps'
+
+# System Settings, 1Password's mini window and video calls are sized by their
+# own authors and stretch badly into a tile. Toggles back into the tree.
+alt-shift-space = 'layout floating tiling'
+
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+alt-minus = 'resize smart -50'
+alt-equal = 'resize smart +50'
+
+# cmd-alt, not plain alt: this is a British layout, where # is Option+3 and
+# a global alt-3 hotkey eats it. Both families move together so the rule
+# stays predictable — cmd-alt is workspaces, add shift to take the window.
+cmd-alt-1 = 'workspace 1'
+cmd-alt-2 = 'workspace 2'
+cmd-alt-3 = 'workspace 3'
+cmd-alt-4 = 'workspace 4'
+cmd-alt-5 = 'workspace 5'
+cmd-alt-6 = 'workspace 6'
+
+cmd-alt-shift-1 = 'move-node-to-workspace 1'
+cmd-alt-shift-2 = 'move-node-to-workspace 2'
+cmd-alt-shift-3 = 'move-node-to-workspace 3'
+cmd-alt-shift-4 = 'move-node-to-workspace 4'
+cmd-alt-shift-5 = 'move-node-to-workspace 5'
+cmd-alt-shift-6 = 'move-node-to-workspace 6'
+
+# Keyboard equivalents of the mouse thumb buttons, which Hammerspoon maps to
+# the same two commands.
+alt-leftSquareBracket = 'workspace --wrap-around prev'
+alt-rightSquareBracket = 'workspace --wrap-around next'
+
+# Monitors. The bracket family already means "traverse" one axis at a time, so
+# it extends upwards rather than inventing a new shape: alt walks workspaces,
+# cmd-alt walks monitors, and shift takes the focused window along — the same
+# shift rule the workspace bindings above already use.
+cmd-alt-leftSquareBracket = 'focus-monitor --wrap-around prev'
+cmd-alt-rightSquareBracket = 'focus-monitor --wrap-around next'
+
+cmd-alt-shift-leftSquareBracket = 'move-node-to-monitor --wrap-around --focus-follows-window prev'
+cmd-alt-shift-rightSquareBracket = 'move-node-to-monitor --wrap-around --focus-follows-window next'
+
+# Moves the whole workspace rather than one window. This is the one that matters
+# when a display is unplugged, or when a context built on the laptop screen
+# should move to the 4K wholesale.
+alt-ctrl-leftSquareBracket = 'move-workspace-to-monitor --wrap-around prev'
+alt-ctrl-rightSquareBracket = 'move-workspace-to-monitor --wrap-around next'
+
+alt-tab = 'workspace-back-and-forth'
