@@ -1,18 +1,26 @@
 # What this machine runs. A module that is off skips its bootstrap steps
 # instead of configuring something nothing will read.
 #
-# Everything defaults on, and an unknown name is treated as on, so a profile
-# written before a module existed still gets it. Override per machine in an
-# untracked profile.local.toml — never edit this file to turn something off
-# for one machine, or every other machine inherits the decision.
+# Most modules default on, and an unknown name is treated as on, so a profile
+# written before a module existed still gets it. The exceptions are the two
+# below that change how the whole machine behaves rather than how one tool is
+# configured — those are off here and turned on deliberately.
+#
+# Override per machine in an untracked profile.local.toml — never edit this
+# file for one machine, or every other machine inherits the decision.
 
 [modules]
-# Tiling window manager. Off: AeroSpace is neither started nor checked.
-aerospace = true
+# --- Opt in: these alter the machine, not just an app's config -------------
 
-# Scroll direction and mouse buttons via event taps. Off: ~/.hammerspoon/init.lua
-# is not linked and Hammerspoon is not started.
-hammerspoon = true
+# Tiling window manager. It tiles every open window the moment it launches and
+# needs an Accessibility grant, so a fresh clone should not get it by accident.
+aerospace = false
+
+# Scroll direction and mouse buttons, via global event taps. Also needs
+# Accessibility, and changes input behaviour everywhere once running.
+hammerspoon = false
+
+# --- On by default: scoped to their own tool ------------------------------
 
 # Browser prefs, chrome CSS and add-on policies. Off: no profile discovery, no
 # policies written into the app bundle.

@@ -156,16 +156,22 @@ bootstrap steps rather than configuring something nothing will read — which
 matters because this repo *is* `~/.config`, so a rendered config is read by its
 app the moment that app exists, whether or not you wanted it.
 
-| Module | Off means |
-| --- | --- |
-| `aerospace` | Not started, not checked |
-| `hammerspoon` | `~/.hammerspoon/init.lua` not linked, not started |
-| `firefox` | No profile discovery, no policies written into the app bundle |
-| `containers` | podman machine not initialised, compose plugin not wired |
-| `rust` | rustup not installed — `mise install` cannot build rust |
+| Module | Default | Off means |
+| --- | --- | --- |
+| `aerospace` | **off** | Not started, not checked |
+| `hammerspoon` | **off** | `~/.hammerspoon/init.lua` not linked, not started |
+| `firefox` | on | No profile discovery, no policies written into the app bundle |
+| `containers` | on | podman machine not initialised, compose plugin not wired |
+| `rust` | on | rustup not installed — `mise install` cannot build rust |
 
-Everything defaults on, and an **unknown name is treated as on**, so a profile
-written before a module existed still gets it. Override per machine in an
+The two input-stack modules are **opt in**. They change how the whole machine
+behaves rather than how one tool is configured — AeroSpace tiles every open
+window the moment it launches, Hammerspoon remaps scroll direction and mouse
+buttons globally — and both need an Accessibility grant. A fresh clone should
+not inherit that by accident. Turn them on in `profile.local.toml`.
+
+Everything else defaults on, and an **unknown name is treated as on**, so a
+profile written before a module existed still gets it. Override per machine in an
 untracked `profile.local.toml`; never edit `profile.toml` to turn something off
 for one machine, or every other machine inherits the decision.
 
