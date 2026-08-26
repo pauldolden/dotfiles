@@ -19,4 +19,12 @@ mkdir -p "$TMPDIR"
 # appears, with no error from anything that reads it.
 # ${TMPDIR%/} normalises the trailing slash, which differs between the system
 # TMPDIR (/var/folders/.../T/, trailing) and the override above (no trailing).
-export DOCKER_HOST="unix://${TMPDIR%/}/podman/podman-machine-default-api.sock"
+# Guarded on the machine's socket directory, not on podman being on PATH:
+# this file is sourced before .zshrc builds $path, so a PATH probe here is
+# answering a question about the parent shell. Set unconditionally, this
+# variable makes docker unusable anywhere podman is not the runtime — it
+# dials a socket that never appears, and the error names a podman path on a
+# machine that never installed podman.
+if [[ -d "${TMPDIR%/}/podman" ]]; then
+  export DOCKER_HOST="unix://${TMPDIR%/}/podman/podman-machine-default-api.sock"
+fi
