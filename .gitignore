@@ -18,11 +18,15 @@ zsh/completions.local.zsh
 # Claude Code writes autoMode back into this file — a generated threat
 # model of whatever this machine works on. Never tracked.
 ai/claude/settings.json
+ai/AGENTS.local.md
+ai/mcp-servers.local.json
 Brewfile.local
 mise/conf.d/local.toml
 
 # Machine-local tool state
 .semgrep/
+# brew trust store — lands here because XDG_CONFIG_HOME is this repo
+homebrew/
 configstore/
 containers/
 opencode/

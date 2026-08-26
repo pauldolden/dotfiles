@@ -11,6 +11,7 @@ import sys
 
 HOME = pathlib.Path.home()
 CANONICAL = pathlib.Path(__file__).parent / "mcp-servers.json"
+LOCAL = pathlib.Path(__file__).parent / "mcp-servers.local.json"
 CLAUDE = HOME / ".claude.json"
 COPILOT = HOME / ".copilot" / "mcp-config.json"
 
@@ -34,6 +35,10 @@ def write_json(path, data):
 
 def main():
     servers = json.loads(CANONICAL.read_text())["servers"]
+    # Machine-local servers merge over canonical: an employer's internal
+    # MCP endpoints belong on one machine, not in a public repo.
+    if LOCAL.exists():
+        servers |= json.loads(LOCAL.read_text()).get("servers", {})
 
     claude = json.loads(CLAUDE.read_text()) if CLAUDE.exists() else {}
     claude["mcpServers"] = {n: shape(s) for n, s in selected(servers, "claude").items()}

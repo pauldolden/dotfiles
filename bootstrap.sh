@@ -120,6 +120,41 @@ else
 	skip "writable"
 fi
 
+step "Trusting third-party tap entries"
+# `trusted:` in a Brewfile governs installation, not the outdated check. That
+# check reads Homebrew's own trust store, so without this every third-party
+# formula reports "needs to be installed or updated" forever — installed,
+# current, and indistinguishable from missing.
+#
+# Both Brewfile forms grant trust and both are honoured here: a per-entry
+# `trusted: true`, and a tap-level `trusted: { formulae: [...] }`. The tap
+# itself is never trusted wholesale — that would widen a deliberately narrow
+# grant. Trust state lands in $XDG_CONFIG_HOME/homebrew, which is this repo,
+# and is gitignored.
+if command -v brew >/dev/null; then
+	trusted=0
+	while IFS=' ' read -r kind name; do
+		[ -n "$name" ] || continue
+		brew trust --"$kind" "$name" >/dev/null 2>&1 && trusted=$((trusted + 1))
+	done <<EOF
+$(cat "$CONFIG/Brewfile" "$CONFIG/Brewfile.local" 2>/dev/null | python3 -c '
+import re, sys
+for line in sys.stdin:
+    m = re.match(r"(brew|cask) \"([^\"]+)\".*trusted:", line)
+    if m:
+        print("formula" if m.group(1) == "brew" else "cask", m.group(2))
+        continue
+    m = re.match(r"tap \"([^\"]+)\".*trusted:\s*\{[^}]*formulae:\s*\[([^]]*)\]", line)
+    if m:
+        for f in re.findall(r"\"([^\"]+)\"", m.group(2)):
+            print("formula", f"{m.group(1)}/{f}")
+')
+EOF
+	skip "$trusted third-party entries trusted"
+else
+	skip "brew missing — skipping trust"
+fi
+
 step "Installing packages (brew bundle)"
 # Non-fatal: one unavailable package must not abandon the rest of the bootstrap.
 # brew bundle is itself idempotent, so re-running picks up whatever was missed.

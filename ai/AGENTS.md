@@ -260,3 +260,12 @@ When primary CI signals (lint, format, type check, tests) pass and the PR is oth
 - No half-finished implementations. If a feature is not ready, do not merge it.
 - No backwards-compat shims when you can just change the code.
 - Security: validate all inputs at system boundaries. Never trust data from outside. Prefer allowlists. Sanitise anything rendered as HTML or executed.
+
+---
+
+## Machine-local instructions
+
+Anything true of one machine only — an employer's compliance rules, internal
+services, house style for a codebase that lives on this box. Untracked.
+
+@~/.config/ai/AGENTS.local.md

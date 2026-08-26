@@ -1,0 +1,9 @@
+{
+  "_comment": [
+    "Machine-local MCP servers. Untracked — seeded from this file by bootstrap.sh.",
+    "Merged over mcp-servers.json by sync-mcp.py, so a name here wins.",
+    "Secrets stay as 1Password op:// refs, resolved at run time by `op run`.",
+    "Employer-internal endpoints belong here, never in the shared file."
+  ],
+  "servers": {}
+}
