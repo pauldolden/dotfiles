@@ -1,0 +1,12 @@
+# Machine-local completions. Untracked — seeded from this file by bootstrap.sh.
+#
+# Sourced after compinit, unlike aliases.local.zsh / functions.local.zsh. Put
+# anything that calls compdef or compadd here; in the earlier overlay it is
+# silently skipped because compdef does not exist yet.
+
+## Example — a tool whose generator appends to the rc file rather than writing
+## to stdout, so its block has to be pasted somewhere by hand.
+# if type compdef &>/dev/null; then
+#   _mytool_completions() { ... }
+#   compdef _mytool_completions mytool
+# fi

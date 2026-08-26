@@ -181,6 +181,12 @@ fi
 (( $+commands[eza] ))    && compdef lt=eza
 compdef pe=printenv
 
+# Machine-local completions (gitignored, optional). Separate from the overlay
+# sourced at the top of this file because that runs before compinit, where
+# compdef does not yet exist — a compdef call there is silently skipped, which
+# looks identical to a completion that simply does not work.
+[[ -f ~/.config/zsh/completions.local.zsh ]] && source ~/.config/zsh/completions.local.zsh
+
 # --------------------------------------------------
 # Per-project environment
 # --------------------------------------------------
