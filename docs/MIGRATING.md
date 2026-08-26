@@ -55,6 +55,37 @@ Nothing below is in the repo, on any machine, by design. Take what applies:
 Anything you have no equivalent for, skip — `bootstrap.sh` seeds it from its
 tracked `.example` on the next run.
 
+### If your old setup predates the `.local` layer
+
+Then none of those files exist in `~/.config.old`, and the table above will
+carry over nothing while appearing to work. Your machine-specific content is
+sitting **inside the tracked files** — which the clone in step 2 replaced.
+
+This is the case for any fork of this repo made before the split, and it is the
+one way to lose real work here. Read the old tracked files and extract, before
+`~/.config.old` goes anywhere:
+
+| Look in `~/.config.old/` | Extract to | Looking for |
+| --- | --- | --- |
+| `zsh/functions.zsh` | `zsh/functions.local.zsh` | Functions naming an employer project, cluster, port or namespace |
+| `zsh/aliases.zsh` | `zsh/aliases.local.zsh` | `proj`, app-focus aliases, anything rooted outside the repo |
+| `zsh/.zshrc` | `zsh/completions.local.zsh` | Generated completion blocks — tools whose installer appends to the rc file |
+| `zsh/exports.zsh` | `zsh/aliases.local.zsh` | Extra PATH entries → `ZSH_LOCAL_PATH` |
+| `mise/config.toml` | `mise/conf.d/local.toml` | Version pins a cluster forces, rather than current stable |
+| `Brewfile` | `Brewfile.local` | Taps and formulae only this machine needs |
+| `ai/AGENTS.md` | `ai/AGENTS.local.md` | Sections about one employer's codebases |
+| `ai/mcp-servers.json` | `ai/mcp-servers.local.json` | Servers pointing at internal endpoints |
+
+A useful diff to drive this:
+
+```bash
+diff -r --exclude=.git ~/.config.old ~/.config | less
+```
+
+Everything it reports that is true of *this machine only* belongs in a `.local`
+file. Everything true of *every* machine is either already upstream or worth a
+pull request.
+
 If you carried MCP servers over, re-render the tool configs:
 
 ```bash
